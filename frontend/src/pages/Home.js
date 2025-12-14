@@ -13,7 +13,6 @@ import {
   Link as MuiLink
 } from '@mui/material';
 import { 
-  Email as EmailIcon,
   GitHub as GitHubIcon,
   BugReport as BugReportIcon,
   Lightbulb as LightbulbIcon
@@ -137,26 +136,7 @@ const Home = () => {
         </Typography>
         
         <Grid container spacing={3} justifyContent="center" sx={{ mt: 2 }}>
-          <Grid item xs={12} sm={6} md={3}>
-            <Card variant="outlined" sx={{ textAlign: 'center', p: 2, height: '100%' }}>
-              <EmailIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
-              <Typography variant="subtitle1" gutterBottom>
-                Email Contact
-              </Typography>
-              <Typography variant="body2" color="text.secondary" paragraph>
-                Direct communication for feature requests and collaboration
-              </Typography>
-              <MuiLink 
-                href="mailto:nbarreto@gmail.com?subject=Conservation Biology Toolkit - Feature Request"
-                color="primary"
-                underline="hover"
-              >
-                nbarreto@gmail.com
-              </MuiLink>
-            </Card>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined" sx={{ textAlign: 'center', p: 2, height: '100%' }}>
               <GitHubIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
               <Typography variant="subtitle1" gutterBottom>
@@ -177,7 +157,7 @@ const Home = () => {
             </Card>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined" sx={{ textAlign: 'center', p: 2, height: '100%' }}>
               <LightbulbIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
               <Typography variant="subtitle1" gutterBottom>
@@ -198,7 +178,7 @@ const Home = () => {
             </Card>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <Card variant="outlined" sx={{ textAlign: 'center', p: 2, height: '100%' }}>
               <BugReportIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
               <Typography variant="subtitle1" gutterBottom>
