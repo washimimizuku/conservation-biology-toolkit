@@ -12,6 +12,7 @@ import {
   CircularProgress
 } from '@mui/material';
 import axios from 'axios';
+import { API_URLS } from '../config/api';
 
 const PopulationTools = () => {
   const [growthData, setGrowthData] = useState({
@@ -45,7 +46,7 @@ const PopulationTools = () => {
         carrying_capacity: growthData.carrying_capacity ? parseInt(growthData.carrying_capacity) : null
       };
 
-      const response = await axios.post('/api/population-analysis/population-growth', payload);
+      const response = await axios.post(`${API_URLS.populationAnalysis}/population-growth`, payload);
       setGrowthResult(response.data);
     } catch (error) {
       setGrowthError(error.response?.data?.detail || 'An error occurred');
@@ -65,7 +66,7 @@ const PopulationTools = () => {
         breeding_females: parseInt(effectivePopData.breeding_females)
       };
 
-      const response = await axios.post('/api/population-analysis/effective-population-size', payload);
+      const response = await axios.post(`${API_URLS.populationAnalysis}/effective-population-size`, payload);
       setEffectivePopResult(response.data);
     } catch (error) {
       setEffectivePopError(error.response?.data?.detail || 'An error occurred');
