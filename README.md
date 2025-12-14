@@ -9,10 +9,10 @@ This toolkit addresses the critical need for standardized, accessible conservati
 ## Tool Categories
 
 ### 🧬 Population Analysis
-- **Population Viability Analysis (PVA)** *(WIP)* - Assess extinction risk and population persistence
-- **Effective Population Size** *(WIP)* - Calculate genetic effective population size
-- **Growth Rate & Carrying Capacity** *(WIP)* - Model population dynamics and limits
-- **Metapopulation Dynamics** *(WIP)* - Simulate connected population networks
+- **Population Viability Analysis (PVA)** - Assess extinction risk and population persistence
+- **Effective Population Size** - Calculate genetic effective population size
+- **Growth Rate & Carrying Capacity** - Model population dynamics and limits
+- **Metapopulation Dynamics** - Simulate connected population networks
 
 ### 🔬 Genetic Diversity
 - **Hardy-Weinberg Equilibrium** *(WIP)* - Test population genetic assumptions

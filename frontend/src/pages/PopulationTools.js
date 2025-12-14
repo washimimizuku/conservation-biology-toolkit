@@ -33,6 +33,31 @@ const PopulationTools = () => {
   const [effectivePopLoading, setEffectivePopLoading] = useState(false);
   const [effectivePopError, setEffectivePopError] = useState(null);
 
+  // PVA state
+  const [pvaData, setPvaData] = useState({
+    initial_population: '',
+    growth_rate: '',
+    environmental_variance: '',
+    carrying_capacity: '',
+    years: '',
+    simulations: '1000'
+  });
+  const [pvaResult, setPvaResult] = useState(null);
+  const [pvaLoading, setPvaLoading] = useState(false);
+  const [pvaError, setPvaError] = useState(null);
+
+  // Metapopulation state
+  const [metaData, setMetaData] = useState({
+    patch_populations: '100,80,60',
+    patch_capacities: '200,150,120',
+    growth_rates: '0.1,0.08,0.12',
+    migration_matrix: '0,0.05,0.02;0.05,0,0.03;0.02,0.03,0',
+    years: '20'
+  });
+  const [metaResult, setMetaResult] = useState(null);
+  const [metaLoading, setMetaLoading] = useState(false);
+  const [metaError, setMetaError] = useState(null);
+
   const handleGrowthSubmit = async (e) => {
     e.preventDefault();
     setGrowthLoading(true);
@@ -72,6 +97,55 @@ const PopulationTools = () => {
       setEffectivePopError(error.response?.data?.detail || 'An error occurred');
     } finally {
       setEffectivePopLoading(false);
+    }
+  };
+
+  const handlePvaSubmit = async (e) => {
+    e.preventDefault();
+    setPvaLoading(true);
+    setPvaError(null);
+
+    try {
+      const payload = {
+        initial_population: parseInt(pvaData.initial_population),
+        growth_rate: parseFloat(pvaData.growth_rate),
+        environmental_variance: parseFloat(pvaData.environmental_variance),
+        carrying_capacity: parseInt(pvaData.carrying_capacity),
+        years: parseInt(pvaData.years),
+        simulations: parseInt(pvaData.simulations)
+      };
+
+      const response = await axios.post(`${API_URLS.populationAnalysis}/population-viability-analysis`, payload);
+      setPvaResult(response.data);
+    } catch (error) {
+      setPvaError(error.response?.data?.detail || 'An error occurred');
+    } finally {
+      setPvaLoading(false);
+    }
+  };
+
+  const handleMetaSubmit = async (e) => {
+    e.preventDefault();
+    setMetaLoading(true);
+    setMetaError(null);
+
+    try {
+      const payload = {
+        patch_populations: metaData.patch_populations.split(',').map(x => parseInt(x.trim())),
+        patch_capacities: metaData.patch_capacities.split(',').map(x => parseInt(x.trim())),
+        growth_rates: metaData.growth_rates.split(',').map(x => parseFloat(x.trim())),
+        migration_matrix: metaData.migration_matrix.split(';').map(row => 
+          row.split(',').map(x => parseFloat(x.trim()))
+        ),
+        years: parseInt(metaData.years)
+      };
+
+      const response = await axios.post(`${API_URLS.populationAnalysis}/metapopulation-dynamics`, payload);
+      setMetaResult(response.data);
+    } catch (error) {
+      setMetaError(error.response?.data?.detail || 'An error occurred');
+    } finally {
+      setMetaLoading(false);
     }
   };
 
@@ -232,6 +306,210 @@ const PopulationTools = () => {
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
                     Formula: Ne = 4 × Nm × Nf / (Nm + Nf)
+                  </Typography>
+                </Box>
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Population Viability Analysis */}
+        <Grid item xs={12} md={6}>
+          <Card>
+            <CardContent>
+              <Typography variant="h5" component="h2" gutterBottom>
+                Population Viability Analysis (PVA)
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                Assess extinction risk and population persistence using stochastic population models.
+              </Typography>
+
+              <Box component="form" onSubmit={handlePvaSubmit} sx={{ mt: 2 }}>
+                <TextField
+                  fullWidth
+                  label="Initial Population"
+                  type="number"
+                  value={pvaData.initial_population}
+                  onChange={(e) => setPvaData({...pvaData, initial_population: e.target.value})}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Growth Rate (r)"
+                  type="number"
+                  step="0.01"
+                  value={pvaData.growth_rate}
+                  onChange={(e) => setPvaData({...pvaData, growth_rate: e.target.value})}
+                  margin="normal"
+                  helperText="Mean annual growth rate"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Environmental Variance"
+                  type="number"
+                  step="0.01"
+                  value={pvaData.environmental_variance}
+                  onChange={(e) => setPvaData({...pvaData, environmental_variance: e.target.value})}
+                  margin="normal"
+                  helperText="Standard deviation of growth rate"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Carrying Capacity"
+                  type="number"
+                  value={pvaData.carrying_capacity}
+                  onChange={(e) => setPvaData({...pvaData, carrying_capacity: e.target.value})}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Years to Simulate"
+                  type="number"
+                  value={pvaData.years}
+                  onChange={(e) => setPvaData({...pvaData, years: e.target.value})}
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Number of Simulations"
+                  type="number"
+                  value={pvaData.simulations}
+                  onChange={(e) => setPvaData({...pvaData, simulations: e.target.value})}
+                  margin="normal"
+                  helperText="More simulations = more accurate results"
+                />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  sx={{ mt: 2 }}
+                  disabled={pvaLoading}
+                >
+                  {pvaLoading ? <CircularProgress size={24} /> : 'Run PVA'}
+                </Button>
+              </Box>
+
+              {pvaError && (
+                <Alert severity="error" sx={{ mt: 2 }}>
+                  {pvaError}
+                </Alert>
+              )}
+
+              {pvaResult && (
+                <Box sx={{ mt: 2 }}>
+                  <Typography variant="h6">Results:</Typography>
+                  <Typography variant="body2">
+                    Extinction Probability: {' '}
+                    <strong>{(pvaResult.extinction_probability * 100).toFixed(1)}%</strong>
+                  </Typography>
+                  <Typography variant="body2">
+                    Quasi-extinction Probability (&lt;50): {' '}
+                    <strong>{(pvaResult.quasi_extinction_probability * 100).toFixed(1)}%</strong>
+                  </Typography>
+                  <Typography variant="body2">
+                    Mean Final Population: {' '}
+                    <strong>{Math.round(pvaResult.mean_final_population)}</strong>
+                  </Typography>
+                </Box>
+              )}
+            </CardContent>
+          </Card>
+        </Grid>
+
+        {/* Metapopulation Dynamics */}
+        <Grid item xs={12} md={6}>
+          <Card>
+            <CardContent>
+              <Typography variant="h5" component="h2" gutterBottom>
+                Metapopulation Dynamics
+              </Typography>
+              <Typography variant="body2" color="text.secondary" paragraph>
+                Simulate population dynamics across connected habitat patches with migration.
+              </Typography>
+
+              <Box component="form" onSubmit={handleMetaSubmit} sx={{ mt: 2 }}>
+                <TextField
+                  fullWidth
+                  label="Patch Populations"
+                  value={metaData.patch_populations}
+                  onChange={(e) => setMetaData({...metaData, patch_populations: e.target.value})}
+                  margin="normal"
+                  helperText="Comma-separated (e.g., 100,80,60)"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Patch Capacities"
+                  value={metaData.patch_capacities}
+                  onChange={(e) => setMetaData({...metaData, patch_capacities: e.target.value})}
+                  margin="normal"
+                  helperText="Comma-separated (e.g., 200,150,120)"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Growth Rates"
+                  value={metaData.growth_rates}
+                  onChange={(e) => setMetaData({...metaData, growth_rates: e.target.value})}
+                  margin="normal"
+                  helperText="Comma-separated (e.g., 0.1,0.08,0.12)"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Migration Matrix"
+                  value={metaData.migration_matrix}
+                  onChange={(e) => setMetaData({...metaData, migration_matrix: e.target.value})}
+                  margin="normal"
+                  helperText="Semicolon-separated rows (e.g., 0,0.05,0.02;0.05,0,0.03;0.02,0.03,0)"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  label="Years to Simulate"
+                  type="number"
+                  value={metaData.years}
+                  onChange={(e) => setMetaData({...metaData, years: e.target.value})}
+                  margin="normal"
+                  required
+                />
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  fullWidth
+                  sx={{ mt: 2 }}
+                  disabled={metaLoading}
+                >
+                  {metaLoading ? <CircularProgress size={24} /> : 'Simulate Metapopulation'}
+                </Button>
+              </Box>
+
+              {metaError && (
+                <Alert severity="error" sx={{ mt: 2 }}>
+                  {metaError}
+                </Alert>
+              )}
+
+              {metaResult && (
+                <Box sx={{ mt: 2 }}>
+                  <Typography variant="h6">Results:</Typography>
+                  <Typography variant="body2">
+                    Final Total Population: {' '}
+                    <strong>{Math.round(metaResult.total_population[metaResult.total_population.length - 1])}</strong>
+                  </Typography>
+                  <Typography variant="body2">
+                    Final Extinction Risk: {' '}
+                    <strong>{(metaResult.extinction_risk[metaResult.extinction_risk.length - 1] * 100).toFixed(1)}%</strong>
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                    Patches: {metaResult.patch_populations[0].length}
                   </Typography>
                 </Box>
               )}
