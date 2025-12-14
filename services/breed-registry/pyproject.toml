@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "breed-registry"
+version = "0.1.0"
+description = "Breed registry and data management service"
+authors = ["Nuno Barreto <nbarreto@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "^4.2.0"
+djangorestframework = "^3.14.0"
+django-cors-headers = "^4.3.0"
+psycopg2-binary = "^2.9.0"
+celery = "^5.3.0"
+redis = "^5.0.0"
+pillow = "^10.0.0"
+django-filter = "^23.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest-django = "^4.5.0"
+factory-boy = "^3.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
