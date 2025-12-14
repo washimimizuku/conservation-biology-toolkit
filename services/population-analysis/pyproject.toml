@@ -7,8 +7,8 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "^0.104.0"
-uvicorn = "^0.24.0"
+fastapi = "^0.115.6"
+uvicorn = "^0.32.1"
 numpy = "^1.24.0"
 scipy = "^1.11.0"
 pandas = "^2.1.0"
