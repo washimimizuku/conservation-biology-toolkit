@@ -7,7 +7,7 @@ const Home = () => {
     {
       title: '🧬 Population Analysis',
       description: 'Population viability analysis, effective population size, and demographic modeling',
-      tools: ['PVA Calculator', 'Effective Population Size', 'Growth Rate Models'],
+      tools: ['Population Growth Calculator', 'Effective Population Size', 'PVA Calculator', 'Metapopulation Dynamics'],
       link: '/population-tools',
       status: 'Available'
     },
