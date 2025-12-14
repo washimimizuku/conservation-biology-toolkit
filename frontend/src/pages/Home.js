@@ -15,7 +15,9 @@ import {
 import { 
   GitHub as GitHubIcon,
   BugReport as BugReportIcon,
-  Lightbulb as LightbulbIcon
+  Lightbulb as LightbulbIcon,
+  PlayArrow as PlayArrowIcon,
+  Schedule as ScheduleIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
@@ -60,10 +62,53 @@ const Home = () => {
         <Typography variant="h5" color="text.secondary" paragraph>
           Essential computational tools for conservation biologists, wildlife managers, and researchers
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }}>
+        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 800, mx: 'auto' }} paragraph>
           From population viability analysis to climate impact assessments, these tools help researchers 
           make data-driven conservation decisions through an intuitive web interface.
         </Typography>
+        
+        {/* Call to Action for Available Tools */}
+        <Box 
+          sx={{ 
+            mt: 4, 
+            p: 3, 
+            background: 'linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%)',
+            borderRadius: 2,
+            border: '2px solid #2196F3',
+            maxWidth: 600,
+            mx: 'auto'
+          }}
+        >
+          <Typography variant="h6" color="primary" gutterBottom>
+            🚀 Ready to Use Now!
+          </Typography>
+          <Typography variant="body1" color="text.primary" paragraph>
+            <strong>Population Analysis tools are live!</strong> Calculate population growth, 
+            effective population size, run PVA simulations, and model metapopulation dynamics.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            component={Link}
+            to="/population-tools"
+            startIcon={<PlayArrowIcon />}
+            sx={{
+              px: 4,
+              py: 1.5,
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+              boxShadow: '0 4px 8px 2px rgba(33, 203, 243, .3)',
+              '&:hover': {
+                background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
+                boxShadow: '0 6px 12px 4px rgba(33, 203, 243, .4)',
+                transform: 'translateY(-2px)'
+              }
+            }}
+          >
+            Try Population Analysis Tools
+          </Button>
+        </Box>
       </Box>
 
       <Grid container spacing={4}>
@@ -99,14 +144,31 @@ const Home = () => {
                   ))}
                 </Box>
               </CardContent>
-              <CardActions>
+              <CardActions sx={{ p: 2, pt: 0 }}>
                 <Button 
-                  size="small" 
+                  variant={category.status === 'Available' ? 'contained' : 'outlined'}
+                  size="large"
+                  fullWidth
                   component={Link} 
                   to={category.link}
                   disabled={category.status !== 'Available'}
+                  startIcon={category.status === 'Available' ? <PlayArrowIcon /> : <ScheduleIcon />}
+                  sx={{
+                    py: 1.5,
+                    fontSize: '1rem',
+                    fontWeight: 'bold',
+                    ...(category.status === 'Available' && {
+                      background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+                      boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
+                      '&:hover': {
+                        background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
+                        boxShadow: '0 4px 8px 3px rgba(33, 203, 243, .4)',
+                        transform: 'translateY(-1px)'
+                      }
+                    })
+                  }}
                 >
-                  {category.status === 'Available' ? 'Explore Tools' : 'Coming Soon'}
+                  {category.status === 'Available' ? 'Explore Tools Now' : 'Coming Soon'}
                 </Button>
               </CardActions>
             </Card>
