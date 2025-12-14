@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📧 Direct Email Contact
+    url: mailto:nbarreto@gmail.com?subject=Conservation Biology Toolkit - Question
+    about: For direct communication, collaboration opportunities, or urgent matters
+  - name: 💬 General Discussion
+    url: https://github.com/washimimizuku/conservation-biology-toolkit/discussions
+    about: Ask questions, share ideas, or discuss conservation biology methods
+  - name: 📖 Documentation
+    url: https://github.com/washimimizuku/conservation-biology-toolkit/blob/master/README.md
+    about: Check the README for setup instructions and tool descriptions
