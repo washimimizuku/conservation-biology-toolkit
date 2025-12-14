@@ -3,6 +3,7 @@ name = "breed-registry"
 version = "0.1.0"
 description = "Breed registry and data management service"
 authors = ["Nuno Barreto <nbarreto@gmail.com>"]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
