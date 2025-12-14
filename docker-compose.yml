@@ -1,42 +1,42 @@
 services:
-  # Database
-  db:
-    image: postgres:15-alpine
-    environment:
-      POSTGRES_DB: breed_registry
-      POSTGRES_USER: conservation_user
-      POSTGRES_PASSWORD: conservation_pass
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+  # Database - Currently disabled, will be enabled when breed registry is implemented
+  # db:
+  #   image: postgres:15-alpine
+  #   environment:
+  #     POSTGRES_DB: breed_registry
+  #     POSTGRES_USER: conservation_user
+  #     POSTGRES_PASSWORD: conservation_pass
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
 
-  # Redis for caching and task queue
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
+  # Redis for caching and task queue - Currently disabled, will be enabled when needed
+  # redis:
+  #   image: redis:7-alpine
+  #   ports:
+  #     - "6379:6379"
+  #   volumes:
+  #     - redis_data:/data
 
-  # Breed Registry - Django Service
-  breed-registry:
-    build:
-      context: ./services/breed-registry
-      dockerfile: Dockerfile
-    ports:
-      - "8001:8000"
-    volumes:
-      - ./services/breed-registry:/app
-    environment:
-      - POSTGRES_DB=breed_registry
-      - POSTGRES_USER=conservation_user
-      - POSTGRES_PASSWORD=conservation_pass
-      - DB_HOST=db
-      - DEBUG=1
-    depends_on:
-      - db
-      - redis
+  # Breed Registry - Django Service - Currently disabled, will be implemented last
+  # breed-registry:
+  #   build:
+  #     context: ./services/breed-registry
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "8001:8000"
+  #   volumes:
+  #     - ./services/breed-registry:/app
+  #   environment:
+  #     - POSTGRES_DB=breed_registry
+  #     - POSTGRES_USER=conservation_user
+  #     - POSTGRES_PASSWORD=conservation_pass
+  #     - DB_HOST=db
+  #     - DEBUG=1
+  #   depends_on:
+  #     - db
+  #     - redis
 
   # Population Analysis - FastAPI Service
   population-analysis:
@@ -47,8 +47,9 @@ services:
       - "8002:8000"
     volumes:
       - ./services/population-analysis:/app
-    environment:
-      - REDIS_URL=redis://redis:6379/1
+    # Redis dependency removed until breed registry is implemented
+    # environment:
+    #   - REDIS_URL=redis://redis:6379/1
 
   # Frontend - React App
   frontend:
@@ -64,7 +65,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     depends_on:
       - population-analysis
-      - breed-registry
+      # - breed-registry  # Disabled until breed registry is implemented
 
   # Reverse Proxy
   nginx:
@@ -74,10 +75,11 @@ services:
     volumes:
       - ./deployment/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - breed-registry
+      # - breed-registry  # Disabled until breed registry is implemented
       - population-analysis
       - frontend
 
-volumes:
-  postgres_data:
-  redis_data:
+# Volumes disabled until breed registry is implemented
+# volumes:
+#   postgres_data:
+#   redis_data:
