@@ -30,24 +30,24 @@ describe('Home', () => {
     expect(screen.getByText(/Essential computational tools for conservation biologists/)).toBeInTheDocument();
   });
 
-  test('renders call-to-action section', () => {
+  test('renders open source section', () => {
     renderWithRouter(<Home />);
     
-    expect(screen.getByText('🚀 Ready to Use Now!')).toBeInTheDocument();
-    expect(screen.getByText(/Four complete tool suites are live!/)).toBeInTheDocument();
+    expect(screen.getByText('Open Source & Scientific')).toBeInTheDocument();
+    expect(screen.getByText(/This toolkit is open source and designed with scientific rigor/)).toBeInTheDocument();
   });
 
-  test('renders call-to-action buttons', () => {
+  test('renders service navigation buttons', () => {
     renderWithRouter(<Home />);
     
-    const populationButton = screen.getByRole('link', { name: /Population Analysis/i });
-    const samplingButton = screen.getByRole('link', { name: /Sampling & Survey/i });
+    const exploreButtons = screen.getAllByText('Explore Tools Now');
+    expect(exploreButtons.length).toBeGreaterThan(0);
     
+    // Check that buttons link to correct paths
+    const populationButton = exploreButtons.find(button => 
+      button.closest('a')?.getAttribute('href') === '/population-tools'
+    );
     expect(populationButton).toBeInTheDocument();
-    expect(populationButton).toHaveAttribute('href', '/population-tools');
-    
-    expect(samplingButton).toBeInTheDocument();
-    expect(samplingButton).toHaveAttribute('href', '/sampling-tools');
   });
 
   test('renders all tool category cards', () => {
@@ -59,6 +59,8 @@ describe('Home', () => {
       '🔬 Genetic Diversity',
       '📊 Species Assessment',
       '🌍 Habitat & Landscape',
+      '🌡️ Climate Impact Assessment',
+      '🎯 Conservation Planning',
       '📚 Breed Registry'
     ];
 
@@ -72,11 +74,11 @@ describe('Home', () => {
     
     // Available tools should have success chips
     const availableChips = screen.getAllByText('Available');
-    expect(availableChips).toHaveLength(5); // Population Analysis, Sampling & Survey Design, Genetic Diversity, Species Assessment, and Habitat & Landscape
+    expect(availableChips).toHaveLength(7); // All services except Breed Registry are available
     
     // Coming soon tools should have chips (both in status and buttons)
     const comingSoonElements = screen.getAllByText('Coming Soon');
-    expect(comingSoonElements.length).toBeGreaterThanOrEqual(2); // At least 2 coming soon tools
+    expect(comingSoonElements.length).toBeGreaterThanOrEqual(1); // At least Breed Registry is coming soon
   });
 
   test('renders tool descriptions', () => {
@@ -102,13 +104,25 @@ describe('Home', () => {
     expect(screen.getByText('Detection Probability')).toBeInTheDocument();
     expect(screen.getByText('Capture-Recapture')).toBeInTheDocument();
     expect(screen.getByText('Distance Sampling')).toBeInTheDocument();
+    
+    // Climate Impact tools
+    expect(screen.getByText('Temperature Tolerance')).toBeInTheDocument();
+    expect(screen.getByText('Phenology Shift')).toBeInTheDocument();
+    expect(screen.getByText('Sea Level Rise')).toBeInTheDocument();
+    expect(screen.getByText('Climate Velocity')).toBeInTheDocument();
+    
+    // Conservation Planning tools
+    expect(screen.getByText('Priority Analysis')).toBeInTheDocument();
+    expect(screen.getByText('Threat Assessment')).toBeInTheDocument();
+    expect(screen.getByText('Cost-Effectiveness')).toBeInTheDocument();
+    expect(screen.getByText('Reserve Selection')).toBeInTheDocument();
   });
 
   test('available tools have enabled buttons', () => {
     renderWithRouter(<Home />);
     
     const availableButtons = screen.getAllByText('Explore Tools Now');
-    expect(availableButtons).toHaveLength(5);
+    expect(availableButtons).toHaveLength(7); // 7 available services
     
     availableButtons.forEach(button => {
       expect(button).not.toBeDisabled();
@@ -189,10 +203,10 @@ describe('Home', () => {
   test('has proper responsive grid layout', () => {
     renderWithRouter(<Home />);
     
-    // Should have 6 tool category cards (check by links instead of buttons)
+    // Should have 8 tool category cards (7 available + 1 coming soon)
     const exploreButtons = screen.getAllByRole('link', { name: /Explore Tools Now/ });
     const comingSoonButtons = screen.getAllByRole('link', { name: /Coming Soon/ });
-    expect(exploreButtons.length + comingSoonButtons.length).toBe(6);
+    expect(exploreButtons.length + comingSoonButtons.length).toBe(8);
   });
 
   test('renders icons in feature request cards', () => {
@@ -204,25 +218,30 @@ describe('Home', () => {
     expect(screen.getByText('Bug Reports')).toBeInTheDocument();
   });
 
-  test('call-to-action section is present', () => {
+  test('feature request section is present', () => {
     renderWithRouter(<Home />);
     
-    const ctaSection = screen.getByText('🚀 Ready to Use Now!');
-    expect(ctaSection).toBeInTheDocument();
+    const featureSection = screen.getByText('🔬 Request New Features & Tools');
+    expect(featureSection).toBeInTheDocument();
   });
 
   test('renders all navigation links correctly', () => {
     renderWithRouter(<Home />);
     
-    const toolLinks = [
-      { text: /Population Analysis/i, href: '/population-tools' },
-      { text: /Sampling & Survey/i, href: '/sampling-tools' }
-    ];
+    // Check that explore buttons link to correct paths
+    const exploreButtons = screen.getAllByText('Explore Tools Now');
+    expect(exploreButtons.length).toBe(7);
     
-    toolLinks.forEach(({ text, href }) => {
-      const link = screen.getByRole('link', { name: text });
-      expect(link).toHaveAttribute('href', href);
-    });
+    // Check specific service links exist
+    const populationLink = exploreButtons.find(button => 
+      button.closest('a')?.getAttribute('href') === '/population-tools'
+    );
+    const climateLink = exploreButtons.find(button => 
+      button.closest('a')?.getAttribute('href') === '/climate-impact'
+    );
+    
+    expect(populationLink).toBeInTheDocument();
+    expect(climateLink).toBeInTheDocument();
   });
 
   test('renders proper container structure', () => {

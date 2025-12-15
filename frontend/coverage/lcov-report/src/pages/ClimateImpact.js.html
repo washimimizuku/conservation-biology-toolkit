@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/pages/HabitatLandscape.js</title>
+    <title>Code coverage report for src/pages/ClimateImpact.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> HabitatLandscape.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> ClimateImpact.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.56% </span>
+                <span class="strong">84.16% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>85/114</span>
+                <span class='fraction'>101/120</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.74% </span>
+                <span class="strong">40.5% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>41/71</span>
+                <span class='fraction'>32/79</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.9% </span>
+                <span class="strong">86.27% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>29/44</span>
+                <span class='fraction'>44/51</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.64% </span>
+                <span class="strong">86.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>77/106</span>
+                <span class='fraction'>96/111</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -781,7 +781,253 @@
 <a name='L716'></a><a href='#L716'>716</a>
 <a name='L717'></a><a href='#L717'>717</a>
 <a name='L718'></a><a href='#L718'>718</a>
-<a name='L719'></a><a href='#L719'>719</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L719'></a><a href='#L719'>719</a>
+<a name='L720'></a><a href='#L720'>720</a>
+<a name='L721'></a><a href='#L721'>721</a>
+<a name='L722'></a><a href='#L722'>722</a>
+<a name='L723'></a><a href='#L723'>723</a>
+<a name='L724'></a><a href='#L724'>724</a>
+<a name='L725'></a><a href='#L725'>725</a>
+<a name='L726'></a><a href='#L726'>726</a>
+<a name='L727'></a><a href='#L727'>727</a>
+<a name='L728'></a><a href='#L728'>728</a>
+<a name='L729'></a><a href='#L729'>729</a>
+<a name='L730'></a><a href='#L730'>730</a>
+<a name='L731'></a><a href='#L731'>731</a>
+<a name='L732'></a><a href='#L732'>732</a>
+<a name='L733'></a><a href='#L733'>733</a>
+<a name='L734'></a><a href='#L734'>734</a>
+<a name='L735'></a><a href='#L735'>735</a>
+<a name='L736'></a><a href='#L736'>736</a>
+<a name='L737'></a><a href='#L737'>737</a>
+<a name='L738'></a><a href='#L738'>738</a>
+<a name='L739'></a><a href='#L739'>739</a>
+<a name='L740'></a><a href='#L740'>740</a>
+<a name='L741'></a><a href='#L741'>741</a>
+<a name='L742'></a><a href='#L742'>742</a>
+<a name='L743'></a><a href='#L743'>743</a>
+<a name='L744'></a><a href='#L744'>744</a>
+<a name='L745'></a><a href='#L745'>745</a>
+<a name='L746'></a><a href='#L746'>746</a>
+<a name='L747'></a><a href='#L747'>747</a>
+<a name='L748'></a><a href='#L748'>748</a>
+<a name='L749'></a><a href='#L749'>749</a>
+<a name='L750'></a><a href='#L750'>750</a>
+<a name='L751'></a><a href='#L751'>751</a>
+<a name='L752'></a><a href='#L752'>752</a>
+<a name='L753'></a><a href='#L753'>753</a>
+<a name='L754'></a><a href='#L754'>754</a>
+<a name='L755'></a><a href='#L755'>755</a>
+<a name='L756'></a><a href='#L756'>756</a>
+<a name='L757'></a><a href='#L757'>757</a>
+<a name='L758'></a><a href='#L758'>758</a>
+<a name='L759'></a><a href='#L759'>759</a>
+<a name='L760'></a><a href='#L760'>760</a>
+<a name='L761'></a><a href='#L761'>761</a>
+<a name='L762'></a><a href='#L762'>762</a>
+<a name='L763'></a><a href='#L763'>763</a>
+<a name='L764'></a><a href='#L764'>764</a>
+<a name='L765'></a><a href='#L765'>765</a>
+<a name='L766'></a><a href='#L766'>766</a>
+<a name='L767'></a><a href='#L767'>767</a>
+<a name='L768'></a><a href='#L768'>768</a>
+<a name='L769'></a><a href='#L769'>769</a>
+<a name='L770'></a><a href='#L770'>770</a>
+<a name='L771'></a><a href='#L771'>771</a>
+<a name='L772'></a><a href='#L772'>772</a>
+<a name='L773'></a><a href='#L773'>773</a>
+<a name='L774'></a><a href='#L774'>774</a>
+<a name='L775'></a><a href='#L775'>775</a>
+<a name='L776'></a><a href='#L776'>776</a>
+<a name='L777'></a><a href='#L777'>777</a>
+<a name='L778'></a><a href='#L778'>778</a>
+<a name='L779'></a><a href='#L779'>779</a>
+<a name='L780'></a><a href='#L780'>780</a>
+<a name='L781'></a><a href='#L781'>781</a>
+<a name='L782'></a><a href='#L782'>782</a>
+<a name='L783'></a><a href='#L783'>783</a>
+<a name='L784'></a><a href='#L784'>784</a>
+<a name='L785'></a><a href='#L785'>785</a>
+<a name='L786'></a><a href='#L786'>786</a>
+<a name='L787'></a><a href='#L787'>787</a>
+<a name='L788'></a><a href='#L788'>788</a>
+<a name='L789'></a><a href='#L789'>789</a>
+<a name='L790'></a><a href='#L790'>790</a>
+<a name='L791'></a><a href='#L791'>791</a>
+<a name='L792'></a><a href='#L792'>792</a>
+<a name='L793'></a><a href='#L793'>793</a>
+<a name='L794'></a><a href='#L794'>794</a>
+<a name='L795'></a><a href='#L795'>795</a>
+<a name='L796'></a><a href='#L796'>796</a>
+<a name='L797'></a><a href='#L797'>797</a>
+<a name='L798'></a><a href='#L798'>798</a>
+<a name='L799'></a><a href='#L799'>799</a>
+<a name='L800'></a><a href='#L800'>800</a>
+<a name='L801'></a><a href='#L801'>801</a>
+<a name='L802'></a><a href='#L802'>802</a>
+<a name='L803'></a><a href='#L803'>803</a>
+<a name='L804'></a><a href='#L804'>804</a>
+<a name='L805'></a><a href='#L805'>805</a>
+<a name='L806'></a><a href='#L806'>806</a>
+<a name='L807'></a><a href='#L807'>807</a>
+<a name='L808'></a><a href='#L808'>808</a>
+<a name='L809'></a><a href='#L809'>809</a>
+<a name='L810'></a><a href='#L810'>810</a>
+<a name='L811'></a><a href='#L811'>811</a>
+<a name='L812'></a><a href='#L812'>812</a>
+<a name='L813'></a><a href='#L813'>813</a>
+<a name='L814'></a><a href='#L814'>814</a>
+<a name='L815'></a><a href='#L815'>815</a>
+<a name='L816'></a><a href='#L816'>816</a>
+<a name='L817'></a><a href='#L817'>817</a>
+<a name='L818'></a><a href='#L818'>818</a>
+<a name='L819'></a><a href='#L819'>819</a>
+<a name='L820'></a><a href='#L820'>820</a>
+<a name='L821'></a><a href='#L821'>821</a>
+<a name='L822'></a><a href='#L822'>822</a>
+<a name='L823'></a><a href='#L823'>823</a>
+<a name='L824'></a><a href='#L824'>824</a>
+<a name='L825'></a><a href='#L825'>825</a>
+<a name='L826'></a><a href='#L826'>826</a>
+<a name='L827'></a><a href='#L827'>827</a>
+<a name='L828'></a><a href='#L828'>828</a>
+<a name='L829'></a><a href='#L829'>829</a>
+<a name='L830'></a><a href='#L830'>830</a>
+<a name='L831'></a><a href='#L831'>831</a>
+<a name='L832'></a><a href='#L832'>832</a>
+<a name='L833'></a><a href='#L833'>833</a>
+<a name='L834'></a><a href='#L834'>834</a>
+<a name='L835'></a><a href='#L835'>835</a>
+<a name='L836'></a><a href='#L836'>836</a>
+<a name='L837'></a><a href='#L837'>837</a>
+<a name='L838'></a><a href='#L838'>838</a>
+<a name='L839'></a><a href='#L839'>839</a>
+<a name='L840'></a><a href='#L840'>840</a>
+<a name='L841'></a><a href='#L841'>841</a>
+<a name='L842'></a><a href='#L842'>842</a>
+<a name='L843'></a><a href='#L843'>843</a>
+<a name='L844'></a><a href='#L844'>844</a>
+<a name='L845'></a><a href='#L845'>845</a>
+<a name='L846'></a><a href='#L846'>846</a>
+<a name='L847'></a><a href='#L847'>847</a>
+<a name='L848'></a><a href='#L848'>848</a>
+<a name='L849'></a><a href='#L849'>849</a>
+<a name='L850'></a><a href='#L850'>850</a>
+<a name='L851'></a><a href='#L851'>851</a>
+<a name='L852'></a><a href='#L852'>852</a>
+<a name='L853'></a><a href='#L853'>853</a>
+<a name='L854'></a><a href='#L854'>854</a>
+<a name='L855'></a><a href='#L855'>855</a>
+<a name='L856'></a><a href='#L856'>856</a>
+<a name='L857'></a><a href='#L857'>857</a>
+<a name='L858'></a><a href='#L858'>858</a>
+<a name='L859'></a><a href='#L859'>859</a>
+<a name='L860'></a><a href='#L860'>860</a>
+<a name='L861'></a><a href='#L861'>861</a>
+<a name='L862'></a><a href='#L862'>862</a>
+<a name='L863'></a><a href='#L863'>863</a>
+<a name='L864'></a><a href='#L864'>864</a>
+<a name='L865'></a><a href='#L865'>865</a>
+<a name='L866'></a><a href='#L866'>866</a>
+<a name='L867'></a><a href='#L867'>867</a>
+<a name='L868'></a><a href='#L868'>868</a>
+<a name='L869'></a><a href='#L869'>869</a>
+<a name='L870'></a><a href='#L870'>870</a>
+<a name='L871'></a><a href='#L871'>871</a>
+<a name='L872'></a><a href='#L872'>872</a>
+<a name='L873'></a><a href='#L873'>873</a>
+<a name='L874'></a><a href='#L874'>874</a>
+<a name='L875'></a><a href='#L875'>875</a>
+<a name='L876'></a><a href='#L876'>876</a>
+<a name='L877'></a><a href='#L877'>877</a>
+<a name='L878'></a><a href='#L878'>878</a>
+<a name='L879'></a><a href='#L879'>879</a>
+<a name='L880'></a><a href='#L880'>880</a>
+<a name='L881'></a><a href='#L881'>881</a>
+<a name='L882'></a><a href='#L882'>882</a>
+<a name='L883'></a><a href='#L883'>883</a>
+<a name='L884'></a><a href='#L884'>884</a>
+<a name='L885'></a><a href='#L885'>885</a>
+<a name='L886'></a><a href='#L886'>886</a>
+<a name='L887'></a><a href='#L887'>887</a>
+<a name='L888'></a><a href='#L888'>888</a>
+<a name='L889'></a><a href='#L889'>889</a>
+<a name='L890'></a><a href='#L890'>890</a>
+<a name='L891'></a><a href='#L891'>891</a>
+<a name='L892'></a><a href='#L892'>892</a>
+<a name='L893'></a><a href='#L893'>893</a>
+<a name='L894'></a><a href='#L894'>894</a>
+<a name='L895'></a><a href='#L895'>895</a>
+<a name='L896'></a><a href='#L896'>896</a>
+<a name='L897'></a><a href='#L897'>897</a>
+<a name='L898'></a><a href='#L898'>898</a>
+<a name='L899'></a><a href='#L899'>899</a>
+<a name='L900'></a><a href='#L900'>900</a>
+<a name='L901'></a><a href='#L901'>901</a>
+<a name='L902'></a><a href='#L902'>902</a>
+<a name='L903'></a><a href='#L903'>903</a>
+<a name='L904'></a><a href='#L904'>904</a>
+<a name='L905'></a><a href='#L905'>905</a>
+<a name='L906'></a><a href='#L906'>906</a>
+<a name='L907'></a><a href='#L907'>907</a>
+<a name='L908'></a><a href='#L908'>908</a>
+<a name='L909'></a><a href='#L909'>909</a>
+<a name='L910'></a><a href='#L910'>910</a>
+<a name='L911'></a><a href='#L911'>911</a>
+<a name='L912'></a><a href='#L912'>912</a>
+<a name='L913'></a><a href='#L913'>913</a>
+<a name='L914'></a><a href='#L914'>914</a>
+<a name='L915'></a><a href='#L915'>915</a>
+<a name='L916'></a><a href='#L916'>916</a>
+<a name='L917'></a><a href='#L917'>917</a>
+<a name='L918'></a><a href='#L918'>918</a>
+<a name='L919'></a><a href='#L919'>919</a>
+<a name='L920'></a><a href='#L920'>920</a>
+<a name='L921'></a><a href='#L921'>921</a>
+<a name='L922'></a><a href='#L922'>922</a>
+<a name='L923'></a><a href='#L923'>923</a>
+<a name='L924'></a><a href='#L924'>924</a>
+<a name='L925'></a><a href='#L925'>925</a>
+<a name='L926'></a><a href='#L926'>926</a>
+<a name='L927'></a><a href='#L927'>927</a>
+<a name='L928'></a><a href='#L928'>928</a>
+<a name='L929'></a><a href='#L929'>929</a>
+<a name='L930'></a><a href='#L930'>930</a>
+<a name='L931'></a><a href='#L931'>931</a>
+<a name='L932'></a><a href='#L932'>932</a>
+<a name='L933'></a><a href='#L933'>933</a>
+<a name='L934'></a><a href='#L934'>934</a>
+<a name='L935'></a><a href='#L935'>935</a>
+<a name='L936'></a><a href='#L936'>936</a>
+<a name='L937'></a><a href='#L937'>937</a>
+<a name='L938'></a><a href='#L938'>938</a>
+<a name='L939'></a><a href='#L939'>939</a>
+<a name='L940'></a><a href='#L940'>940</a>
+<a name='L941'></a><a href='#L941'>941</a>
+<a name='L942'></a><a href='#L942'>942</a>
+<a name='L943'></a><a href='#L943'>943</a>
+<a name='L944'></a><a href='#L944'>944</a>
+<a name='L945'></a><a href='#L945'>945</a>
+<a name='L946'></a><a href='#L946'>946</a>
+<a name='L947'></a><a href='#L947'>947</a>
+<a name='L948'></a><a href='#L948'>948</a>
+<a name='L949'></a><a href='#L949'>949</a>
+<a name='L950'></a><a href='#L950'>950</a>
+<a name='L951'></a><a href='#L951'>951</a>
+<a name='L952'></a><a href='#L952'>952</a>
+<a name='L953'></a><a href='#L953'>953</a>
+<a name='L954'></a><a href='#L954'>954</a>
+<a name='L955'></a><a href='#L955'>955</a>
+<a name='L956'></a><a href='#L956'>956</a>
+<a name='L957'></a><a href='#L957'>957</a>
+<a name='L958'></a><a href='#L958'>958</a>
+<a name='L959'></a><a href='#L959'>959</a>
+<a name='L960'></a><a href='#L960'>960</a>
+<a name='L961'></a><a href='#L961'>961</a>
+<a name='L962'></a><a href='#L962'>962</a>
+<a name='L963'></a><a href='#L963'>963</a>
+<a name='L964'></a><a href='#L964'>964</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -817,106 +1063,262 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">189x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -925,97 +1327,59 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">32x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1032,104 +1396,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">129x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1199,7 +1465,123 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">443x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1217,137 +1599,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">97x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1359,31 +1610,73 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1404,6 +1697,96 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1463,6 +1846,113 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1524,700 +2014,945 @@ import {
   Divider
 } from '@mui/material';
 import { 
-  Landscape, 
-  Assessment, 
-  ScatterPlot, 
+  Thermostat, 
+  Schedule, 
+  Waves, 
+  Speed,
   Add as AddIcon, 
   Delete as DeleteIcon 
 } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 &nbsp;
-const HabitatLandscape = () =&gt; {
-  // Habitat Suitability State
-  const [hsiParameters, setHsiParameters] = useState([
-    { name: 'Food Availability', score: '0.8', weight: '0.3' },
-    { name: 'Water Access', score: '0.9', weight: '0.2' },
-    { name: 'Cover Quality', score: '0.7', weight: '0.3' },
-    { name: 'Nesting Sites', score: '0.6', weight: '0.2' }
-  ]);
-  const [hsiResults, setHsiResults] = useState(null);
-  const [hsiLoading, setHsiLoading] = useState(false);
-  const [hsiError, setHsiError] = useState('');
+const ClimateImpact = () =&gt; {
+  // Temperature Tolerance State
+  const [tempTolerance, setTempTolerance] = useState({
+    current_temp_min: '10.0',
+    current_temp_max: '25.0',
+    optimal_temp_min: '15.0',
+    optimal_temp_max: '20.0',
+    critical_temp_min: '5.0',
+    critical_temp_max: '30.0',
+    projected_temp_change: '2.0'
+  });
+  const [tempResults, setTempResults] = useState(null);
+  const [tempLoading, setTempLoading] = useState(false);
+  const [tempError, setTempError] = useState('');
 &nbsp;
-  // Species-Area Relationship State
-  const [areaData, setAreaData] = useState([
-    { area: '1', species: '5' },
-    { area: '10', species: '15' },
-    { area: '100', species: '35' },
-    { area: '1000', species: '80' }
+  // Phenology Shift State
+  const [phenologyData, setPhenologyData] = useState({
+    historical_event_day: '120',
+    temperature_sensitivity: '3.0',
+    projected_temp_change: '2.0',
+    species_flexibility: '0.6'
+  });
+  const [dependentEvents, setDependentEvents] = useState([
+    { day: '115' },
+    { day: '125' }
   ]);
-  const [predictionArea, setPredictionArea] = useState('500');
-  const [sarResults, setSarResults] = useState(null);
-  const [sarLoading, setSarLoading] = useState(false);
-  const [sarError, setSarError] = useState('');
+  const [phenologyResults, setPhenologyResults] = useState(null);
+  const [phenologyLoading, setPhenologyLoading] = useState(false);
+  const [phenologyError, setPhenologyError] = useState('');
 &nbsp;
-  // Fragmentation State
-  const [patches, setPatches] = useState([
-    { area: '10.0', perimeter: '1200' },
-    { area: '5.0', perimeter: '900' },
-    { area: '15.0', perimeter: '1500' }
-  ]);
-  const [landscapeArea, setLandscapeArea] = useState('100.0');
-  const [fragResults, setFragResults] = useState(null);
-  const [fragLoading, setFragLoading] = useState(false);
-  const [fragError, setFragError] = useState('');
+  // Sea Level Rise State
+  const [seaLevelData, setSeaLevelData] = useState({
+    habitat_elevation: '2.0',
+    habitat_area: '100.0',
+    slope_gradient: '5.0',
+    sea_level_rise_rate: '3.0',
+    time_horizon: '50',
+    migration_potential: '0.6'
+  });
+  const [seaLevelResults, setSeaLevelResults] = useState(null);
+  const [seaLevelLoading, setSeaLevelLoading] = useState(false);
+  const [seaLevelError, setSeaLevelError] = useState('');
 &nbsp;
-  // HSI Functions
-  const addHsiParameter = () =&gt; {
-    setHsiParameters([...hsiParameters, { name: '', score: '0.5', weight: '0.1' }]);
+  // Climate Velocity State
+  const [velocityData, setVelocityData] = useState({
+    temperature_gradient: '0.5',
+    climate_change_rate: '2.0',
+    species_dispersal_rate: '1.0',
+    habitat_fragmentation: '0.3',
+    topographic_complexity: '0.6'
+  });
+  const [velocityResults, setVelocityResults] = useState(null);
+  const [velocityLoading, setVelocityLoading] = useState(false);
+  const [velocityError, setVelocityError] = useState('');
+&nbsp;
+  // Temperature Tolerance Functions
+  const updateTempTolerance = (field, value) =&gt; {
+    setTempTolerance(prev =&gt; ({ ...prev, [field]: value }));
   };
 &nbsp;
-  const removeHsiParameter = (index) =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (hsiParameters.length &gt; 1) {
-      setHsiParameters(hsiParameters.filter((_, i) =&gt; i !== index));
-    }
-  };
-&nbsp;
-  const updateHsiParameter = <span class="fstat-no" title="function not covered" >(i</span>ndex, field, value) =&gt; {
-    const updated = <span class="cstat-no" title="statement not covered" >[...hsiParameters];</span>
-<span class="cstat-no" title="statement not covered" >    updated[index][field] = value;</span>
-<span class="cstat-no" title="statement not covered" >    setHsiParameters(updated);</span>
-  };
-&nbsp;
-  const calculateHSI = async () =&gt; {
-    setHsiLoading(true);
-    setHsiError('');
+  const calculateTemperatureTolerance = async () =&gt; {
+    setTempLoading(true);
+    setTempError('');
     
     try {
-      const parameters = hsiParameters.map(param =&gt; ({
-        name: param.name || <span class="branch-1 cbranch-no" title="branch not covered" >'Unnamed Parameter',</span>
-        score: parseFloat(param.score) || <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
-        weight: parseFloat(param.weight) || <span class="branch-1 cbranch-no" title="branch not covered" >0</span>
-      }));
-&nbsp;
-      const response = await axios.post(`${API_URLS.habitatLandscape}/habitat-suitability`, {
-        parameters
-      });
-      
-<span class="cstat-no" title="statement not covered" >      setHsiResults(response.data);</span>
-    } catch (error) {
-      setHsiError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
-    } finally {
-      setHsiLoading(false);
-    }
-  };
-&nbsp;
-  // Species-Area Functions
-  const addAreaDataPoint = () =&gt; {
-    setAreaData([...areaData, { area: '', species: '' }]);
-  };
-&nbsp;
-  const removeAreaDataPoint = (index) =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (areaData.length &gt; 2) {
-      setAreaData(areaData.filter((_, i) =&gt; i !== index));
-    }
-  };
-&nbsp;
-  const updateAreaDataPoint = <span class="fstat-no" title="function not covered" >(i</span>ndex, field, value) =&gt; {
-    const updated = <span class="cstat-no" title="statement not covered" >[...areaData];</span>
-<span class="cstat-no" title="statement not covered" >    updated[index][field] = value;</span>
-<span class="cstat-no" title="statement not covered" >    setAreaData(updated);</span>
-  };
-&nbsp;
-  const calculateSpeciesArea = async () =&gt; {
-    setSarLoading(true);
-    setSarError('');
-    
-    try {
-      const areas = areaData.map(d =&gt; parseFloat(d.area)).filter(a =&gt; !isNaN(a) &amp;&amp; a &gt; 0);
-      const species_counts = areaData.map(d =&gt; parseInt(d.species)).filter(s =&gt; !isNaN(s) &amp;&amp; s &gt; 0);
-      
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (areas.length !== species_counts.length || areas.length &lt; 2) {
-<span class="cstat-no" title="statement not covered" >        throw new Error('Need at least 2 valid data points with positive values');</span>
-      }
-&nbsp;
       const payload = {
-        areas,
-        species_counts,
-        prediction_area: predictionArea ? parseFloat(predictionArea) : <span class="branch-1 cbranch-no" title="branch not covered" >null</span>
+        current_temp_min: parseFloat(tempTolerance.current_temp_min),
+        current_temp_max: parseFloat(tempTolerance.current_temp_max),
+        optimal_temp_min: parseFloat(tempTolerance.optimal_temp_min),
+        optimal_temp_max: parseFloat(tempTolerance.optimal_temp_max),
+        critical_temp_min: parseFloat(tempTolerance.critical_temp_min),
+        critical_temp_max: parseFloat(tempTolerance.critical_temp_max),
+        projected_temp_change: parseFloat(tempTolerance.projected_temp_change)
       };
 &nbsp;
-      const response = await axios.post(`${API_URLS.habitatLandscape}/species-area-relationship`, payload);
-<span class="cstat-no" title="statement not covered" >      setSarResults(response.data);</span>
+      const response = await axios.post(`${API_URLS.climateImpact}/temperature-tolerance`, payload);
+<span class="cstat-no" title="statement not covered" >      setTempResults(response.data);</span>
     } catch (error) {
-      setSarError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
+      setTempError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
     } finally {
-      setSarLoading(false);
+      setTempLoading(false);
     }
   };
 &nbsp;
-  // Fragmentation Functions
-  const addPatch = () =&gt; {
-    setPatches([...patches, { area: '', perimeter: '' }]);
+  // Phenology Functions
+  const updatePhenologyData = (field, value) =&gt; {
+    setPhenologyData(prev =&gt; ({ ...prev, [field]: value }));
   };
 &nbsp;
-  const removePatch = (index) =&gt; {
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (patches.length &gt; 1) {
-      setPatches(patches.filter((_, i) =&gt; i !== index));
+  const addDependentEvent = () =&gt; {
+    setDependentEvents([...dependentEvents, { day: '' }]);
+  };
+&nbsp;
+  const removeDependentEvent = (index) =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (dependentEvents.length &gt; 0) {
+      setDependentEvents(dependentEvents.filter((_, i) =&gt; i !== index));
     }
   };
 &nbsp;
-  const updatePatch = <span class="fstat-no" title="function not covered" >(i</span>ndex, field, value) =&gt; {
-    const updated = <span class="cstat-no" title="statement not covered" >[...patches];</span>
-<span class="cstat-no" title="statement not covered" >    updated[index][field] = value;</span>
-<span class="cstat-no" title="statement not covered" >    setPatches(updated);</span>
+  const updateDependentEvent = (index, value) =&gt; {
+    const updated = [...dependentEvents];
+    updated[index].day = value;
+    setDependentEvents(updated);
   };
 &nbsp;
-  const calculateFragmentation = async () =&gt; {
-    setFragLoading(true);
-    setFragError('');
+  const calculatePhenologyShift = async () =&gt; {
+    setPhenologyLoading(true);
+    setPhenologyError('');
     
     try {
-      const validPatches = patches
-        .filter(p =&gt; p.area &amp;&amp; p.perimeter)
-        .map(p =&gt; ({
-          area: parseFloat(p.area),
-          perimeter: parseFloat(p.perimeter)
-        }))
-        .filter(p =&gt; p.area &gt; 0 &amp;&amp; p.perimeter &gt; 0);
-&nbsp;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (validPatches.length === 0) {
-<span class="cstat-no" title="statement not covered" >        throw new Error('Need at least one valid patch with positive area and perimeter');</span>
-      }
-&nbsp;
       const payload = {
-        patches: validPatches,
-        total_landscape_area: parseFloat(landscapeArea) || <span class="branch-1 cbranch-no" title="branch not covered" >100</span>
+        historical_event_day: parseInt(phenologyData.historical_event_day),
+        temperature_sensitivity: parseFloat(phenologyData.temperature_sensitivity),
+        projected_temp_change: parseFloat(phenologyData.projected_temp_change),
+        species_flexibility: parseFloat(phenologyData.species_flexibility),
+        dependent_species_events: dependentEvents
+          .map(e =&gt; parseInt(e.day))
+          .filter(d =&gt; !isNaN(d) &amp;&amp; d &gt;= 1 &amp;&amp; d &lt;= 365)
       };
 &nbsp;
-      const response = await axios.post(`${API_URLS.habitatLandscape}/fragmentation-metrics`, payload);
-<span class="cstat-no" title="statement not covered" >      setFragResults(response.data);</span>
+      const response = await axios.post(`${API_URLS.climateImpact}/phenology-shift`, payload);
+<span class="cstat-no" title="statement not covered" >      setPhenologyResults(response.data);</span>
     } catch (error) {
-      setFragError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
+      setPhenologyError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
     } finally {
-      setFragLoading(false);
+      setPhenologyLoading(false);
     }
   };
 &nbsp;
-  const getSuitabilityColor = <span class="fstat-no" title="function not covered" >(s</span>uitabilityClass) =&gt; {
-    const colors = <span class="cstat-no" title="statement not covered" >{</span>
-      'Excellent': 'success',
-      'Good': 'info',
-      'Fair': 'warning',
-      'Poor': 'error',
-      'Unsuitable': 'error'
-    };
-<span class="cstat-no" title="statement not covered" >    return colors[suitabilityClass] || 'default';</span>
+  // Sea Level Rise Functions
+  const updateSeaLevelData = (field, value) =&gt; {
+    setSeaLevelData(prev =&gt; ({ ...prev, [field]: value }));
   };
 &nbsp;
-  const getRelationshipColor = <span class="fstat-no" title="function not covered" >(s</span>trength) =&gt; {
-    const colors = <span class="cstat-no" title="statement not covered" >{</span>
-      'Very Strong': 'success',
-      'Strong': 'info',
-      'Moderate': 'warning',
-      'Weak': 'error',
-      'Very Weak': 'error'
-    };
-<span class="cstat-no" title="statement not covered" >    return colors[strength] || 'default';</span>
+  const calculateSeaLevelRise = async () =&gt; {
+    setSeaLevelLoading(true);
+    setSeaLevelError('');
+    
+    try {
+      const payload = {
+        habitat_elevation: parseFloat(seaLevelData.habitat_elevation),
+        habitat_area: parseFloat(seaLevelData.habitat_area),
+        slope_gradient: parseFloat(seaLevelData.slope_gradient),
+        sea_level_rise_rate: parseFloat(seaLevelData.sea_level_rise_rate),
+        time_horizon: parseInt(seaLevelData.time_horizon),
+        migration_potential: parseFloat(seaLevelData.migration_potential)
+      };
+&nbsp;
+      const response = await axios.post(`${API_URLS.climateImpact}/sea-level-rise`, payload);
+<span class="cstat-no" title="statement not covered" >      setSeaLevelResults(response.data);</span>
+    } catch (error) {
+      setSeaLevelError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
+    } finally {
+      setSeaLevelLoading(false);
+    }
   };
 &nbsp;
-  const getFragmentationColor = <span class="fstat-no" title="function not covered" >(f</span>ragClass) =&gt; {
-    const colors = <span class="cstat-no" title="statement not covered" >{</span>
-      'Low Fragmentation': 'success',
-      'Moderate Fragmentation': 'info',
-      'High Fragmentation': 'warning',
-      'Very High Fragmentation': 'error',
-      'Extreme Fragmentation': 'error'
-    };
-<span class="cstat-no" title="statement not covered" >    return colors[fragClass] || 'default';</span>
+  // Climate Velocity Functions
+  const updateVelocityData = (field, value) =&gt; {
+    setVelocityData(prev =&gt; ({ ...prev, [field]: value }));
+  };
+&nbsp;
+  const calculateClimateVelocity = async () =&gt; {
+    setVelocityLoading(true);
+    setVelocityError('');
+    
+    try {
+      const payload = {
+        temperature_gradient: parseFloat(velocityData.temperature_gradient),
+        climate_change_rate: parseFloat(velocityData.climate_change_rate),
+        species_dispersal_rate: parseFloat(velocityData.species_dispersal_rate),
+        habitat_fragmentation: parseFloat(velocityData.habitat_fragmentation),
+        topographic_complexity: parseFloat(velocityData.topographic_complexity)
+      };
+&nbsp;
+      const response = await axios.post(`${API_URLS.climateImpact}/climate-velocity`, payload);
+<span class="cstat-no" title="statement not covered" >      setVelocityResults(response.data);</span>
+    } catch (error) {
+      setVelocityError(error.response?.data?.detail || error.message || <span class="branch-2 cbranch-no" title="branch not covered" >'Calculation failed')</span>;
+    } finally {
+      setVelocityLoading(false);
+    }
+  };
+&nbsp;
+  // Helper function to get risk level color
+  const getRiskColor = <span class="fstat-no" title="function not covered" >(r</span>iskLevel) =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (riskLevel?.includes('Very High')) <span class="cstat-no" title="statement not covered" >return 'error';</span></span>
+<span class="cstat-no" title="statement not covered" >    if (riskLevel?.includes('High')) <span class="cstat-no" title="statement not covered" >return 'warning';</span></span>
+<span class="cstat-no" title="statement not covered" >    if (riskLevel?.includes('Moderate')) <span class="cstat-no" title="statement not covered" >return 'info';</span></span>
+<span class="cstat-no" title="statement not covered" >    if (riskLevel?.includes('Low')) <span class="cstat-no" title="statement not covered" >return 'success';</span></span>
+<span class="cstat-no" title="statement not covered" >    return 'default';</span>
   };
 &nbsp;
   return (
-    &lt;Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}&gt;
-      &lt;Typography variant="h3" component="h1" gutterBottom align="center"&gt;
-        🌍 Habitat &amp; Landscape Tools
-      &lt;/Typography&gt;
-      
-      &lt;Typography variant="h6" color="text.secondary" align="center" paragraph&gt;
-        Analyze habitat quality, species-area relationships, and landscape fragmentation patterns
-      &lt;/Typography&gt;
+    &lt;Container maxWidth="xl" sx={{ py: 4 }}&gt;
+      &lt;Box sx={{ mb: 4 }}&gt;
+        &lt;Typography variant="h3" component="h1" gutterBottom&gt;
+          Climate Impact Assessment
+        &lt;/Typography&gt;
+        &lt;Typography variant="h6" color="text.secondary" paragraph&gt;
+          Analyze climate change impacts on species and ecosystems using mathematical models
+        &lt;/Typography&gt;
+      &lt;/Box&gt;
 &nbsp;
       &lt;Grid container spacing={4}&gt;
-        {/* Habitat Suitability Index */}
+        {/* Temperature Tolerance Analysis */}
         &lt;Grid item xs={12} lg={6}&gt;
           &lt;Card&gt;
             &lt;CardContent&gt;
-              &lt;Box display="flex" alignItems="center" mb={2}&gt;
-                &lt;Landscape color="primary" sx={{ mr: 1 }} /&gt;
+              &lt;Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}&gt;
+                &lt;Thermostat sx={{ mr: 1, color: 'primary.main' }} /&gt;
                 &lt;Typography variant="h5" component="h2"&gt;
-                  Habitat Suitability Index
+                  Temperature Tolerance Analysis
                 &lt;/Typography&gt;
               &lt;/Box&gt;
-              
               &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
-                Evaluate overall habitat quality using weighted environmental parameters.
+                Assess species vulnerability to temperature changes based on thermal tolerance ranges.
               &lt;/Typography&gt;
-              
               &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
                 &lt;strong&gt;References:&lt;/strong&gt;{' '}
-                &lt;a href="https://www.fws.gov/policy/ESMindex.html" target="_blank" rel="noopener noreferrer"&gt;
-                  U.S. Fish and Wildlife Service HSI Models
-                &lt;/a&gt;{' '}•{' '}
-                Schamberger, M. &amp; Krohn, W.B. (1982). Status of the habitat evaluation procedures. &lt;em&gt;Transactions of the North American Wildlife and Natural Resources Conference&lt;/em&gt; 47: 154-164.
+                &lt;a href="https://doi.org/10.1073/pnas.0709472105" target="_blank" rel="noopener noreferrer"&gt;
+                  Deutsch et al. (2008) PNAS
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1093/icb/19.1.25" target="_blank" rel="noopener noreferrer"&gt;
+                  Huey &amp; Stevenson (1979) Am. Zool.
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1111/j.1461-0248.2008.01277.x" target="_blank" rel="noopener noreferrer"&gt;
+                  Kearney &amp; Porter (2009) Ecol. Lett.
+                &lt;/a&gt;
               &lt;/Typography&gt;
 &nbsp;
-              &lt;Typography variant="subtitle2" gutterBottom sx={{ mt: 2 }}&gt;
-                Habitat Parameters
-              &lt;/Typography&gt;
-              
-              {hsiParameters.map((param, index) =&gt; (
-                &lt;Box key={index} sx={{ mb: 2, p: 2, border: '1px solid #e0e0e0', borderRadius: 1 }}&gt;
-                  &lt;Grid container spacing={2} alignItems="center"&gt;
-                    &lt;Grid item xs={12} sm={4}&gt;
-                      &lt;TextField
-                        fullWidth
-                        label="Parameter Name"
-                        value={param.name}
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updateHsiParameter(index, 'name', e.target.value)}</span>
-                        size="small"
-                      /&gt;
-                    &lt;/Grid&gt;
-                    &lt;Grid item xs={6} sm={3}&gt;
-                      &lt;TextField
-                        fullWidth
-                        label="Score (0-1)"
-                        type="number"
-                        inputProps={{ step: 0.1, min: 0, max: 1 }}
-                        value={param.score}
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updateHsiParameter(index, 'score', e.target.value)}</span>
-                        size="small"
-                      /&gt;
-                    &lt;/Grid&gt;
-                    &lt;Grid item xs={6} sm={3}&gt;
-                      &lt;TextField
-                        fullWidth
-                        label="Weight (0-1)"
-                        type="number"
-                        inputProps={{ step: 0.1, min: 0, max: 1 }}
-                        value={param.weight}
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updateHsiParameter(index, 'weight', e.target.value)}</span>
-                        size="small"
-                      /&gt;
-                    &lt;/Grid&gt;
-                    &lt;Grid item xs={12} sm={2}&gt;
-                      &lt;IconButton 
-                        onClick={() =&gt; removeHsiParameter(index)}
-                        disabled={hsiParameters.length &lt;= 1}
-                        color="error"
-                      &gt;
-                        &lt;DeleteIcon /&gt;
-                      &lt;/IconButton&gt;
-                    &lt;/Grid&gt;
-                  &lt;/Grid&gt;
-                &lt;/Box&gt;
-              ))}
-              
-              &lt;Button
-                startIcon={&lt;AddIcon /&gt;}
-                onClick={addHsiParameter}
-                variant="outlined"
-                size="small"
-                sx={{ mb: 2 }}
-              &gt;
-                Add Parameter
-              &lt;/Button&gt;
-&nbsp;
-              {hsiError &amp;&amp; (
-                &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
-                  {hsiError}
-                &lt;/Alert&gt;
-              )}
-&nbsp;
-              {hsiResults &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 2 }}&gt;</span>
-                  &lt;Typography variant="h6" gutterBottom&gt;HSI Results:&lt;/Typography&gt;
-                  &lt;Chip 
-                    label={`HSI: ${hsiResults.habitat_suitability_index} (${hsiResults.suitability_class})`}
-                    color={getSuitabilityColor(hsiResults.suitability_class)}
-                    sx={{ mb: 2, fontSize: '1rem', fontWeight: 'bold' }}
-                  /&gt;
-                  
-                  &lt;Typography variant="body2" sx={{ mt: 2 }}&gt;
-                    &lt;strong&gt;Parameter Contributions:&lt;/strong&gt;
-                  &lt;/Typography&gt;
-                  {Object.entries(hsiResults.parameter_contributions).map(<span class="fstat-no" title="function not covered" >([</span>param, contribution]) =&gt; (
-<span class="cstat-no" title="statement not covered" >                    &lt;Chip </span>
-                      key={param} 
-                      label={`${param}: ${(contribution * 100).toFixed(1)}%`} 
-                      size="small" 
-                      sx={{ mr: 1, mb: 1 }} 
-                    /&gt;
-                  ))}
-                  
-                  &lt;Typography variant="body2" sx={{ mt: 2 }}&gt;
-                    &lt;strong&gt;Recommendations:&lt;/strong&gt;
-                  &lt;/Typography&gt;
-                  {hsiResults.recommendations.map(<span class="fstat-no" title="function not covered" >(r</span>ec, index) =&gt; (
-<span class="cstat-no" title="statement not covered" >                    &lt;Typography key={index} variant="body2" sx={{ ml: 2 }}&gt;</span>
-                      • {rec}
-                    &lt;/Typography&gt;
-                  ))}
-                &lt;/Box&gt;
-              )}
-            &lt;/CardContent&gt;
-            
-            &lt;CardActions&gt;
-              &lt;Button 
-                variant="contained" 
-                onClick={calculateHSI}
-                disabled={hsiLoading}
-                startIcon={hsiLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Assessment /&gt;}
-                sx={{
-                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
-                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
-                  '&amp;:hover': {
-                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
-                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
-                    transform: 'translateY(-1px)'
-                  }
-                }}
-              &gt;
-                {hsiLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Calculate HSI'}
-              &lt;/Button&gt;
-            &lt;/CardActions&gt;
-          &lt;/Card&gt;
-        &lt;/Grid&gt;
-&nbsp;
-        {/* Species-Area Relationship */}
-        &lt;Grid item xs={12} lg={6}&gt;
-          &lt;Card&gt;
-            &lt;CardContent&gt;
-              &lt;Box display="flex" alignItems="center" mb={2}&gt;
-                &lt;ScatterPlot color="primary" sx={{ mr: 1 }} /&gt;
-                &lt;Typography variant="h5" component="h2"&gt;
-                  Species-Area Relationship
-                &lt;/Typography&gt;
-              &lt;/Box&gt;
-              
-              &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
-                Model the relationship between habitat area and species richness using the power law S = c × A^z.
-              &lt;/Typography&gt;
-              
-              &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
-                &lt;strong&gt;References:&lt;/strong&gt;{' '}
-                &lt;a href="https://en.wikipedia.org/wiki/Species%E2%80%93area_relationship" target="_blank" rel="noopener noreferrer"&gt;
-                  Species-Area Relationship
-                &lt;/a&gt;{' '}•{' '}
-                MacArthur, R.H. &amp; Wilson, E.O. (1967). &lt;em&gt;The Theory of Island Biogeography&lt;/em&gt;. Princeton University Press.
-              &lt;/Typography&gt;
-&nbsp;
-              &lt;Typography variant="subtitle2" gutterBottom sx={{ mt: 2 }}&gt;
-                Area-Species Data Points
-              &lt;/Typography&gt;
-              
-              {areaData.map((data, index) =&gt; (
-                &lt;Box key={index} sx={{ mb: 2, p: 2, border: '1px solid #e0e0e0', borderRadius: 1 }}&gt;
-                  &lt;Grid container spacing={2} alignItems="center"&gt;
-                    &lt;Grid item xs={5}&gt;
-                      &lt;TextField
-                        fullWidth
-                        label="Area (hectares)"
-                        type="number"
-                        value={data.area}
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updateAreaDataPoint(index, 'area', e.target.value)}</span>
-                        size="small"
-                      /&gt;
-                    &lt;/Grid&gt;
-                    &lt;Grid item xs={5}&gt;
-                      &lt;TextField
-                        fullWidth
-                        label="Species Count"
-                        type="number"
-                        value={data.species}
-                        onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updateAreaDataPoint(index, 'species', e.target.value)}</span>
-                        size="small"
-                      /&gt;
-                    &lt;/Grid&gt;
-                    &lt;Grid item xs={2}&gt;
-                      &lt;IconButton 
-                        onClick={() =&gt; removeAreaDataPoint(index)}
-                        disabled={areaData.length &lt;= 2}
-                        color="error"
-                      &gt;
-                        &lt;DeleteIcon /&gt;
-                      &lt;/IconButton&gt;
-                    &lt;/Grid&gt;
-                  &lt;/Grid&gt;
-                &lt;/Box&gt;
-              ))}
-              
-              &lt;Button
-                startIcon={&lt;AddIcon /&gt;}
-                onClick={addAreaDataPoint}
-                variant="outlined"
-                size="small"
-                sx={{ mb: 2 }}
-              &gt;
-                Add Data Point
-              &lt;/Button&gt;
-&nbsp;
-              &lt;Divider sx={{ my: 2 }} /&gt;
-&nbsp;
-              &lt;TextField
-                fullWidth
-                label="Prediction Area (hectares)"
-                type="number"
-                value={predictionArea}
-                onChange={(e) =&gt; setPredictionArea(e.target.value)}
-                size="small"
-                sx={{ mb: 2 }}
-                helperText="Optional: Predict species count for this area"
-              /&gt;
-&nbsp;
-              {sarError &amp;&amp; (
-                &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
-                  {sarError}
-                &lt;/Alert&gt;
-              )}
-&nbsp;
-              {sarResults &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 2 }}&gt;</span>
-                  &lt;Typography variant="h6" gutterBottom&gt;Species-Area Results:&lt;/Typography&gt;
-                  
-                  &lt;Typography variant="body2"&gt;
-                    &lt;strong&gt;Equation:&lt;/strong&gt; {sarResults.equation}
-                  &lt;/Typography&gt;
-                  &lt;Typography variant="body2"&gt;
-                    &lt;strong&gt;R²:&lt;/strong&gt; {sarResults.r_squared}
-                  &lt;/Typography&gt;
-                  
-                  &lt;Chip 
-                    label={sarResults.relationship_strength}
-                    color={getRelationshipColor(sarResults.relationship_strength)}
-                    sx={{ mt: 1, mb: 2 }}
-                  /&gt;
-                  
-                  {sarResults.predicted_species &amp;&amp; (
-                    &lt;Typography variant="body2" sx={{ mt: 1 }}&gt;
-                      &lt;strong&gt;Predicted Species:&lt;/strong&gt; {sarResults.predicted_species} species for {predictionArea} hectares
-                    &lt;/Typography&gt;
-                  )}
-                &lt;/Box&gt;
-              )}
-            &lt;/CardContent&gt;
-            
-            &lt;CardActions&gt;
-              &lt;Button 
-                variant="contained" 
-                onClick={calculateSpeciesArea}
-                disabled={sarLoading}
-                startIcon={sarLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;ScatterPlot /&gt;}
-                sx={{
-                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
-                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
-                  '&amp;:hover': {
-                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
-                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
-                    transform: 'translateY(-1px)'
-                  }
-                }}
-              &gt;
-                {sarLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Calculate Relationship'}
-              &lt;/Button&gt;
-            &lt;/CardActions&gt;
-          &lt;/Card&gt;
-        &lt;/Grid&gt;
-&nbsp;
-        {/* Fragmentation Metrics */}
-        &lt;Grid item xs={12}&gt;
-          &lt;Card&gt;
-            &lt;CardContent&gt;
-              &lt;Box display="flex" alignItems="center" mb={2}&gt;
-                &lt;Assessment color="primary" sx={{ mr: 1 }} /&gt;
-                &lt;Typography variant="h5" component="h2"&gt;
-                  Fragmentation Metrics
-                &lt;/Typography&gt;
-              &lt;/Box&gt;
-              
-              &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
-                Quantify landscape fragmentation using patch-based metrics including density, edge effects, and shape complexity.
-              &lt;/Typography&gt;
-              
-              &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
-                &lt;strong&gt;References:&lt;/strong&gt;{' '}
-                &lt;a href="https://www.umass.edu/landeco/research/fragstats/fragstats.html" target="_blank" rel="noopener noreferrer"&gt;
-                  FRAGSTATS Landscape Metrics
-                &lt;/a&gt;{' '}•{' '}
-                McGarigal, K. &amp; Marks, B.J. (1995). FRAGSTATS: spatial pattern analysis program for quantifying landscape structure. &lt;em&gt;USDA Forest Service General Technical Report&lt;/em&gt; PNW-351.
-              &lt;/Typography&gt;
-&nbsp;
-              &lt;Grid container spacing={3}&gt;
-                &lt;Grid item xs={12} md={8}&gt;
-                  &lt;Typography variant="subtitle2" gutterBottom&gt;
-                    Habitat Patches
-                  &lt;/Typography&gt;
-                  
-                  {patches.map((patch, index) =&gt; (
-                    &lt;Box key={index} sx={{ mb: 2, p: 2, border: '1px solid #e0e0e0', borderRadius: 1 }}&gt;
-                      &lt;Grid container spacing={2} alignItems="center"&gt;
-                        &lt;Grid item xs={5}&gt;
-                          &lt;TextField
-                            fullWidth
-                            label="Area (hectares)"
-                            type="number"
-                            value={patch.area}
-                            onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updatePatch(index, 'area', e.target.value)}</span>
-                            size="small"
-                          /&gt;
-                        &lt;/Grid&gt;
-                        &lt;Grid item xs={5}&gt;
-                          &lt;TextField
-                            fullWidth
-                            label="Perimeter (meters)"
-                            type="number"
-                            value={patch.perimeter}
-                            onChange={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >updatePatch(index, 'perimeter', e.target.value)}</span>
-                            size="small"
-                          /&gt;
-                        &lt;/Grid&gt;
-                        &lt;Grid item xs={2}&gt;
-                          &lt;IconButton 
-                            onClick={() =&gt; removePatch(index)}
-                            disabled={patches.length &lt;= 1}
-                            color="error"
-                          &gt;
-                            &lt;DeleteIcon /&gt;
-                          &lt;/IconButton&gt;
-                        &lt;/Grid&gt;
-                      &lt;/Grid&gt;
-                    &lt;/Box&gt;
-                  ))}
-                  
-                  &lt;Button
-                    startIcon={&lt;AddIcon /&gt;}
-                    onClick={addPatch}
-                    variant="outlined"
-                    size="small"
-                    sx={{ mb: 2 }}
-                  &gt;
-                    Add Patch
-                  &lt;/Button&gt;
-                &lt;/Grid&gt;
-&nbsp;
-                &lt;Grid item xs={12} md={4}&gt;
+              &lt;Grid container spacing={2}&gt;
+                &lt;Grid item xs={6}&gt;
                   &lt;TextField
                     fullWidth
-                    label="Total Landscape Area (hectares)"
+                    label="Current Min Temp (°C)"
                     type="number"
-                    value={landscapeArea}
-                    onChange={(e) =&gt; setLandscapeArea(e.target.value)}
+                    value={tempTolerance.current_temp_min}
+                    onChange={(e) =&gt; updateTempTolerance('current_temp_min', e.target.value)}
                     size="small"
-                    sx={{ mb: 2 }}
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Current Max Temp (°C)"
+                    type="number"
+                    value={tempTolerance.current_temp_max}
+                    onChange={(e) =&gt; updateTempTolerance('current_temp_max', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Optimal Min Temp (°C)"
+                    type="number"
+                    value={tempTolerance.optimal_temp_min}
+                    onChange={(e) =&gt; updateTempTolerance('optimal_temp_min', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Optimal Max Temp (°C)"
+                    type="number"
+                    value={tempTolerance.optimal_temp_max}
+                    onChange={(e) =&gt; updateTempTolerance('optimal_temp_max', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Critical Min Temp (°C)"
+                    type="number"
+                    value={tempTolerance.critical_temp_min}
+                    onChange={(e) =&gt; updateTempTolerance('critical_temp_min', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Critical Max Temp (°C)"
+                    type="number"
+                    value={tempTolerance.critical_temp_max}
+                    onChange={(e) =&gt; updateTempTolerance('critical_temp_max', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={12}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Projected Temperature Change (°C)"
+                    type="number"
+                    value={tempTolerance.projected_temp_change}
+                    onChange={(e) =&gt; updateTempTolerance('projected_temp_change', e.target.value)}
+                    size="small"
                   /&gt;
                 &lt;/Grid&gt;
               &lt;/Grid&gt;
 &nbsp;
-              {fragError &amp;&amp; (
+              {tempError &amp;&amp; (
                 &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
-                  {fragError}
+                  {tempError}
                 &lt;/Alert&gt;
               )}
 &nbsp;
-              {fragResults &amp;&amp; (
+              {tempResults &amp;&amp; (
 <span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 3 }}&gt;</span>
-                  &lt;Typography variant="h6" gutterBottom&gt;Fragmentation Results:&lt;/Typography&gt;
+                  &lt;Typography variant="h6" gutterBottom&gt;Results&lt;/Typography&gt;
+                  &lt;Grid container spacing={2}&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Current Suitability&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{(tempResults.current_suitability * 100).toFixed(1)}%&lt;/Typography&gt;
+                        &lt;Chip label={tempResults.current_status} size="small" /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Projected Suitability&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{(tempResults.projected_suitability * 100).toFixed(1)}%&lt;/Typography&gt;
+                        &lt;Chip label={tempResults.projected_status} size="small" /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={12}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Risk Level&lt;/Typography&gt;
+                        &lt;Chip 
+                          label={tempResults.risk_level} 
+                          color={getRiskColor(tempResults.risk_level)}
+                          sx={{ mt: 1 }}
+                        /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                  &lt;/Grid&gt;
                   
-                  &lt;Chip 
-                    label={fragResults.fragmentation_class}
-                    color={getFragmentationColor(fragResults.fragmentation_class)}
-                    sx={{ mb: 2, fontSize: '1rem', fontWeight: 'bold' }}
-                  /&gt;
-                  
-                  &lt;TableContainer component={Paper} sx={{ mt: 2 }}&gt;
-                    &lt;Table size="small"&gt;
-                      &lt;TableHead&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;&lt;strong&gt;Metric&lt;/strong&gt;&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/TableCell&gt;
-                          &lt;TableCell&gt;&lt;strong&gt;Unit&lt;/strong&gt;&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                      &lt;/TableHead&gt;
-                      &lt;TableBody&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Number of Patches&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.number_of_patches}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;patches&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Total Habitat Area&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.total_habitat_area}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;hectares&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Habitat Proportion&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{(fragResults.habitat_proportion * 100).toFixed(1)}%&lt;/TableCell&gt;
-                          &lt;TableCell&gt;percentage&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Mean Patch Size&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.mean_patch_size}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;hectares&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Patch Density&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.patch_density}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;patches/100ha&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Edge Density&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.edge_density}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;m/ha&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;Mean Shape Index&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;{fragResults.mean_shape_index}&lt;/TableCell&gt;
-                          &lt;TableCell&gt;ratio&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                        &lt;TableRow&gt;
-                          &lt;TableCell&gt;&lt;strong&gt;Fragmentation Index&lt;/strong&gt;&lt;/TableCell&gt;
-                          &lt;TableCell align="right"&gt;&lt;strong&gt;{fragResults.fragmentation_index}&lt;/strong&gt;&lt;/TableCell&gt;
-                          &lt;TableCell&gt;&lt;strong&gt;0-1 scale&lt;/strong&gt;&lt;/TableCell&gt;
-                        &lt;/TableRow&gt;
-                      &lt;/TableBody&gt;
-                    &lt;/Table&gt;
-                  &lt;/TableContainer&gt;
+                  {tempResults.recommendations &amp;&amp; tempResults.recommendations.length &gt; 0 &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Recommendations:&lt;/Typography&gt;
+                      {tempResults.recommendations.map(<span class="fstat-no" title="function not covered" >(r</span>ec, index) =&gt; (
+<span class="cstat-no" title="statement not covered" >                        &lt;Typography key={index} variant="body2" sx={{ mb: 0.5 }}&gt;</span>
+                          • {rec}
+                        &lt;/Typography&gt;
+                      ))}
+                    &lt;/Box&gt;
+                  )}
                 &lt;/Box&gt;
               )}
             &lt;/CardContent&gt;
-            
             &lt;CardActions&gt;
-              &lt;Button 
-                variant="contained" 
-                onClick={calculateFragmentation}
-                disabled={fragLoading}
-                startIcon={fragLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Assessment /&gt;}
+              &lt;Button
+                variant="contained"
+                onClick={calculateTemperatureTolerance}
+                disabled={tempLoading}
+                startIcon={tempLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Thermostat /&gt;}
                 sx={{
-                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
-                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
                   '&amp;:hover': {
-                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
-                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
                     transform: 'translateY(-1px)'
                   }
                 }}
               &gt;
-                {fragLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Calculate Metrics'}
+                {tempLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Analyze Temperature Tolerance'}
+              &lt;/Button&gt;
+            &lt;/CardActions&gt;
+          &lt;/Card&gt;
+        &lt;/Grid&gt;
+&nbsp;
+        {/* Phenology Shift Analysis */}
+        &lt;Grid item xs={12} lg={6}&gt;
+          &lt;Card&gt;
+            &lt;CardContent&gt;
+              &lt;Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}&gt;
+                &lt;Schedule sx={{ mr: 1, color: 'primary.main' }} /&gt;
+                &lt;Typography variant="h5" component="h2"&gt;
+                  Phenology Shift Analysis
+                &lt;/Typography&gt;
+              &lt;/Box&gt;
+              &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
+                Calculate timing shifts in species life cycle events due to climate change.
+              &lt;/Typography&gt;
+              &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
+                &lt;strong&gt;References:&lt;/strong&gt;{' '}
+                &lt;a href="https://doi.org/10.1038/nature01286" target="_blank" rel="noopener noreferrer"&gt;
+                  Parmesan &amp; Yohe (2003) Nature
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1038/nature04539" target="_blank" rel="noopener noreferrer"&gt;
+                  Both et al. (2006) Nature
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1038/ncomms10717" target="_blank" rel="noopener noreferrer"&gt;
+                  Thackeray et al. (2016) Nature Comm.
+                &lt;/a&gt;
+              &lt;/Typography&gt;
+&nbsp;
+              &lt;Grid container spacing={2}&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Historical Event Day (1-365)"
+                    type="number"
+                    value={phenologyData.historical_event_day}
+                    onChange={(e) =&gt; updatePhenologyData('historical_event_day', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 1, max: 365 }}
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Temperature Sensitivity (days/°C)"
+                    type="number"
+                    value={phenologyData.temperature_sensitivity}
+                    onChange={(e) =&gt; updatePhenologyData('temperature_sensitivity', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Projected Temp Change (°C)"
+                    type="number"
+                    value={phenologyData.projected_temp_change}
+                    onChange={(e) =&gt; updatePhenologyData('projected_temp_change', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Species Flexibility (0-1)"
+                    type="number"
+                    value={phenologyData.species_flexibility}
+                    onChange={(e) =&gt; updatePhenologyData('species_flexibility', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 0, max: 1, step: 0.1 }}
+                  /&gt;
+                &lt;/Grid&gt;
+              &lt;/Grid&gt;
+&nbsp;
+              &lt;Box sx={{ mt: 2 }}&gt;
+                &lt;Typography variant="subtitle2" gutterBottom&gt;
+                  Dependent Species Events (Optional)
+                &lt;/Typography&gt;
+                {dependentEvents.map((event, index) =&gt; (
+                  &lt;Box key={index} sx={{ display: 'flex', alignItems: 'center', mb: 1 }}&gt;
+                    &lt;TextField
+                      size="small"
+                      label={`Species ${index + 1} Event Day`}
+                      type="number"
+                      value={event.day}
+                      onChange={(e) =&gt; updateDependentEvent(index, e.target.value)}
+                      inputProps={{ min: 1, max: 365 }}
+                      sx={{ flexGrow: 1, mr: 1 }}
+                    /&gt;
+                    &lt;IconButton
+                      onClick={() =&gt; removeDependentEvent(index)}
+                      size="small"
+                      color="error"
+                    &gt;
+                      &lt;DeleteIcon /&gt;
+                    &lt;/IconButton&gt;
+                  &lt;/Box&gt;
+                ))}
+                &lt;Button
+                  startIcon={&lt;AddIcon /&gt;}
+                  onClick={addDependentEvent}
+                  size="small"
+                  variant="outlined"
+                &gt;
+                  Add Dependent Species
+                &lt;/Button&gt;
+              &lt;/Box&gt;
+&nbsp;
+              {phenologyError &amp;&amp; (
+                &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
+                  {phenologyError}
+                &lt;/Alert&gt;
+              )}
+&nbsp;
+              {phenologyResults &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 3 }}&gt;</span>
+                  &lt;Typography variant="h6" gutterBottom&gt;Results&lt;/Typography&gt;
+                  &lt;Grid container spacing={2}&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Projected Event Day&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{phenologyResults.projected_event_day}&lt;/Typography&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Shift Magnitude&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{phenologyResults.shift_magnitude} days&lt;/Typography&gt;
+                        &lt;Chip label={phenologyResults.shift_direction} size="small" /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Mismatch Risk&lt;/Typography&gt;
+                        &lt;Chip 
+                          label={phenologyResults.mismatch_risk} 
+                          color={getRiskColor(phenologyResults.mismatch_risk)}
+                        /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Adaptation Potential&lt;/Typography&gt;
+                        &lt;Chip label={phenologyResults.adaptation_potential} /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                  &lt;/Grid&gt;
+&nbsp;
+                  {phenologyResults.synchrony_analysis &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Synchrony Changes:&lt;/Typography&gt;
+                      {Object.entries(phenologyResults.synchrony_analysis).map(<span class="fstat-no" title="function not covered" >([</span>species, change]) =&gt; (
+<span class="cstat-no" title="statement not covered" >                        &lt;Typography key={species} variant="body2"&gt;</span>
+                          {species}: {change &gt; 0 ? '+' : ''}{change} days
+                        &lt;/Typography&gt;
+                      ))}
+                    &lt;/Box&gt;
+                  )}
+                  
+                  {phenologyResults.recommendations &amp;&amp; phenologyResults.recommendations.length &gt; 0 &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Recommendations:&lt;/Typography&gt;
+                      {phenologyResults.recommendations.map(<span class="fstat-no" title="function not covered" >(r</span>ec, index) =&gt; (
+<span class="cstat-no" title="statement not covered" >                        &lt;Typography key={index} variant="body2" sx={{ mb: 0.5 }}&gt;</span>
+                          • {rec}
+                        &lt;/Typography&gt;
+                      ))}
+                    &lt;/Box&gt;
+                  )}
+                &lt;/Box&gt;
+              )}
+            &lt;/CardContent&gt;
+            &lt;CardActions&gt;
+              &lt;Button
+                variant="contained"
+                onClick={calculatePhenologyShift}
+                disabled={phenologyLoading}
+                startIcon={phenologyLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Schedule /&gt;}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&amp;:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
+              &gt;
+                {phenologyLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Analyze Phenology Shift'}
+              &lt;/Button&gt;
+            &lt;/CardActions&gt;
+          &lt;/Card&gt;
+        &lt;/Grid&gt;
+&nbsp;
+        {/* Sea Level Rise Analysis */}
+        &lt;Grid item xs={12} lg={6}&gt;
+          &lt;Card&gt;
+            &lt;CardContent&gt;
+              &lt;Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}&gt;
+                &lt;Waves sx={{ mr: 1, color: 'primary.main' }} /&gt;
+                &lt;Typography variant="h5" component="h2"&gt;
+                  Sea Level Rise Impact
+                &lt;/Typography&gt;
+              &lt;/Box&gt;
+              &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
+                Assess coastal habitat vulnerability to sea level rise.
+              &lt;/Typography&gt;
+              &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
+                &lt;strong&gt;References:&lt;/strong&gt;{' '}
+                &lt;a href="https://doi.org/10.1672/0277-5212(2002)022[0691:GCCASL]2.0.CO;2" target="_blank" rel="noopener noreferrer"&gt;
+                  Galbraith et al. (2002) Wetlands
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1890/070219" target="_blank" rel="noopener noreferrer"&gt;
+                  Craft et al. (2009) Front. Ecol. Environ.
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1016/j.biocon.2010.09.001" target="_blank" rel="noopener noreferrer"&gt;
+                  Traill et al. (2011) Biol. Conserv.
+                &lt;/a&gt;
+              &lt;/Typography&gt;
+&nbsp;
+              &lt;Grid container spacing={2}&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Habitat Elevation (m)"
+                    type="number"
+                    value={seaLevelData.habitat_elevation}
+                    onChange={(e) =&gt; updateSeaLevelData('habitat_elevation', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Habitat Area (hectares)"
+                    type="number"
+                    value={seaLevelData.habitat_area}
+                    onChange={(e) =&gt; updateSeaLevelData('habitat_area', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Slope Gradient (degrees)"
+                    type="number"
+                    value={seaLevelData.slope_gradient}
+                    onChange={(e) =&gt; updateSeaLevelData('slope_gradient', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 0, max: 90 }}
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Sea Level Rise Rate (mm/year)"
+                    type="number"
+                    value={seaLevelData.sea_level_rise_rate}
+                    onChange={(e) =&gt; updateSeaLevelData('sea_level_rise_rate', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Time Horizon (years)"
+                    type="number"
+                    value={seaLevelData.time_horizon}
+                    onChange={(e) =&gt; updateSeaLevelData('time_horizon', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Migration Potential (0-1)"
+                    type="number"
+                    value={seaLevelData.migration_potential}
+                    onChange={(e) =&gt; updateSeaLevelData('migration_potential', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 0, max: 1, step: 0.1 }}
+                  /&gt;
+                &lt;/Grid&gt;
+              &lt;/Grid&gt;
+&nbsp;
+              {seaLevelError &amp;&amp; (
+                &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
+                  {seaLevelError}
+                &lt;/Alert&gt;
+              )}
+&nbsp;
+              {seaLevelResults &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 3 }}&gt;</span>
+                  &lt;Typography variant="h6" gutterBottom&gt;Results&lt;/Typography&gt;
+                  &lt;Grid container spacing={2}&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Total Sea Level Rise&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{seaLevelResults.total_sea_level_rise} m&lt;/Typography&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Habitat Loss&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{seaLevelResults.habitat_loss_percentage}%&lt;/Typography&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={12}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Urgency Level&lt;/Typography&gt;
+                        &lt;Chip 
+                          label={seaLevelResults.urgency_level} 
+                          color={getRiskColor(seaLevelResults.urgency_level)}
+                          sx={{ mt: 1 }}
+                        /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                  &lt;/Grid&gt;
+&nbsp;
+                  {seaLevelResults.inundation_timeline &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Inundation Timeline:&lt;/Typography&gt;
+                      &lt;TableContainer component={Paper} variant="outlined"&gt;
+                        &lt;Table size="small"&gt;
+                          &lt;TableHead&gt;
+                            &lt;TableRow&gt;
+                              &lt;TableCell&gt;Time Period&lt;/TableCell&gt;
+                              &lt;TableCell align="right"&gt;Habitat Loss (%)&lt;/TableCell&gt;
+                            &lt;/TableRow&gt;
+                          &lt;/TableHead&gt;
+                          &lt;TableBody&gt;
+                            {Object.entries(seaLevelResults.inundation_timeline).map(<span class="fstat-no" title="function not covered" >([</span>year, loss]) =&gt; (
+<span class="cstat-no" title="statement not covered" >                              &lt;TableRow key={year}&gt;</span>
+                                &lt;TableCell&gt;{year.replace('year_', '')} years&lt;/TableCell&gt;
+                                &lt;TableCell align="right"&gt;{loss}%&lt;/TableCell&gt;
+                              &lt;/TableRow&gt;
+                            ))}
+                          &lt;/TableBody&gt;
+                        &lt;/Table&gt;
+                      &lt;/TableContainer&gt;
+                    &lt;/Box&gt;
+                  )}
+                  
+                  {seaLevelResults.recommendations &amp;&amp; seaLevelResults.recommendations.length &gt; 0 &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Recommendations:&lt;/Typography&gt;
+                      {seaLevelResults.recommendations.map(<span class="fstat-no" title="function not covered" >(r</span>ec, index) =&gt; (
+<span class="cstat-no" title="statement not covered" >                        &lt;Typography key={index} variant="body2" sx={{ mb: 0.5 }}&gt;</span>
+                          • {rec}
+                        &lt;/Typography&gt;
+                      ))}
+                    &lt;/Box&gt;
+                  )}
+                &lt;/Box&gt;
+              )}
+            &lt;/CardContent&gt;
+            &lt;CardActions&gt;
+              &lt;Button
+                variant="contained"
+                onClick={calculateSeaLevelRise}
+                disabled={seaLevelLoading}
+                startIcon={seaLevelLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Waves /&gt;}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&amp;:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
+              &gt;
+                {seaLevelLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Analyze Sea Level Rise'}
+              &lt;/Button&gt;
+            &lt;/CardActions&gt;
+          &lt;/Card&gt;
+        &lt;/Grid&gt;
+&nbsp;
+        {/* Climate Velocity Analysis */}
+        &lt;Grid item xs={12} lg={6}&gt;
+          &lt;Card&gt;
+            &lt;CardContent&gt;
+              &lt;Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}&gt;
+                &lt;Speed sx={{ mr: 1, color: 'primary.main' }} /&gt;
+                &lt;Typography variant="h5" component="h2"&gt;
+                  Climate Velocity Analysis
+                &lt;/Typography&gt;
+              &lt;/Box&gt;
+              &lt;Typography variant="body2" color="text.secondary" paragraph&gt;
+                Analyze species ability to track shifting climate conditions.
+              &lt;/Typography&gt;
+              &lt;Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}&gt;
+                &lt;strong&gt;References:&lt;/strong&gt;{' '}
+                &lt;a href="https://doi.org/10.1038/nature08649" target="_blank" rel="noopener noreferrer"&gt;
+                  Loarie et al. (2009) Nature
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1126/science.1210288" target="_blank" rel="noopener noreferrer"&gt;
+                  Burrows et al. (2011) Science
+                &lt;/a&gt;
+                {', '}
+                &lt;a href="https://doi.org/10.1111/ddi.12346" target="_blank" rel="noopener noreferrer"&gt;
+                  Carroll et al. (2015) Divers. Distrib.
+                &lt;/a&gt;
+              &lt;/Typography&gt;
+&nbsp;
+              &lt;Grid container spacing={2}&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Temperature Gradient (°C/km)"
+                    type="number"
+                    value={velocityData.temperature_gradient}
+                    onChange={(e) =&gt; updateVelocityData('temperature_gradient', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Climate Change Rate (°C/decade)"
+                    type="number"
+                    value={velocityData.climate_change_rate}
+                    onChange={(e) =&gt; updateVelocityData('climate_change_rate', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Species Dispersal Rate (km/year)"
+                    type="number"
+                    value={velocityData.species_dispersal_rate}
+                    onChange={(e) =&gt; updateVelocityData('species_dispersal_rate', e.target.value)}
+                    size="small"
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={6}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Habitat Fragmentation (0-1)"
+                    type="number"
+                    value={velocityData.habitat_fragmentation}
+                    onChange={(e) =&gt; updateVelocityData('habitat_fragmentation', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 0, max: 1, step: 0.1 }}
+                  /&gt;
+                &lt;/Grid&gt;
+                &lt;Grid item xs={12}&gt;
+                  &lt;TextField
+                    fullWidth
+                    label="Topographic Complexity (0-1)"
+                    type="number"
+                    value={velocityData.topographic_complexity}
+                    onChange={(e) =&gt; updateVelocityData('topographic_complexity', e.target.value)}
+                    size="small"
+                    inputProps={{ min: 0, max: 1, step: 0.1 }}
+                  /&gt;
+                &lt;/Grid&gt;
+              &lt;/Grid&gt;
+&nbsp;
+              {velocityError &amp;&amp; (
+                &lt;Alert severity="error" sx={{ mt: 2 }}&gt;
+                  {velocityError}
+                &lt;/Alert&gt;
+              )}
+&nbsp;
+              {velocityResults &amp;&amp; (
+<span class="branch-1 cbranch-no" title="branch not covered" >                &lt;Box sx={{ mt: 3 }}&gt;</span>
+                  &lt;Typography variant="h6" gutterBottom&gt;Results&lt;/Typography&gt;
+                  &lt;Grid container spacing={2}&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Climate Velocity&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{velocityResults.climate_velocity} km/year&lt;/Typography&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={6}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Dispersal Deficit&lt;/Typography&gt;
+                        &lt;Typography variant="h6"&gt;{velocityResults.dispersal_deficit} km/year&lt;/Typography&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                    &lt;Grid item xs={12}&gt;
+                      &lt;Paper sx={{ p: 2, textAlign: 'center' }}&gt;
+                        &lt;Typography variant="body2" color="text.secondary"&gt;Migration Feasibility&lt;/Typography&gt;
+                        &lt;Chip 
+                          label={velocityResults.migration_feasibility} 
+                          color={velocityResults.migration_feasibility === 'High' ? 'success' : 
+                                 velocityResults.migration_feasibility === 'Moderate' ? 'info' : 'warning'}
+                          sx={{ mt: 1 }}
+                        /&gt;
+                      &lt;/Paper&gt;
+                    &lt;/Grid&gt;
+                  &lt;/Grid&gt;
+&nbsp;
+                  &lt;Box sx={{ mt: 2 }}&gt;
+                    &lt;Typography variant="subtitle2" gutterBottom&gt;Assessment Details:&lt;/Typography&gt;
+                    &lt;Typography variant="body2" sx={{ mb: 0.5 }}&gt;
+                      &lt;strong&gt;Tracking Ability:&lt;/strong&gt; {velocityResults.tracking_ability}
+                    &lt;/Typography&gt;
+                    &lt;Typography variant="body2" sx={{ mb: 0.5 }}&gt;
+                      &lt;strong&gt;Fragmentation Impact:&lt;/strong&gt; {velocityResults.fragmentation_impact}
+                    &lt;/Typography&gt;
+                    &lt;Typography variant="body2" sx={{ mb: 0.5 }}&gt;
+                      &lt;strong&gt;Topographic Refugia:&lt;/strong&gt; {velocityResults.topographic_refugia}
+                    &lt;/Typography&gt;
+                  &lt;/Box&gt;
+                  
+                  {velocityResults.recommendations &amp;&amp; velocityResults.recommendations.length &gt; 0 &amp;&amp; (
+                    &lt;Box sx={{ mt: 2 }}&gt;
+                      &lt;Typography variant="subtitle2" gutterBottom&gt;Recommendations:&lt;/Typography&gt;
+                      {velocityResults.recommendations.map(<span class="fstat-no" title="function not covered" >(r</span>ec, index) =&gt; (
+<span class="cstat-no" title="statement not covered" >                        &lt;Typography key={index} variant="body2" sx={{ mb: 0.5 }}&gt;</span>
+                          • {rec}
+                        &lt;/Typography&gt;
+                      ))}
+                    &lt;/Box&gt;
+                  )}
+                &lt;/Box&gt;
+              )}
+            &lt;/CardContent&gt;
+            &lt;CardActions&gt;
+              &lt;Button
+                variant="contained"
+                onClick={calculateClimateVelocity}
+                disabled={velocityLoading}
+                startIcon={velocityLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >&lt;CircularProgress size={20} /&gt; </span>: &lt;Speed /&gt;}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&amp;:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
+              &gt;
+                {velocityLoading ? <span class="branch-0 cbranch-no" title="branch not covered" >'Calculating...' </span>: 'Analyze Climate Velocity'}
               &lt;/Button&gt;
             &lt;/CardActions&gt;
           &lt;/Card&gt;
         &lt;/Grid&gt;
       &lt;/Grid&gt;
+&nbsp;
+&nbsp;
     &lt;/Container&gt;
   );
 };
 &nbsp;
-export default HabitatLandscape;</pre></td></tr></table></pre>
+export default ClimateImpact;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
