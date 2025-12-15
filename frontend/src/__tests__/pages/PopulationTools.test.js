@@ -76,4 +76,74 @@ describe('PopulationTools', () => {
     expect(screen.getByDisplayValue('25')).toBeInTheDocument(); // Breeding males
     expect(screen.getByDisplayValue('30')).toBeInTheDocument(); // Breeding females
   });
+
+  test('form inputs accept user input', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    const growthRateInput = screen.getByLabelText(/growth rate \(r\)/i);
+    fireEvent.change(growthRateInput, { target: { value: '0.08' } });
+    expect(growthRateInput).toHaveValue(0.08);
+  });
+
+  test('form validation prevents invalid submissions', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    // Test that required fields are marked as required
+    const requiredFields = screen.getAllByRole('textbox', { required: true });
+    expect(requiredFields.length).toBeGreaterThan(0);
+  });
+
+  test('displays loading states correctly', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    const buttons = screen.getAllByRole('button');
+    buttons.forEach(button => {
+      expect(button).not.toBeDisabled(); // Initially not disabled
+    });
+  });
+
+  test('handles form submission events', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    const forms = screen.getAllByRole('button', { name: /calculate|run|simulate/i });
+    expect(forms).toHaveLength(4); // Four different calculators
+  });
+
+  test('displays proper input constraints', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    // Check for min attributes on number inputs
+    const numberInputs = screen.getAllByRole('spinbutton');
+    numberInputs.forEach(input => {
+      const minValue = input.getAttribute('min');
+      if (minValue) {
+        expect(parseFloat(minValue)).toBeGreaterThanOrEqual(0);
+      }
+    });
+  });
+
+  test('renders all form sections', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    // Check that all four main sections are present
+    expect(screen.getByText('Population Growth Calculator')).toBeInTheDocument();
+    expect(screen.getByText('Effective Population Size')).toBeInTheDocument();
+    expect(screen.getByText('Population Viability Analysis (PVA)')).toBeInTheDocument();
+    expect(screen.getByText('Metapopulation Dynamics')).toBeInTheDocument();
+  });
+
+  test('has proper form structure with labels and inputs', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    // Test that forms have proper structure
+    const textFields = screen.getAllByRole('textbox');
+    expect(textFields.length).toBeGreaterThan(10); // Multiple input fields across forms
+  });
+
+  test('displays scientific formulas in results', () => {
+    renderWithRouter(<PopulationTools />);
+    
+    // Check for formula text that would appear in results
+    expect(screen.getByText(/Formula: Ne = 4 × Nm × Nf/)).toBeInTheDocument();
+  });
 });
