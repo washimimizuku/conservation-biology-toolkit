@@ -79,9 +79,9 @@ const Home = () => {
           sx={{ 
             mt: 4, 
             p: 3, 
-            background: 'linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%)',
+            background: 'linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%)',
             borderRadius: 2,
-            border: '2px solid #2196F3',
+            border: '2px solid #4CAF50',
             maxWidth: 600,
             mx: 'auto'
           }}
@@ -105,11 +105,11 @@ const Home = () => {
                 py: 1.5,
                 fontSize: '1rem',
                 fontWeight: 'bold',
-                background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-                boxShadow: '0 4px 8px 2px rgba(33, 203, 243, .3)',
+                background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                boxShadow: '0 4px 8px 2px rgba(76, 175, 80, .3)',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
-                  boxShadow: '0 6px 12px 4px rgba(33, 203, 243, .4)',
+                  background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(76, 175, 80, .4)',
                   transform: 'translateY(-2px)'
                 }
               }}
@@ -189,11 +189,11 @@ const Home = () => {
                     fontSize: '1rem',
                     fontWeight: 'bold',
                     ...(category.status === 'Available' && {
-                      background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-                      boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
+                      background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                      boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
                       '&:hover': {
-                        background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
-                        boxShadow: '0 4px 8px 3px rgba(33, 203, 243, .4)',
+                        background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                        boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
                         transform: 'translateY(-1px)'
                       }
                     })
