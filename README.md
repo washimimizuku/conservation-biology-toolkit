@@ -13,42 +13,66 @@ This toolkit addresses the critical need for standardized, accessible conservati
 - **Effective Population Size** ✅ - Calculate genetic effective population size
 - **Growth Rate & Carrying Capacity** ✅ - Model population dynamics and limits
 - **Metapopulation Dynamics** ✅ - Simulate connected population networks
+- **Age-Structured Population Models** *(Planned v2.0)* - Advanced demographic modeling with age classes
+- **Sensitivity Analysis Tools** *(Planned v2.0)* - Parameter sensitivity and uncertainty analysis
 
 ### 📋 Sampling & Survey Design ✅ **COMPLETE**
 - **Sample Size Calculators** ✅ - Determine optimal survey effort with finite population correction
 - **Detection Probability** ✅ - Account for imperfect species detection using Wilson score intervals
 - **Capture-Recapture Analysis** ✅ - Estimate population size from marked individuals (Lincoln-Petersen)
 - **Distance Sampling** ✅ - Analyze line and point transect surveys with half-normal detection function
+- **Advanced Detection Functions** *(Planned v2.0)* - Hazard-rate and uniform detection models
+- **Multi-Species Capture-Recapture** *(Planned v2.0)* - Community-level population estimation
+- **Stratified Sampling Calculators** *(Planned v2.0)* - Complex survey design optimization
+- **Power Analysis Tools** *(Planned v2.0)* - Statistical power and effect size calculations
 
 ### 🔬 Genetic Diversity ✅ **COMPLETE**
 - **Hardy-Weinberg Equilibrium** ✅ - Test population genetic assumptions
 - **Inbreeding Coefficients** ✅ - Measure genetic relatedness and inbreeding
 - **Bottleneck Detection** ✅ - Identify genetic diversity loss events
 - **Allelic Richness & Heterozygosity** ✅ - Quantify genetic variation
+- **Multi-Population Hardy-Weinberg Tests** *(Planned v2.0)* - Population structure analysis
+- **Linkage Disequilibrium Analysis** *(Planned v2.0)* - Genetic association patterns
+- **Population Structure Analysis** *(Planned v2.0)* - STRUCTURE-like clustering algorithms
+- **Phylogenetic Diversity Metrics** *(Planned v2.0)* - Evolutionary diversity quantification
 
 ### 📊 Species Assessment ✅ **COMPLETE**
 - **IUCN Red List Assessment** ✅ - Apply standardized threat assessment criteria (A, B, C, D)
 - **Extinction Risk Assessment** ✅ - Quantify species vulnerability with multi-factor scoring
 - **Range Size Analysis** ✅ - Calculate extent of occurrence, area of occupancy, and fragmentation metrics
-- **Species Distribution Modeling** *(Planned for v2.0)* - Map current and potential species ranges
+- **Species Distribution Modeling (SDM)** *(Planned v2.0)* - Advanced GIS integration for range mapping
+- **Climate Change Vulnerability Assessment** *(Planned v2.0)* - Climate-species interaction modeling
+- **Population Trend Analysis Integration** *(Planned v2.0)* - Time-series population data analysis
+- **Automated Threat Assessment** *(Planned v2.0)* - AI-assisted threat identification and scoring
 
 ### 🌍 Habitat & Landscape ✅ **COMPLETE**
 - **Habitat Suitability Index** ✅ - Evaluate habitat quality using weighted environmental parameters
 - **Fragmentation Metrics** ✅ - Measure landscape connectivity, patch density, edge effects, and shape complexity
 - **Species-Area Relationships** ✅ - Predict species richness using power law regression analysis
-- **Wildlife Corridor Design** *(Planned for v2.0)* - Calculate optimal corridor widths for movement
+- **Wildlife Corridor Calculator** *(Planned v2.0)* - Advanced spatial connectivity analysis and optimal corridor design
+- **Landscape Connectivity Modeling** *(Planned v2.0)* - Graph-based connectivity assessment
+- **Habitat Network Analysis** *(Planned v2.0)* - Network topology and resilience metrics
+- **GIS Data Integration** *(Planned v2.0)* - Direct integration with spatial data sources
 
 ### 🌡️ Climate Impact Assessment ✅ **COMPLETE**
 - **Temperature Tolerance Analysis** ✅ - Assess species vulnerability to temperature changes
 - **Phenology Shift Analysis** ✅ - Calculate timing shifts in life cycle events due to climate change
 - **Sea Level Rise Impact Assessment** ✅ - Evaluate coastal habitat vulnerability to rising seas
 - **Climate Velocity Analysis** ✅ - Analyze species ability to track shifting climate conditions
+- **Species Distribution Modeling (SDM) Integration** *(Planned v2.0)* - Climate-driven range shift predictions
+- **Climate Refugia Identification** *(Planned v2.0)* - Locate climate-stable areas for conservation
+- **Extreme Weather Event Analysis** *(Planned v2.0)* - Impact assessment of climate extremes
+- **Climate Adaptation Pathway Planning** *(Planned v2.0)* - Strategic adaptation scenario modeling
 
 ### 🎯 Conservation Planning ✅ **COMPLETE**
 - **Conservation Priority Analysis** ✅ - Multi-criteria decision analysis for site prioritization
 - **Threat Assessment Matrix** ✅ - Systematic threat evaluation using severity, scope, and urgency
 - **Cost-Effectiveness Analysis** ✅ - Investment optimization with budget constraints and ROI analysis
 - **Reserve Selection Optimization** ✅ - Greedy set cover algorithms for optimal site selection
+- **Advanced Reserve Selection Algorithms** *(Planned v2.0)* - Simulated annealing and genetic algorithms
+- **Spatial Connectivity Analysis Integration** *(Planned v2.0)* - Corridor-aware reserve design
+- **Multi-Objective Optimization** *(Planned v2.0)* - Pareto frontier analysis for trade-offs
+- **Uncertainty Analysis & Robust Optimization** *(Planned v2.0)* - Decision-making under uncertainty
 
 ### 📚 Breed Registry & Data Management *(Future Release)*
 - **Individual Animal Records** *(Planned)* - Comprehensive pedigree and life history tracking
@@ -218,25 +242,65 @@ poetry run pytest --cov=main --cov-report=html
 - ✅ React frontend with comprehensive testing
 - ✅ Docker development environment
 
-### 🎯 **Milestone 2: Enhanced Features** *(Q1 2026)*
-- 📋 Enhanced data visualization components
+### 🎯 **Milestone 2: Platform Completion** *(Q1 2026)*
+- 📋 Breed Registry Service (7 tools) - Complete the final service category
+- 📋 Enhanced data visualization components with interactive charts
 - 📋 Export/import functionality (CSV, JSON, PDF reports)
-- 📋 CI/CD pipeline implementation
-- 📋 Performance optimization and caching
+- 📋 CI/CD pipeline implementation with automated testing
+- 📋 Performance optimization and caching strategies
 
-### 🎯 **Milestone 3: Environmental Analysis** *(Q2 2026)*
-- 📋 Climate Impact Assessment Service (4 tools)
-- 📋 Species Distribution Modeling (SDM) integration
-- 📋 GIS integration capabilities
-- 📋 External data source integration (GBIF, climate data)
+### 🎯 **Milestone 3: Advanced Analytics (v2.0)** *(Q2-Q3 2026)*
+- 📋 Species Distribution Modeling (SDM) with advanced GIS integration
+- 📋 Wildlife corridor design and landscape connectivity modeling
+- 📋 Climate refugia identification and adaptation pathway planning
+- 📋 Advanced genetic analysis (population structure, linkage disequilibrium)
+- 📋 Multi-species capture-recapture and community-level analysis
 
-### 🎯 **Milestone 4: Advanced Planning** *(Q3-Q4 2026)*
-- 📋 Conservation Planning Service (4 tools)
-- 📋 Breed Registry Service (7 tools)
-- 📋 Advanced optimization algorithms
-- 📋 Mobile application (optional)
+### 🎯 **Milestone 4: Optimization & Intelligence** *(Q4 2026)*
+- 📋 Advanced optimization algorithms (simulated annealing, genetic algorithms)
+- 📋 Multi-objective optimization with Pareto frontier analysis
+- 📋 AI-assisted threat assessment and automated analysis
+- 📋 External data source integration (GBIF, climate databases, satellite data)
+- 📋 Mobile application for field data collection (optional)
 
 **Progress: 81.3% Complete (7/8 services, 26/32 tools)**
+
+## Planned Features & Enhancements
+
+### 🔬 **Advanced Scientific Methods (v2.0)**
+- **Age-Structured Population Models**: Demographic analysis with age classes and life tables
+- **Population Structure Analysis**: STRUCTURE-like clustering algorithms for genetic data
+- **Species Distribution Modeling (SDM)**: MaxEnt-style environmental niche modeling with GIS integration
+- **Multi-Species Community Analysis**: Capture-recapture and occupancy modeling for species assemblages
+- **Phylogenetic Diversity Metrics**: Evolutionary diversity quantification and conservation prioritization
+
+### 🌐 **Spatial Analysis & Connectivity (v2.0)**
+- **Wildlife Corridor Design**: Least-cost path analysis and corridor optimization algorithms
+- **Landscape Connectivity Modeling**: Graph-based connectivity assessment with network topology metrics
+- **Habitat Network Analysis**: Resilience metrics and critical node identification
+- **Climate Refugia Identification**: Stable climate area detection for conservation planning
+- **Spatial Connectivity Integration**: Corridor-aware reserve selection and design optimization
+
+### 🤖 **Advanced Algorithms & Optimization (v2.0)**
+- **Simulated Annealing & Genetic Algorithms**: Advanced metaheuristic optimization for reserve selection
+- **Multi-Objective Optimization**: Pareto frontier analysis for conservation trade-offs
+- **Uncertainty Analysis**: Robust optimization and decision-making under uncertainty
+- **AI-Assisted Analysis**: Machine learning for automated threat assessment and pattern recognition
+- **Sensitivity Analysis**: Parameter uncertainty propagation and model validation
+
+### 📊 **Data Integration & Visualization (v2.0)**
+- **External Data Sources**: GBIF species occurrence, climate databases, satellite imagery
+- **Interactive Visualizations**: Dynamic charts, maps, and 3D landscape models
+- **GIS Integration**: Direct shapefile import/export and spatial data processing
+- **Real-Time Data Feeds**: Live environmental monitoring and species tracking integration
+- **Advanced Export Options**: Publication-ready figures, statistical reports, and data packages
+
+### 📱 **Platform Enhancements (v2.0)**
+- **Mobile Field Application**: Data collection app for surveys and monitoring
+- **User Authentication & Profiles**: Personal workspaces and project management
+- **Collaborative Features**: Team projects, data sharing, and peer review workflows
+- **API Ecosystem**: RESTful APIs and SDKs for third-party integration
+- **Cloud Deployment**: Scalable infrastructure with global accessibility
 
 ## Contributing
 
