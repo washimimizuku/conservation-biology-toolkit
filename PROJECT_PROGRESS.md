@@ -76,46 +76,8 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ---
 
-## 🔬 Genetic Diversity Service
-
-### ✅ Completed
-- [ ] *Not started*
-
-### 📋 Planned
-- [ ] Hardy-Weinberg equilibrium calculator *(WIP)*
-- [ ] Inbreeding coefficient estimator *(WIP)*
-- [ ] Bottleneck detection tools *(WIP)*
-- [ ] Allelic richness calculator *(WIP)*
-
----
-
-## 🌍 Habitat & Landscape Service
-
-### ✅ Completed
-- [ ] *Not started*
-
-### 📋 Planned
-- [ ] Habitat suitability index calculator *(WIP)*
-- [ ] Fragmentation metrics *(WIP)*
-- [ ] Species-area relationship estimator *(WIP)*
-- [ ] Wildlife corridor calculator *(WIP)*
-
----
-
-## 📊 Species Assessment Service
-
-### ✅ Completed
-- [ ] *Not started*
-
-### 📋 Planned
-- [ ] IUCN Red List criteria calculator *(WIP)*
-- [ ] Extinction risk assessment *(WIP)*
-- [ ] Species distribution modeling *(WIP)*
-- [ ] Range size calculator *(WIP)*
-
----
-
-## 📋 Sampling & Survey Design Service
+## � Seampling & Survey Design Service
+**Complexity: Low** - Statistical calculations similar to population analysis
 
 ### ✅ Completed
 - [ ] *Not started*
@@ -128,20 +90,50 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ---
 
-## 🎯 Conservation Planning Service
+## 🔬 Genetic Diversity Service
+**Complexity: Low-Medium** - Specialized genetics calculations but well-established formulas
 
 ### ✅ Completed
 - [ ] *Not started*
 
 ### 📋 Planned
-- [ ] Reserve selection algorithms *(WIP)*
-- [ ] Cost-effectiveness analysis *(WIP)*
-- [ ] Threat assessment matrices *(WIP)*
-- [ ] Conservation prioritization *(WIP)*
+- [ ] Hardy-Weinberg equilibrium calculator *(WIP)*
+- [ ] Inbreeding coefficient estimator *(WIP)*
+- [ ] Bottleneck detection tools *(WIP)*
+- [ ] Allelic richness calculator *(WIP)*
+
+---
+
+## 📊 Species Assessment Service
+**Complexity: Medium** - Rule-based logic and distribution modeling
+
+### ✅ Completed
+- [ ] *Not started*
+
+### 📋 Planned
+- [ ] IUCN Red List criteria calculator *(WIP)*
+- [ ] Extinction risk assessment *(WIP)*
+- [ ] Species distribution modeling *(WIP)*
+- [ ] Range size calculator *(WIP)*
+
+---
+
+## 🌍 Habitat & Landscape Service
+**Complexity: Medium-High** - Requires spatial analysis and GIS-like calculations
+
+### ✅ Completed
+- [ ] *Not started*
+
+### 📋 Planned
+- [ ] Habitat suitability index calculator *(WIP)*
+- [ ] Fragmentation metrics *(WIP)*
+- [ ] Species-area relationship estimator *(WIP)*
+- [ ] Wildlife corridor calculator *(WIP)*
 
 ---
 
 ## 🌡️ Climate Impact Service
+**Complexity: Medium-High** - External data integration and complex modeling
 
 ### ✅ Completed
 - [ ] *Not started*
@@ -154,7 +146,22 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ---
 
+## 🎯 Conservation Planning Service
+**Complexity: High** - Complex optimization algorithms and multi-criteria analysis
+
+### ✅ Completed
+- [ ] *Not started*
+
+### 📋 Planned
+- [ ] Reserve selection algorithms *(WIP)*
+- [ ] Cost-effectiveness analysis *(WIP)*
+- [ ] Threat assessment matrices *(WIP)*
+- [ ] Conservation prioritization *(WIP)*
+
+---
+
 ## 📚 Breed Registry Service
+**Complexity: High** - Different tech stack (Django), complex data models, full CRUD application
 
 ### ✅ Completed
 - [x] Django project structure
