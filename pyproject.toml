@@ -12,7 +12,7 @@ python = "^3.9"
 pydantic = "^2.5.0"
 python-jose = "^3.3.0"
 passlib = "^1.7.4"
-python-multipart = "^0.0.6"
+python-multipart = "^0.0.18"
 redis = "^5.0.0"
 
 [tool.poetry.group.dev.dependencies]
