@@ -18,7 +18,7 @@ import { API_URLS } from '../config/api';
 const SamplingTools = () => {
   // Sample Size Calculator state
   const [sampleSizeData, setSampleSizeData] = useState({
-    population_size: '',
+    population_size: '', // Optional - leave empty for infinite population
     expected_proportion: '0.5',
     margin_of_error: '0.05',
     confidence_level: '0.95'
@@ -29,8 +29,8 @@ const SamplingTools = () => {
 
   // Detection Probability state
   const [detectionData, setDetectionData] = useState({
-    detections: '',
-    surveys: '',
+    detections: '15',
+    surveys: '20',
     confidence_level: '0.95'
   });
   const [detectionResult, setDetectionResult] = useState(null);
@@ -39,9 +39,9 @@ const SamplingTools = () => {
 
   // Capture-Recapture state
   const [captureData, setCaptureData] = useState({
-    marked_first_sample: '',
-    total_second_sample: '',
-    marked_in_second: ''
+    marked_first_sample: '50',
+    total_second_sample: '40',
+    marked_in_second: '8'
   });
   const [captureResult, setCaptureResult] = useState(null);
   const [captureLoading, setCaptureLoading] = useState(false);
@@ -50,8 +50,8 @@ const SamplingTools = () => {
   // Distance Sampling state
   const [distanceData, setDistanceData] = useState({
     distances: '5.2,12.1,8.7,15.3,3.4,9.8,18.2,6.5',
-    transect_length: '',
-    transect_width: ''
+    transect_length: '1000',
+    transect_width: '25'
   });
   const [distanceResult, setDistanceResult] = useState(null);
   const [distanceLoading, setDistanceLoading] = useState(false);

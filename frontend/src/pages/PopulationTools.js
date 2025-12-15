@@ -16,18 +16,18 @@ import { API_URLS } from '../config/api';
 
 const PopulationTools = () => {
   const [growthData, setGrowthData] = useState({
-    initial_population: '',
-    growth_rate: '',
-    years: '',
-    carrying_capacity: ''
+    initial_population: '100',
+    growth_rate: '0.05',
+    years: '20',
+    carrying_capacity: '' // Optional - leave empty for exponential growth
   });
   const [growthResult, setGrowthResult] = useState(null);
   const [growthLoading, setGrowthLoading] = useState(false);
   const [growthError, setGrowthError] = useState(null);
 
   const [effectivePopData, setEffectivePopData] = useState({
-    breeding_males: '',
-    breeding_females: ''
+    breeding_males: '25',
+    breeding_females: '30'
   });
   const [effectivePopResult, setEffectivePopResult] = useState(null);
   const [effectivePopLoading, setEffectivePopLoading] = useState(false);
@@ -35,11 +35,11 @@ const PopulationTools = () => {
 
   // PVA state
   const [pvaData, setPvaData] = useState({
-    initial_population: '',
-    growth_rate: '',
-    environmental_variance: '',
-    carrying_capacity: '',
-    years: '',
+    initial_population: '50',
+    growth_rate: '0.03',
+    environmental_variance: '0.15',
+    carrying_capacity: '200',
+    years: '50',
     simulations: '1000'
   });
   const [pvaResult, setPvaResult] = useState(null);
