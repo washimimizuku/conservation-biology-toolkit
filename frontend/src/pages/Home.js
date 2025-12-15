@@ -312,13 +312,13 @@ const Home = () => {
                 Share your conservation analysis needs and tool ideas
               </Typography>
               <MuiLink 
-                href="https://github.com/washimimizuku/conservation-biology-toolkit/discussions"
+                href="https://github.com/washimimizuku/conservation-biology-toolkit/issues/new?template=feature_request.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 color="primary"
                 underline="hover"
               >
-                Start Discussion
+                Request Feature
               </MuiLink>
             </Card>
           </Grid>

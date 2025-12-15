@@ -146,12 +146,12 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const githubIssuesLink = screen.getByText('Open Issue');
-    const discussionsLink = screen.getByText('Start Discussion');
+    const discussionsLink = screen.getByText('Request Feature');
     const bugReportLink = screen.getByText('Report Bug');
     const viewSourceLink = screen.getByText('View Source');
     
     expect(githubIssuesLink).toHaveAttribute('href', 'https://github.com/washimimizuku/conservation-biology-toolkit/issues/new');
-    expect(discussionsLink).toHaveAttribute('href', 'https://github.com/washimimizuku/conservation-biology-toolkit/discussions');
+    expect(discussionsLink).toHaveAttribute('href', 'https://github.com/washimimizuku/conservation-biology-toolkit/issues/new?template=feature_request.md');
     expect(bugReportLink).toHaveAttribute('href', 'https://github.com/washimimizuku/conservation-biology-toolkit/issues/new?template=bug_report.md');
     expect(viewSourceLink).toHaveAttribute('href', 'https://github.com/washimimizuku/conservation-biology-toolkit');
   });
@@ -161,7 +161,7 @@ describe('Home', () => {
     
     const externalLinks = [
       screen.getByText('Open Issue'),
-      screen.getByText('Start Discussion'),
+      screen.getByText('Request Feature'),
       screen.getByText('Report Bug'),
       screen.getByText('View Source')
     ];
