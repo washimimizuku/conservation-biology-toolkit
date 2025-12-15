@@ -91,6 +91,16 @@ services:
     volumes:
       - ./services/habitat-landscape:/app
 
+  # Climate Impact Assessment - FastAPI Service
+  climate-impact:
+    build:
+      context: ./services/climate-impact
+      dockerfile: Dockerfile
+    ports:
+      - "8007:8007"
+    volumes:
+      - ./services/climate-impact:/app
+
   # Frontend - React App
   frontend:
     build: 
@@ -109,6 +119,7 @@ services:
       - genetic-diversity
       - species-assessment
       - habitat-landscape
+      - climate-impact
       # - breed-registry  # Disabled until breed registry is implemented
 
   # Reverse Proxy
@@ -125,6 +136,7 @@ services:
       - genetic-diversity
       - species-assessment
       - habitat-landscape
+      - climate-impact
       - frontend
 
 # Volumes disabled until breed registry is implemented

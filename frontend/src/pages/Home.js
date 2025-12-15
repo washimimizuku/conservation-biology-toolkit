@@ -59,6 +59,13 @@ const Home = () => {
       status: 'Available'
     },
     {
+      title: '🌡️ Climate Impact Assessment',
+      description: 'Climate change vulnerability analysis and adaptation planning tools',
+      tools: ['Temperature Tolerance', 'Phenology Shift', 'Sea Level Rise', 'Climate Velocity'],
+      link: '/climate-impact',
+      status: 'Available'
+    },
+    {
       title: '📚 Breed Registry',
       description: 'Comprehensive animal records, pedigree tracking, and breeding management',
       tools: ['Animal Records', 'Pedigree Tracking', 'Breeding Plans'],
@@ -97,9 +104,10 @@ const Home = () => {
             🚀 Ready to Use Now!
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            <strong>Four complete tool suites are live!</strong> Population Analysis for demographic modeling, 
+            <strong>Six complete tool suites are live!</strong> Population Analysis for demographic modeling, 
             Sampling & Survey Design for statistical analysis, Genetic Diversity for population genetics,
-            and Species Assessment for conservation status evaluation.
+            Species Assessment for conservation status evaluation, Habitat & Landscape for spatial analysis,
+            and Climate Impact Assessment for climate vulnerability analysis.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Button
@@ -211,6 +219,28 @@ const Home = () => {
               }}
             >
               Habitat & Landscape
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/climate-impact"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                boxShadow: '0 4px 8px 2px rgba(33, 150, 243, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(33, 150, 243, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Climate Impact
             </Button>
           </Box>
         </Box>

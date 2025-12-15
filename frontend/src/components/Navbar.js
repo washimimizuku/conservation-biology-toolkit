@@ -12,6 +12,7 @@ const Navbar = () => {
     { label: 'Genetic Tools', path: '/genetic-tools' },
     { label: 'Species Assessment', path: '/species-assessment' },
     { label: 'Habitat & Landscape', path: '/habitat-landscape' },
+    { label: 'Climate Impact', path: '/climate-impact' },
     { label: 'Breed Registry', path: '/breed-registry' },
   ];
 
