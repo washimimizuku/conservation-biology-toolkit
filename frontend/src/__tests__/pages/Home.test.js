@@ -34,7 +34,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     expect(screen.getByText('🚀 Ready to Use Now!')).toBeInTheDocument();
-    expect(screen.getByText(/Two complete tool suites are live!/)).toBeInTheDocument();
+    expect(screen.getByText(/Three complete tool suites are live!/)).toBeInTheDocument();
   });
 
   test('renders call-to-action buttons', () => {
@@ -71,7 +71,7 @@ describe('Home', () => {
     
     // Available tools should have success chips
     const availableChips = screen.getAllByText('Available');
-    expect(availableChips).toHaveLength(2); // Population Analysis and Sampling & Survey Design
+    expect(availableChips).toHaveLength(3); // Population Analysis, Sampling & Survey Design, and Genetic Diversity
     
     // Coming soon tools should have chips (both in status and buttons)
     const comingSoonElements = screen.getAllByText('Coming Soon');
@@ -106,7 +106,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const availableButtons = screen.getAllByText('Explore Tools Now');
-    expect(availableButtons).toHaveLength(2);
+    expect(availableButtons).toHaveLength(3);
     
     availableButtons.forEach(button => {
       expect(button).not.toBeDisabled();
@@ -117,7 +117,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const comingSoonButtons = screen.getAllByRole('link', { name: 'Coming Soon' });
-    expect(comingSoonButtons).toHaveLength(3);
+    expect(comingSoonButtons).toHaveLength(2);
     
     comingSoonButtons.forEach(button => {
       expect(button).toHaveAttribute('aria-disabled', 'true');

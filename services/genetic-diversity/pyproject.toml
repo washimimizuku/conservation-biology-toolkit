@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "genetic-diversity-service"
+version = "0.1.0"
+description = "Genetic diversity analysis tools for conservation biology"
+authors = ["Conservation Biology Toolkit Team"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.115.0"
+uvicorn = "^0.32.0"
+pydantic = "^2.5.0"
+numpy = "^1.26.0"
+scipy = "^1.11.0"
+pandas = "^2.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-asyncio = "^0.21.0"
+pytest-cov = "^4.1.0"
+httpx = "^0.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "."]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "--cov=main --cov-report=html --cov-report=term-missing"

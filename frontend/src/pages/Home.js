@@ -40,9 +40,9 @@ const Home = () => {
     {
       title: '🔬 Genetic Diversity',
       description: 'Hardy-Weinberg equilibrium, inbreeding coefficients, and genetic bottleneck detection',
-      tools: ['Hardy-Weinberg Test', 'Inbreeding Calculator', 'Bottleneck Detection'],
+      tools: ['Hardy-Weinberg Test', 'Inbreeding Calculator', 'Bottleneck Detection', 'Allelic Richness'],
       link: '/genetic-tools',
-      status: 'Coming Soon'
+      status: 'Available'
     },
     {
       title: '🌍 Habitat & Landscape',
@@ -90,8 +90,8 @@ const Home = () => {
             🚀 Ready to Use Now!
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            <strong>Two complete tool suites are live!</strong> Population Analysis for demographic modeling 
-            and PVA simulations, plus Sampling & Survey Design for statistical survey planning and analysis.
+            <strong>Three complete tool suites are live!</strong> Population Analysis for demographic modeling, 
+            Sampling & Survey Design for statistical analysis, and Genetic Diversity for population genetics.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Button
@@ -137,6 +137,28 @@ const Home = () => {
               }}
             >
               Sampling & Survey
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/genetic-tools"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+                boxShadow: '0 4px 8px 2px rgba(156, 39, 176, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(156, 39, 176, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Genetic Diversity
             </Button>
           </Box>
         </Box>

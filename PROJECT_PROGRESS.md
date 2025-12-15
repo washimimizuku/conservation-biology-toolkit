@@ -134,13 +134,44 @@ A comprehensive web-based platform providing essential computational tools for c
 **Complexity: Low-Medium** - Specialized genetics calculations but well-established formulas
 
 ### ✅ Completed
-- [ ] *Not started*
+- [x] FastAPI service structure
+- [x] Poetry configuration
+- [x] Hardy-Weinberg equilibrium calculator (chi-square test)
+- [x] Inbreeding coefficient estimator (FIS, FST, FIT)
+- [x] Bottleneck detection tools (severity assessment)
+- [x] Allelic richness calculator (rarefaction method)
+- [x] API documentation (auto-generated)
+- [x] Docker configuration
+- [x] Nginx routing setup
+
+### ✅ Completed (Frontend Integration)
+- [x] Complete frontend integration for all 4 tools
+- [x] Hardy-Weinberg Equilibrium Test with genotype input parsing
+- [x] Inbreeding Coefficient Calculator with F-statistics display
+- [x] Bottleneck Detection with population size analysis
+- [x] Allelic Richness Calculator with rarefaction results table
+- [x] Navigation and routing integration
+- [x] Input validation and error handling
+- [x] Responsive design and consistent styling
+- [x] Scientific references section
+
+### ✅ Completed (Testing & Quality Assurance)
+- [x] Comprehensive unit test suite (36 test cases)
+- [x] 83% code coverage with pytest
+- [x] Mathematical accuracy validation for all genetic methods
+- [x] API endpoint testing with FastAPI TestClient
+- [x] Edge case handling (single alleles, zero values, invalid inputs)
+- [x] Scientific formula verification against published methods
+- [x] Test runner script and configuration
+- [x] Coverage reporting (HTML and terminal)
+- [x] Pydantic model validation for all inputs
 
 ### 📋 Planned
-- [ ] Hardy-Weinberg equilibrium calculator *(WIP)*
-- [ ] Inbreeding coefficient estimator *(WIP)*
-- [ ] Bottleneck detection tools *(WIP)*
-- [ ] Allelic richness calculator *(WIP)*
+- [ ] Advanced Hardy-Weinberg tests (multiple populations)
+- [ ] Linkage disequilibrium analysis
+- [ ] Population structure analysis (STRUCTURE-like algorithms)
+- [ ] Phylogenetic diversity metrics
+- [ ] Data visualization charts for results
 
 ---
 
@@ -247,13 +278,14 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ### Week 2
 - [x] Implement Sampling & Survey Design service (first new service - lowest complexity)
+- [x] Deploy Genetic Diversity service (second service - low-medium complexity)
 - [ ] Create data visualization components
 - [ ] Add user authentication
 
 ### Week 3
-- [ ] Deploy Genetic Diversity service (second service - low-medium complexity)
+- [ ] Implement Species Assessment service (third service - medium complexity)
 - [ ] Implement file upload/export functionality
-- [ ] Add comprehensive testing
+- [ ] Add comprehensive testing for new services
 
 ---
 
@@ -261,10 +293,10 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ### MVP (Month 1) - Foundation + Low Complexity Services
 - [x] Population Analysis service (complete)
-- [x] Sampling & Survey Design service
-- [ ] Genetic Diversity service
-- [ ] Responsive web interface
-- [ ] Docker deployment
+- [x] Sampling & Survey Design service (complete)
+- [x] Genetic Diversity service (complete)
+- [x] Responsive web interface
+- [x] Docker deployment
 
 ### Beta Release (Month 3) - Medium Complexity Services
 - [ ] Species Assessment service

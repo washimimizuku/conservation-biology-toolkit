@@ -3,6 +3,7 @@ jest.mock('../../config/api', () => ({
   API_URLS: {
     populationAnalysis: 'http://localhost:8002',
     samplingSurvey: 'http://localhost:8003',
+    geneticDiversity: 'http://localhost:8004',
     breedRegistry: 'http://localhost:8001'
   }
 }));
@@ -14,12 +15,14 @@ describe('API Configuration', () => {
     expect(API_URLS).toBeDefined();
     expect(API_URLS.populationAnalysis).toBeDefined();
     expect(API_URLS.samplingSurvey).toBeDefined();
+    expect(API_URLS.geneticDiversity).toBeDefined();
     expect(API_URLS.breedRegistry).toBeDefined();
   });
 
   test('API URLs are properly formatted for development', () => {
     expect(API_URLS.populationAnalysis).toMatch(/^https?:\/\/localhost:\d+$/);
     expect(API_URLS.samplingSurvey).toMatch(/^https?:\/\/localhost:\d+$/);
+    expect(API_URLS.geneticDiversity).toMatch(/^https?:\/\/localhost:\d+$/);
     expect(API_URLS.breedRegistry).toMatch(/^https?:\/\/localhost:\d+$/);
   });
 
@@ -53,6 +56,7 @@ describe('API Configuration', () => {
     // Test development environment (current)
     expect(API_URLS.populationAnalysis).toBe('http://localhost:8002');
     expect(API_URLS.samplingSurvey).toBe('http://localhost:8003');
+    expect(API_URLS.geneticDiversity).toBe('http://localhost:8004');
     expect(API_URLS.breedRegistry).toBe('http://localhost:8001');
     
     // Test that environment variable exists
