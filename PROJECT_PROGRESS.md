@@ -110,6 +110,17 @@ A comprehensive web-based platform providing essential computational tools for c
 - [x] Input validation and error handling
 - [x] Responsive design and consistent styling
 
+### ✅ Completed (Testing & Quality Assurance)
+- [x] Comprehensive unit test suite (31 test cases)
+- [x] 94% code coverage with pytest
+- [x] Mathematical accuracy validation for all statistical methods
+- [x] API endpoint testing with FastAPI TestClient
+- [x] Edge case handling (R=1, p=0, p=1, distance=0)
+- [x] Scientific formula verification against published methods
+- [x] Test runner script and configuration
+- [x] Coverage reporting (HTML and terminal)
+- [x] JSON serialization fixes for extreme values
+
 ### 📋 Planned
 - [ ] Advanced detection functions (hazard-rate, uniform)
 - [ ] Multi-species capture-recapture models
