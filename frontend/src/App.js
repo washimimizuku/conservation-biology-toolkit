@@ -10,6 +10,7 @@ import GeneticTools from './pages/GeneticTools';
 import SpeciesAssessment from './pages/SpeciesAssessment';
 import HabitatLandscape from './pages/HabitatLandscape';
 import ClimateImpact from './pages/ClimateImpact';
+import ConservationPlanning from './pages/ConservationPlanning';
 import './App.css';
 
 const theme = createTheme({
@@ -38,6 +39,7 @@ function App() {
             <Route path="/species-assessment" element={<SpeciesAssessment />} />
             <Route path="/habitat-landscape" element={<HabitatLandscape />} />
             <Route path="/climate-impact" element={<ClimateImpact />} />
+            <Route path="/conservation-planning" element={<ConservationPlanning />} />
           </Routes>
         </div>
       </Router>

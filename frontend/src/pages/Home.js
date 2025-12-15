@@ -66,6 +66,13 @@ const Home = () => {
       status: 'Available'
     },
     {
+      title: '🎯 Conservation Planning',
+      description: 'Systematic conservation planning and prioritization tools',
+      tools: ['Priority Analysis', 'Threat Assessment', 'Cost-Effectiveness', 'Reserve Selection'],
+      link: '/conservation-planning',
+      status: 'Available'
+    },
+    {
       title: '📚 Breed Registry',
       description: 'Comprehensive animal records, pedigree tracking, and breeding management',
       tools: ['Animal Records', 'Pedigree Tracking', 'Breeding Plans'],
@@ -104,10 +111,11 @@ const Home = () => {
             🚀 Ready to Use Now!
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            <strong>Six complete tool suites are live!</strong> Population Analysis for demographic modeling, 
+            <strong>Seven complete tool suites are live!</strong> Population Analysis for demographic modeling, 
             Sampling & Survey Design for statistical analysis, Genetic Diversity for population genetics,
             Species Assessment for conservation status evaluation, Habitat & Landscape for spatial analysis,
-            and Climate Impact Assessment for climate vulnerability analysis.
+            Climate Impact Assessment for climate vulnerability analysis, and Conservation Planning for 
+            systematic prioritization and optimization.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Button
@@ -241,6 +249,28 @@ const Home = () => {
               }}
             >
               Climate Impact
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/conservation-planning"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+                boxShadow: '0 4px 8px 2px rgba(233, 30, 99, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(233, 30, 99, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Conservation Planning
             </Button>
           </Box>
         </Box>

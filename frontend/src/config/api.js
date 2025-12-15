@@ -7,6 +7,7 @@ const API_CONFIG = {
     speciesAssessment: 'http://localhost:8005',
     habitatLandscape: 'http://localhost:8006',
     climateImpact: 'http://localhost:8007',
+    conservationPlanning: 'http://localhost:8008',
     breedRegistry: 'http://localhost:8001',
   },
   production: {
@@ -16,6 +17,7 @@ const API_CONFIG = {
     speciesAssessment: '/api/species-assessment',
     habitatLandscape: '/api/habitat-landscape',
     climateImpact: '/api/climate-impact',
+    conservationPlanning: '/api/conservation-planning',
     breedRegistry: '/api/breed-registry',
   }
 };

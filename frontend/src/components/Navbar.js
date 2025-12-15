@@ -13,6 +13,7 @@ const Navbar = () => {
     { label: 'Species Assessment', path: '/species-assessment' },
     { label: 'Habitat & Landscape', path: '/habitat-landscape' },
     { label: 'Climate Impact', path: '/climate-impact' },
+    { label: 'Conservation Planning', path: '/conservation-planning' },
     { label: 'Breed Registry', path: '/breed-registry' },
   ];
 
