@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "sampling-survey"
+version = "0.1.0"
+description = "Sampling and survey design tools for conservation biology"
+authors = ["Nuno Barreto <nbarreto@gmail.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.115.6"
+uvicorn = "^0.32.1"
+numpy = "^1.24.0"
+scipy = "^1.11.0"
+pandas = "^2.1.0"
+matplotlib = "^3.7.0"
+plotly = "^5.17.0"
+pydantic = "^2.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+httpx = "^0.25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

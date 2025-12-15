@@ -76,17 +76,26 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ---
 
-## � Seampling & Survey Design Service
+## 📋 Sampling & Survey Design Service
 **Complexity: Low** - Statistical calculations similar to population analysis
 
 ### ✅ Completed
-- [ ] *Not started*
+- [x] FastAPI service structure
+- [x] Poetry configuration
+- [x] Sample size calculator (with finite population correction)
+- [x] Detection probability estimator (Wilson score intervals)
+- [x] Capture-recapture analysis (Lincoln-Petersen estimator)
+- [x] Distance sampling tools (half-normal detection function)
+- [x] API documentation (auto-generated)
+- [x] Docker configuration
+- [x] Nginx routing setup
 
 ### 📋 Planned
-- [ ] Sample size calculators *(WIP)*
-- [ ] Detection probability estimator *(WIP)*
-- [ ] Capture-recapture analysis *(WIP)*
-- [ ] Distance sampling tools *(WIP)*
+- [ ] Frontend integration for all tools
+- [ ] Advanced detection functions (hazard-rate, uniform)
+- [ ] Multi-species capture-recapture models
+- [ ] Stratified sampling calculators
+- [ ] Power analysis tools
 
 ---
 
@@ -206,7 +215,7 @@ A comprehensive web-based platform providing essential computational tools for c
 - [ ] Set up breed registry Django models
 
 ### Week 2
-- [ ] Implement Sampling & Survey Design service (first new service - lowest complexity)
+- [x] Implement Sampling & Survey Design service (first new service - lowest complexity)
 - [ ] Create data visualization components
 - [ ] Add user authentication
 
@@ -221,7 +230,7 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ### MVP (Month 1) - Foundation + Low Complexity Services
 - [x] Population Analysis service (complete)
-- [ ] Sampling & Survey Design service
+- [x] Sampling & Survey Design service
 - [ ] Genetic Diversity service
 - [ ] Responsive web interface
 - [ ] Docker deployment
