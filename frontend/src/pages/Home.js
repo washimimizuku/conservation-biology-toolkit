@@ -53,10 +53,10 @@ const Home = () => {
     },
     {
       title: '🌍 Habitat & Landscape',
-      description: 'Habitat suitability, fragmentation metrics, and corridor design',
-      tools: ['Habitat Suitability', 'Fragmentation Analysis', 'Corridor Calculator'],
-      link: '/habitat-tools',
-      status: 'Coming Soon'
+      description: 'Habitat suitability, fragmentation metrics, and species-area relationships',
+      tools: ['Habitat Suitability Index', 'Species-Area Relationship', 'Fragmentation Metrics'],
+      link: '/habitat-landscape',
+      status: 'Available'
     },
     {
       title: '📚 Breed Registry',
@@ -189,6 +189,28 @@ const Home = () => {
               }}
             >
               Species Assessment
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/habitat-landscape"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
+                boxShadow: '0 4px 8px 2px rgba(121, 85, 72, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(121, 85, 72, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Habitat & Landscape
             </Button>
           </Box>
         </Box>

@@ -72,7 +72,7 @@ describe('Home', () => {
     
     // Available tools should have success chips
     const availableChips = screen.getAllByText('Available');
-    expect(availableChips).toHaveLength(4); // Population Analysis, Sampling & Survey Design, Genetic Diversity, and Species Assessment
+    expect(availableChips).toHaveLength(5); // Population Analysis, Sampling & Survey Design, Genetic Diversity, Species Assessment, and Habitat & Landscape
     
     // Coming soon tools should have chips (both in status and buttons)
     const comingSoonElements = screen.getAllByText('Coming Soon');
@@ -108,7 +108,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const availableButtons = screen.getAllByText('Explore Tools Now');
-    expect(availableButtons).toHaveLength(4);
+    expect(availableButtons).toHaveLength(5);
     
     availableButtons.forEach(button => {
       expect(button).not.toBeDisabled();
@@ -119,7 +119,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const comingSoonButtons = screen.getAllByRole('link', { name: 'Coming Soon' });
-    expect(comingSoonButtons).toHaveLength(2);
+    expect(comingSoonButtons).toHaveLength(1); // Only Breed Registry is coming soon now
     
     comingSoonButtons.forEach(button => {
       expect(button).toHaveAttribute('aria-disabled', 'true');

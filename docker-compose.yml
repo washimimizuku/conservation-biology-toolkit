@@ -81,6 +81,16 @@ services:
     volumes:
       - ./services/species-assessment:/app
 
+  # Habitat & Landscape - FastAPI Service
+  habitat-landscape:
+    build:
+      context: ./services/habitat-landscape
+      dockerfile: Dockerfile
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./services/habitat-landscape:/app
+
   # Frontend - React App
   frontend:
     build: 
@@ -98,6 +108,7 @@ services:
       - sampling-survey
       - genetic-diversity
       - species-assessment
+      - habitat-landscape
       # - breed-registry  # Disabled until breed registry is implemented
 
   # Reverse Proxy
@@ -113,6 +124,7 @@ services:
       - sampling-survey
       - genetic-diversity
       - species-assessment
+      - habitat-landscape
       - frontend
 
 # Volumes disabled until breed registry is implemented

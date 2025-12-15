@@ -5,6 +5,7 @@ const API_CONFIG = {
     samplingSurvey: 'http://localhost:8003',
     geneticDiversity: 'http://localhost:8004',
     speciesAssessment: 'http://localhost:8005',
+    habitatLandscape: 'http://localhost:8006',
     breedRegistry: 'http://localhost:8001',
   },
   production: {
@@ -12,6 +13,7 @@ const API_CONFIG = {
     samplingSurvey: '/api/sampling-survey',
     geneticDiversity: '/api/genetic-diversity',
     speciesAssessment: '/api/species-assessment',
+    habitatLandscape: '/api/habitat-landscape',
     breedRegistry: '/api/breed-registry',
   }
 };

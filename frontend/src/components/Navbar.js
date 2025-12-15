@@ -11,6 +11,7 @@ const Navbar = () => {
     { label: 'Sampling Tools', path: '/sampling-tools' },
     { label: 'Genetic Tools', path: '/genetic-tools' },
     { label: 'Species Assessment', path: '/species-assessment' },
+    { label: 'Habitat & Landscape', path: '/habitat-landscape' },
     { label: 'Breed Registry', path: '/breed-registry' },
   ];
 
