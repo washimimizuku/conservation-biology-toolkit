@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Container,
   Typography,
-  Paper,
   Box,
   Grid,
   TextField,
@@ -12,12 +11,6 @@ import {
   CardActions,
   Alert,
   Chip,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   CircularProgress,
   FormControl,
   InputLabel,
@@ -26,7 +19,7 @@ import {
   FormControlLabel,
   Switch
 } from '@mui/material';
-import { Assessment, Warning, LocationOn, TrendingDown } from '@mui/icons-material';
+import { Assessment, Warning, LocationOn } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 
@@ -291,7 +284,7 @@ const SpeciesAssessment = () => {
                   <Typography variant="body2" paragraph>
                     <strong>Criteria Met:</strong>
                   </Typography>
-                  {iucnResults.criteria_met.map((criterion, index) => (
+                  {iucnResults.criteria_met && iucnResults.criteria_met.map((criterion, index) => (
                     <Chip key={index} label={criterion} size="small" sx={{ mr: 1, mb: 1 }} />
                   ))}
                   
@@ -427,7 +420,7 @@ const SpeciesAssessment = () => {
                   <Typography variant="body2" sx={{ mt: 1 }}>
                     <strong>Contributing Factors:</strong>
                   </Typography>
-                  {Object.entries(riskResults.contributing_factors).map(([factor, score]) => (
+                  {riskResults.contributing_factors && Object.entries(riskResults.contributing_factors).map(([factor, score]) => (
                     <Chip 
                       key={factor} 
                       label={`${factor}: ${(score * 100).toFixed(0)}%`} 
@@ -439,7 +432,7 @@ const SpeciesAssessment = () => {
                   <Typography variant="body2" sx={{ mt: 2 }}>
                     <strong>Recommendations:</strong>
                   </Typography>
-                  {riskResults.recommendations.map((rec, index) => (
+                  {riskResults.recommendations && riskResults.recommendations.map((rec, index) => (
                     <Typography key={index} variant="body2" sx={{ ml: 2 }}>
                       • {rec}
                     </Typography>
