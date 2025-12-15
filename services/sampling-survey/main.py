@@ -168,9 +168,9 @@ async def capture_recapture_analysis(data: CaptureRecaptureInput):
         ci_lower = exp(log_N - z * log_se)
         ci_upper = exp(log_N + z * log_se)
     else:
-        se = float('inf')
+        se = 1e10  # Use very large number instead of infinity for JSON compatibility
         ci_lower = N_hat
-        ci_upper = float('inf')
+        ci_upper = 1e10  # Use very large number instead of infinity for JSON compatibility
     
     return CaptureRecaptureOutput(
         population_estimate=N_hat,
