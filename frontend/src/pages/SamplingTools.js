@@ -181,7 +181,7 @@ const SamplingTools = () => {
                   label="Expected Proportion"
                   type="number"
                   step="0.01"
-                  inputProps={{ min: 0, max: 1 }}
+                  inputProps={{ min: 0.01, max: 0.99, step: 0.01 }}
                   value={sampleSizeData.expected_proportion}
                   onChange={(e) => setSampleSizeData({...sampleSizeData, expected_proportion: e.target.value})}
                   margin="normal"
@@ -192,8 +192,8 @@ const SamplingTools = () => {
                   fullWidth
                   label="Margin of Error"
                   type="number"
-                  step="0.01"
-                  inputProps={{ min: 0.01, max: 0.5 }}
+                  step="0.001"
+                  inputProps={{ min: 0.001, max: 0.5, step: 0.001 }}
                   value={sampleSizeData.margin_of_error}
                   onChange={(e) => setSampleSizeData({...sampleSizeData, margin_of_error: e.target.value})}
                   margin="normal"
@@ -205,7 +205,7 @@ const SamplingTools = () => {
                   label="Confidence Level"
                   type="number"
                   step="0.01"
-                  inputProps={{ min: 0.5, max: 0.99 }}
+                  inputProps={{ min: 0.50, max: 0.999, step: 0.01 }}
                   value={sampleSizeData.confidence_level}
                   onChange={(e) => setSampleSizeData({...sampleSizeData, confidence_level: e.target.value})}
                   margin="normal"
@@ -297,7 +297,7 @@ const SamplingTools = () => {
                   label="Confidence Level"
                   type="number"
                   step="0.01"
-                  inputProps={{ min: 0.5, max: 0.99 }}
+                  inputProps={{ min: 0.50, max: 0.999, step: 0.01 }}
                   value={detectionData.confidence_level}
                   onChange={(e) => setDetectionData({...detectionData, confidence_level: e.target.value})}
                   margin="normal"
