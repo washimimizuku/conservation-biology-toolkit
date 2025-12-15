@@ -2,10 +2,12 @@
 const API_CONFIG = {
   development: {
     populationAnalysis: 'http://localhost:8002',
+    samplingSurvey: 'http://localhost:8003',
     breedRegistry: 'http://localhost:8001',
   },
   production: {
     populationAnalysis: '/api/population-analysis',
+    samplingSurvey: '/api/sampling-survey',
     breedRegistry: '/api/breed-registry',
   }
 };

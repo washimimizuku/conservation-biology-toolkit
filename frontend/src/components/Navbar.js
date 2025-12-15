@@ -8,6 +8,7 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'Population Tools', path: '/population-tools' },
+    { label: 'Sampling Tools', path: '/sampling-tools' },
     { label: 'Genetic Tools', path: '/genetic-tools' },
     { label: 'Breed Registry', path: '/breed-registry' },
   ];

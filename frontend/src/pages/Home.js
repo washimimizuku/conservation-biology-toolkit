@@ -31,6 +31,13 @@ const Home = () => {
       status: 'Available'
     },
     {
+      title: '📋 Sampling & Survey Design',
+      description: 'Statistical tools for survey planning and sampling data analysis',
+      tools: ['Sample Size Calculator', 'Detection Probability', 'Capture-Recapture', 'Distance Sampling'],
+      link: '/sampling-tools',
+      status: 'Available'
+    },
+    {
       title: '🔬 Genetic Diversity',
       description: 'Hardy-Weinberg equilibrium, inbreeding coefficients, and genetic bottleneck detection',
       tools: ['Hardy-Weinberg Test', 'Inbreeding Calculator', 'Bottleneck Detection'],
@@ -83,31 +90,55 @@ const Home = () => {
             🚀 Ready to Use Now!
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            <strong>Population Analysis tools are live!</strong> Calculate population growth, 
-            effective population size, run PVA simulations, and model metapopulation dynamics.
+            <strong>Two complete tool suites are live!</strong> Population Analysis for demographic modeling 
+            and PVA simulations, plus Sampling & Survey Design for statistical survey planning and analysis.
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            component={Link}
-            to="/population-tools"
-            startIcon={<PlayArrowIcon />}
-            sx={{
-              px: 4,
-              py: 1.5,
-              fontSize: '1.1rem',
-              fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-              boxShadow: '0 4px 8px 2px rgba(33, 203, 243, .3)',
-              '&:hover': {
-                background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
-                boxShadow: '0 6px 12px 4px rgba(33, 203, 243, .4)',
-                transform: 'translateY(-2px)'
-              }
-            }}
-          >
-            Try Population Analysis Tools
-          </Button>
+          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/population-tools"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+                boxShadow: '0 4px 8px 2px rgba(33, 203, 243, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #1976D2 30%, #1BA3D3 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(33, 203, 243, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Population Analysis
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/sampling-tools"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #4CAF50 30%, #8BC34A 90%)',
+                boxShadow: '0 4px 8px 2px rgba(76, 175, 80, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #388E3C 30%, #689F38 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(76, 175, 80, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Sampling & Survey
+            </Button>
+          </Box>
         </Box>
       </Box>
 

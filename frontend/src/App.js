@@ -5,6 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import PopulationTools from './pages/PopulationTools';
+import SamplingTools from './pages/SamplingTools';
 import './App.css';
 
 const theme = createTheme({
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/population-tools" element={<PopulationTools />} />
+            <Route path="/sampling-tools" element={<SamplingTools />} />
           </Routes>
         </div>
       </Router>

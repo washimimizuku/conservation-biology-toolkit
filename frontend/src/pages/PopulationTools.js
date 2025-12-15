@@ -176,6 +176,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Initial Population"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={growthData.initial_population}
                   onChange={(e) => setGrowthData({...growthData, initial_population: e.target.value})}
                   margin="normal"
@@ -196,6 +198,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Number of Years"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={growthData.years}
                   onChange={(e) => setGrowthData({...growthData, years: e.target.value})}
                   margin="normal"
@@ -205,6 +209,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Carrying Capacity (optional)"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={growthData.carrying_capacity}
                   onChange={(e) => setGrowthData({...growthData, carrying_capacity: e.target.value})}
                   margin="normal"
@@ -265,6 +271,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Number of Breeding Males"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={effectivePopData.breeding_males}
                   onChange={(e) => setEffectivePopData({...effectivePopData, breeding_males: e.target.value})}
                   margin="normal"
@@ -274,6 +282,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Number of Breeding Females"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={effectivePopData.breeding_females}
                   onChange={(e) => setEffectivePopData({...effectivePopData, breeding_females: e.target.value})}
                   margin="normal"
@@ -329,6 +339,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Initial Population"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={pvaData.initial_population}
                   onChange={(e) => setPvaData({...pvaData, initial_population: e.target.value})}
                   margin="normal"
@@ -360,6 +372,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Carrying Capacity"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={pvaData.carrying_capacity}
                   onChange={(e) => setPvaData({...pvaData, carrying_capacity: e.target.value})}
                   margin="normal"
@@ -369,6 +383,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Years to Simulate"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={pvaData.years}
                   onChange={(e) => setPvaData({...pvaData, years: e.target.value})}
                   margin="normal"
@@ -378,6 +394,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Number of Simulations"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 100 }}
                   value={pvaData.simulations}
                   onChange={(e) => setPvaData({...pvaData, simulations: e.target.value})}
                   margin="normal"
@@ -474,6 +492,8 @@ const PopulationTools = () => {
                   fullWidth
                   label="Years to Simulate"
                   type="number"
+                  step="1"
+                  inputProps={{ min: 1 }}
                   value={metaData.years}
                   onChange={(e) => setMetaData({...metaData, years: e.target.value})}
                   margin="normal"
