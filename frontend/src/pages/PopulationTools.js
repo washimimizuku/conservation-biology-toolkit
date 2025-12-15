@@ -170,6 +170,15 @@ const PopulationTools = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Model population growth using exponential or logistic models to predict future population sizes.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Population_growth" target="_blank" rel="noopener noreferrer">
+                  Population Growth (Wikipedia)
+                </a>{' '}•{' '}
+                <a href="https://en.wikipedia.org/wiki/Logistic_function#In_ecology:_modeling_population_growth" target="_blank" rel="noopener noreferrer">
+                  Logistic Growth Model
+                </a>
+              </Typography>
 
               <Box component="form" onSubmit={handleGrowthSubmit} sx={{ mt: 2 }}>
                 <TextField
@@ -265,6 +274,13 @@ const PopulationTools = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Calculate the effective population size (Ne) based on the number of breeding individuals.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Effective_population_size" target="_blank" rel="noopener noreferrer">
+                  Effective Population Size (Wikipedia)
+                </a>{' '}•{' '}
+                Wright, S. (1931). Evolution in Mendelian populations. <em>Genetics</em> 16: 97-159
+              </Typography>
 
               <Box component="form" onSubmit={handleEffectivePopSubmit} sx={{ mt: 2 }}>
                 <TextField
@@ -332,6 +348,13 @@ const PopulationTools = () => {
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Assess extinction risk and population persistence using stochastic population models.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Population_viability_analysis" target="_blank" rel="noopener noreferrer">
+                  Population Viability Analysis (Wikipedia)
+                </a>{' '}•{' '}
+                Shaffer, M.L. (1981). Minimum population sizes for species conservation. <em>BioScience</em> 31: 131-134
               </Typography>
 
               <Box component="form" onSubmit={handlePvaSubmit} sx={{ mt: 2 }}>
@@ -449,6 +472,13 @@ const PopulationTools = () => {
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Simulate population dynamics across connected habitat patches with migration.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Metapopulation" target="_blank" rel="noopener noreferrer">
+                  Metapopulation (Wikipedia)
+                </a>{' '}•{' '}
+                Levins, R. (1969). Some demographic and genetic consequences of environmental heterogeneity. <em>Bull. Entomol. Soc. Am.</em> 15: 237-240
               </Typography>
 
               <Box component="form" onSubmit={handleMetaSubmit} sx={{ mt: 2 }}>

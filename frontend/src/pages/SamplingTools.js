@@ -163,6 +163,13 @@ const SamplingTools = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Determine the optimal sample size needed for population surveys with specified precision.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Sample_size_determination" target="_blank" rel="noopener noreferrer">
+                  Sample Size Determination (Wikipedia)
+                </a>{' '}•{' '}
+                Cochran, W.G. (1977). <em>Sampling Techniques</em>. 3rd ed. John Wiley & Sons
+              </Typography>
 
               <Box component="form" onSubmit={handleSampleSizeSubmit} sx={{ mt: 2 }}>
                 <TextField
@@ -266,6 +273,13 @@ const SamplingTools = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Estimate species detection probability from survey data to account for imperfect detection.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Occupancy%E2%80%93detection_model" target="_blank" rel="noopener noreferrer">
+                  Occupancy-Detection Models (Wikipedia)
+                </a>{' '}•{' '}
+                MacKenzie, D.I. et al. (2002). Estimating site occupancy rates when detection probabilities are less than one. <em>Ecology</em> 83: 2248-2255
+              </Typography>
 
               <Box component="form" onSubmit={handleDetectionSubmit} sx={{ mt: 2 }}>
                 <TextField
@@ -353,6 +367,13 @@ const SamplingTools = () => {
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Estimate population size using Lincoln-Petersen method from mark-recapture data.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Mark_and_recapture" target="_blank" rel="noopener noreferrer">
+                  Mark and Recapture (Wikipedia)
+                </a>{' '}•{' '}
+                Lincoln, F.C. (1930). Calculating waterfowl abundance on the basis of banding returns. <em>USDA Circular</em> 118: 1-4
               </Typography>
 
               <Box component="form" onSubmit={handleCaptureSubmit} sx={{ mt: 2 }}>
@@ -444,6 +465,13 @@ const SamplingTools = () => {
               </Typography>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Estimate animal density from line transect surveys using distance sampling methods.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://en.wikipedia.org/wiki/Distance_sampling" target="_blank" rel="noopener noreferrer">
+                  Distance Sampling (Wikipedia)
+                </a>{' '}•{' '}
+                Buckland, S.T. et al. (2001). <em>Introduction to Distance Sampling</em>. Oxford University Press
               </Typography>
 
               <Box component="form" onSubmit={handleDistanceSubmit} sx={{ mt: 2 }}>
