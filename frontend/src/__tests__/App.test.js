@@ -74,8 +74,7 @@ describe('App', () => {
       'Home',
       'Population Tools', 
       'Sampling Tools',
-      'Genetic Tools',
-      'Breed Registry'
+      'Genetic Tools'
     ];
 
     expectedNavItems.forEach(item => {

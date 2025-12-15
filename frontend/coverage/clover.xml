@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1765813068473" clover="3.2.0">
-  <project timestamp="1765813068473" name="All files">
-    <metrics statements="729" coveredstatements="636" conditionals="545" coveredconditionals="323" methods="283" coveredmethods="238" elements="1557" coveredelements="1197" complexity="0" loc="729" ncloc="729" packages="4" files="11" classes="11"/>
+<coverage generated="1765814408287" clover="3.2.0">
+  <project timestamp="1765814408287" name="All files">
+    <metrics statements="738" coveredstatements="645" conditionals="545" coveredconditionals="323" methods="288" coveredmethods="243" elements="1571" coveredelements="1211" complexity="0" loc="738" ncloc="738" packages="4" files="12" classes="12"/>
     <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/App.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="28" count="9" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
@@ -31,7 +31,19 @@
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="719" coveredstatements="626" conditionals="541" coveredconditionals="320" methods="280" coveredmethods="235"/>
+      <metrics statements="728" coveredstatements="635" conditionals="541" coveredconditionals="320" methods="285" coveredmethods="240"/>
+      <file name="BreedRegistry.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/pages/BreedRegistry.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="10" type="stmt"/>
+        <line num="73" count="10" type="stmt"/>
+        <line num="96" count="10" type="stmt"/>
+        <line num="107" count="10" type="stmt"/>
+        <line num="146" count="60" type="stmt"/>
+        <line num="162" count="240" type="stmt"/>
+        <line num="185" count="40" type="stmt"/>
+        <line num="213" count="80" type="stmt"/>
+      </file>
       <file name="ClimateImpact.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/pages/ClimateImpact.js">
         <metrics statements="111" coveredstatements="96" conditionals="79" coveredconditionals="32" methods="51" coveredmethods="44"/>
         <line num="36" count="2" type="stmt"/>

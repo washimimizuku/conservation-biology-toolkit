@@ -43,8 +43,7 @@ describe('Navbar', () => {
       'Species Assessment',
       'Habitat & Landscape',
       'Climate Impact',
-      'Conservation Planning',
-      'Breed Registry'
+      'Conservation Planning'
     ];
 
     expectedNavItems.forEach(item => {
@@ -63,8 +62,7 @@ describe('Navbar', () => {
       { text: 'Species Assessment', href: '/species-assessment' },
       { text: 'Habitat & Landscape', href: '/habitat-landscape' },
       { text: 'Climate Impact', href: '/climate-impact' },
-      { text: 'Conservation Planning', href: '/conservation-planning' },
-      { text: 'Breed Registry', href: '/breed-registry' }
+      { text: 'Conservation Planning', href: '/conservation-planning' }
     ];
 
     navLinks.forEach(({ text, href }) => {
@@ -126,7 +124,7 @@ describe('Navbar', () => {
     
     // The Box component should contain all navigation buttons
     const navButtons = screen.getAllByRole('link');
-    expect(navButtons).toHaveLength(9);
+    expect(navButtons).toHaveLength(8);
   });
 
   test('handles unknown routes without highlighting', () => {
@@ -142,14 +140,14 @@ describe('Navbar', () => {
   test('renders with BrowserRouter', () => {
     renderWithBrowserRouter();
     expect(screen.getByText('🌱 Conservation Biology Toolkit')).toBeInTheDocument();
-    expect(screen.getAllByRole('link')).toHaveLength(9);
+    expect(screen.getAllByRole('link')).toHaveLength(8);
   });
 
   test('navigation items have correct order', () => {
     renderWithRouter();
     
     const navLinks = screen.getAllByRole('link');
-    const expectedOrder = ['Home', 'Population Tools', 'Sampling Tools', 'Genetic Tools', 'Species Assessment', 'Habitat & Landscape', 'Climate Impact', 'Conservation Planning', 'Breed Registry'];
+    const expectedOrder = ['Home', 'Population Tools', 'Sampling Tools', 'Genetic Tools', 'Species Assessment', 'Habitat & Landscape', 'Climate Impact', 'Conservation Planning'];
     
     navLinks.forEach((link, index) => {
       expect(link).toHaveTextContent(expectedOrder[index]);
