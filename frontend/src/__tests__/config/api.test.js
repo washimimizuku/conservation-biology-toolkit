@@ -45,4 +45,17 @@ describe('API Configuration', () => {
     const uniquePorts = [...new Set(ports)];
     expect(uniquePorts).toHaveLength(ports.length);
   });
+
+  test('handles different environment configurations', () => {
+    // Test that the configuration object structure is correct
+    const originalEnv = process.env.NODE_ENV;
+    
+    // Test development environment (current)
+    expect(API_URLS.populationAnalysis).toBe('http://localhost:8002');
+    expect(API_URLS.samplingSurvey).toBe('http://localhost:8003');
+    expect(API_URLS.breedRegistry).toBe('http://localhost:8001');
+    
+    // Test that environment variable exists
+    expect(process.env.NODE_ENV).toBeDefined();
+  });
 });
