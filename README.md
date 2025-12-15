@@ -14,7 +14,7 @@ This toolkit addresses the critical need for standardized, accessible conservati
 - **Growth Rate & Carrying Capacity** ✅ - Model population dynamics and limits
 - **Metapopulation Dynamics** ✅ - Simulate connected population networks
 
-### � Sampliing & Survey Design ✅ **COMPLETE**
+### 📋 Sampling & Survey Design ✅ **COMPLETE**
 - **Sample Size Calculators** ✅ - Determine optimal survey effort with finite population correction
 - **Detection Probability** ✅ - Account for imperfect species detection using Wilson score intervals
 - **Capture-Recapture Analysis** ✅ - Estimate population size from marked individuals (Lincoln-Petersen)
@@ -38,13 +38,13 @@ This toolkit addresses the critical need for standardized, accessible conservati
 - **Species-Area Relationships** *(Planned)* - Predict species richness in habitat patches
 - **Wildlife Corridor Design** *(Planned)* - Calculate optimal corridor widths for movement
 
-### �️ Climavte Impact Assessment *(Future Release)*
+### 🌡️ Climate Impact Assessment *(Future Release)*
 - **Species Climate Envelopes** *(Planned)* - Model climate suitability ranges
 - **Migration Corridor Planning** *(Planned)* - Design climate adaptation pathways
 - **Phenology Shift Calculators** *(Planned)* - Assess timing mismatches in ecological events
 - **Sea Level Rise Impact** *(Planned)* - Evaluate coastal habitat vulnerability
 
-### � CConservation Planning *(Future Release)*
+### 🎯 Conservation Planning *(Future Release)*
 - **Reserve Selection Algorithms** *(Planned)* - Optimize protected area networks
 - **Cost-Effectiveness Analysis** *(Planned)* - Evaluate conservation investment efficiency
 - **Threat Assessment Matrices** *(Planned)* - Systematically evaluate conservation threats
@@ -86,7 +86,7 @@ docker-compose up
 poetry install                                    # Root dependencies
 cd services/breed-registry && poetry install     # Django service
 cd ../population-analysis && poetry install      # FastAPI service
-cd ../sampling-survey && poetry install          # FastAPI service  
+cd ../sampling-survey && poetry install          # FastAPI service
 cd ../genetic-diversity && poetry install        # FastAPI service
 cd ../../frontend && npm install                 # React frontend
 
@@ -123,7 +123,7 @@ This project uses a microservices architecture:
 - **Frontend Application** - React interface with 92%+ test coverage (comprehensive test suite)
 - **Docker Environment** - Multi-service development setup with Nginx proxy
 
-**� Itmplementation Pipeline (5 Services Remaining):**
+**📋 Implementation Pipeline (5 Services Remaining):**
 1. **Species Assessment** (Medium complexity) - IUCN criteria, extinction risk assessment
 2. **Habitat & Landscape** (Medium-High complexity) - Spatial analysis, fragmentation metrics  
 3. **Climate Impact** (Medium-High complexity) - Climate modeling, migration corridors
