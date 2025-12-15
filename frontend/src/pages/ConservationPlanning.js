@@ -365,6 +365,20 @@ const ConservationPlanning = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Multi-criteria decision analysis for site prioritization using weighted scoring.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1038/35012251" target="_blank" rel="noopener noreferrer">
+                  Margules & Pressey (2000) Nature
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1111/brv.12008" target="_blank" rel="noopener noreferrer">
+                  Kukkala & Moilanen (2013) Biol. Rev.
+                </a>
+                {', '}
+                <a href="https://global.oup.com/academic/product/spatial-conservation-prioritization-9780199547760" target="_blank" rel="noopener noreferrer">
+                  Moilanen et al. (2009) Oxford Press
+                </a>
+              </Typography>
 
               <Typography variant="subtitle2" gutterBottom sx={{ mt: 2 }}>
                 Sites to Evaluate:
@@ -547,6 +561,20 @@ const ConservationPlanning = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Systematic threat evaluation using severity, scope, and urgency criteria.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1111/j.1523-1739.2008.00937.x" target="_blank" rel="noopener noreferrer">
+                  Salafsky et al. (2008) Conserv. Biol.
+                </a>
+                {', '}
+                <a href="https://www.iucnredlist.org/resources/threat-classification-scheme" target="_blank" rel="noopener noreferrer">
+                  IUCN Threat Classification
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1038/s41586-020-2773-z" target="_blank" rel="noopener noreferrer">
+                  Maxwell et al. (2020) Nature
+                </a>
+              </Typography>
 
               <Typography variant="subtitle2" gutterBottom>
                 Threats:
@@ -725,6 +753,20 @@ const ConservationPlanning = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Optimize conservation investment by ranking actions and selecting efficient portfolios.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1126/science.279.5359.2126" target="_blank" rel="noopener noreferrer">
+                  Ando et al. (1998) Science
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1016/j.tree.2006.10.003" target="_blank" rel="noopener noreferrer">
+                  Naidoo et al. (2006) TREE
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1016/j.biocon.2006.12.017" target="_blank" rel="noopener noreferrer">
+                  Murdoch et al. (2007) Biol. Conserv.
+                </a>
+              </Typography>
 
               <TextField
                 fullWidth
@@ -893,6 +935,20 @@ const ConservationPlanning = () => {
               </Box>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Optimize reserve selection using set cover algorithms to achieve species representation targets.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1016/0006-3207(83)90056-4" target="_blank" rel="noopener noreferrer">
+                  Kirkpatrick (1983) Biol. Conserv.
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1016/0169-5347(93)90023-I" target="_blank" rel="noopener noreferrer">
+                  Pressey et al. (1993) TREE
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1038/nature02422" target="_blank" rel="noopener noreferrer">
+                  Rodrigues et al. (2004) Nature
+                </a>
               </Typography>
 
               <TextField
@@ -1090,6 +1146,8 @@ const ConservationPlanning = () => {
           </Card>
         </Grid>
       </Grid>
+
+
     </Container>
   );
 };

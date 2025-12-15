@@ -251,6 +251,20 @@ const ClimateImpact = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Assess species vulnerability to temperature changes based on thermal tolerance ranges.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1073/pnas.0709472105" target="_blank" rel="noopener noreferrer">
+                  Deutsch et al. (2008) PNAS
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1093/icb/19.1.25" target="_blank" rel="noopener noreferrer">
+                  Huey & Stevenson (1979) Am. Zool.
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1111/j.1461-0248.2008.01277.x" target="_blank" rel="noopener noreferrer">
+                  Kearney & Porter (2009) Ecol. Lett.
+                </a>
+              </Typography>
 
               <Grid container spacing={2}>
                 <Grid item xs={6}>
@@ -399,6 +413,20 @@ const ClimateImpact = () => {
               </Box>
               <Typography variant="body2" color="text.secondary" paragraph>
                 Calculate timing shifts in species life cycle events due to climate change.
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1038/nature01286" target="_blank" rel="noopener noreferrer">
+                  Parmesan & Yohe (2003) Nature
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1038/nature04539" target="_blank" rel="noopener noreferrer">
+                  Both et al. (2006) Nature
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1038/ncomms10717" target="_blank" rel="noopener noreferrer">
+                  Thackeray et al. (2016) Nature Comm.
+                </a>
               </Typography>
 
               <Grid container spacing={2}>
@@ -570,6 +598,20 @@ const ClimateImpact = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Assess coastal habitat vulnerability to sea level rise.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1672/0277-5212(2002)022[0691:GCCASL]2.0.CO;2" target="_blank" rel="noopener noreferrer">
+                  Galbraith et al. (2002) Wetlands
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1890/070219" target="_blank" rel="noopener noreferrer">
+                  Craft et al. (2009) Front. Ecol. Environ.
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1016/j.biocon.2010.09.001" target="_blank" rel="noopener noreferrer">
+                  Traill et al. (2011) Biol. Conserv.
+                </a>
+              </Typography>
 
               <Grid container spacing={2}>
                 <Grid item xs={6}>
@@ -733,6 +775,20 @@ const ClimateImpact = () => {
               <Typography variant="body2" color="text.secondary" paragraph>
                 Analyze species ability to track shifting climate conditions.
               </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 2 }}>
+                <strong>References:</strong>{' '}
+                <a href="https://doi.org/10.1038/nature08649" target="_blank" rel="noopener noreferrer">
+                  Loarie et al. (2009) Nature
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1126/science.1210288" target="_blank" rel="noopener noreferrer">
+                  Burrows et al. (2011) Science
+                </a>
+                {', '}
+                <a href="https://doi.org/10.1111/ddi.12346" target="_blank" rel="noopener noreferrer">
+                  Carroll et al. (2015) Divers. Distrib.
+                </a>
+              </Typography>
 
               <Grid container spacing={2}>
                 <Grid item xs={6}>
@@ -863,6 +919,8 @@ const ClimateImpact = () => {
           </Card>
         </Grid>
       </Grid>
+
+
     </Container>
   );
 };
