@@ -372,6 +372,15 @@ const HabitatLandscape = () => {
                 onClick={calculateHSI}
                 disabled={hsiLoading}
                 startIcon={hsiLoading ? <CircularProgress size={20} /> : <Assessment />}
+                sx={{
+                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {hsiLoading ? 'Calculating...' : 'Calculate HSI'}
               </Button>
@@ -503,6 +512,15 @@ const HabitatLandscape = () => {
                 onClick={calculateSpeciesArea}
                 disabled={sarLoading}
                 startIcon={sarLoading ? <CircularProgress size={20} /> : <ScatterPlot />}
+                sx={{
+                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {sarLoading ? 'Calculating...' : 'Calculate Relationship'}
               </Button>
@@ -678,6 +696,15 @@ const HabitatLandscape = () => {
                 onClick={calculateFragmentation}
                 disabled={fragLoading}
                 startIcon={fragLoading ? <CircularProgress size={20} /> : <Assessment />}
+                sx={{
+                  background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {fragLoading ? 'Calculating...' : 'Calculate Metrics'}
               </Button>

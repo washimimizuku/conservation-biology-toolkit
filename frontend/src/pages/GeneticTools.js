@@ -263,6 +263,15 @@ const GeneticTools = () => {
                 onClick={calculateHardyWeinberg}
                 disabled={hwLoading || !hwGenotypes.trim()}
                 startIcon={hwLoading ? <CircularProgress size={20} /> : <Analytics />}
+                sx={{
+                  background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(156, 39, 176, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(156, 39, 176, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {hwLoading ? 'Calculating...' : 'Test Equilibrium'}
               </Button>
@@ -351,6 +360,15 @@ const GeneticTools = () => {
                 onClick={calculateInbreeding}
                 disabled={inbreedingLoading || !inbreedingData.subpopHeterozygosity.trim()}
                 startIcon={inbreedingLoading ? <CircularProgress size={20} /> : <Biotech />}
+                sx={{
+                  background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(156, 39, 176, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(156, 39, 176, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {inbreedingLoading ? 'Calculating...' : 'Calculate F-Statistics'}
               </Button>
@@ -422,6 +440,15 @@ const GeneticTools = () => {
                 onClick={detectBottleneck}
                 disabled={bottleneckLoading || !populationSizes.trim()}
                 startIcon={bottleneckLoading ? <CircularProgress size={20} /> : <TrendingUp />}
+                sx={{
+                  background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(156, 39, 176, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(156, 39, 176, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {bottleneckLoading ? 'Analyzing...' : 'Detect Bottleneck'}
               </Button>
@@ -517,6 +544,15 @@ const GeneticTools = () => {
                 onClick={calculateRichness}
                 disabled={richnessLoading || !alleleCounts.trim() || !sampleSizes.trim()}
                 startIcon={richnessLoading ? <CircularProgress size={20} /> : <Analytics />}
+                sx={{
+                  background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(156, 39, 176, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(156, 39, 176, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {richnessLoading ? 'Calculating...' : 'Calculate Richness'}
               </Button>

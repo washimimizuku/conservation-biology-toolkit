@@ -224,7 +224,16 @@ const SamplingTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(0, 188, 212, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(0, 188, 212, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={sampleSizeLoading}
                 >
                   {sampleSizeLoading ? <CircularProgress size={24} /> : 'Calculate Sample Size'}
@@ -323,7 +332,16 @@ const SamplingTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(0, 188, 212, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(0, 188, 212, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={detectionLoading}
                 >
                   {detectionLoading ? <CircularProgress size={24} /> : 'Calculate Detection Probability'}
@@ -418,7 +436,16 @@ const SamplingTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(0, 188, 212, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(0, 188, 212, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={captureLoading}
                 >
                   {captureLoading ? <CircularProgress size={24} /> : 'Estimate Population'}
@@ -511,7 +538,16 @@ const SamplingTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(0, 188, 212, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(0, 188, 212, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={distanceLoading}
                 >
                   {distanceLoading ? <CircularProgress size={24} /> : 'Estimate Density'}

@@ -394,6 +394,15 @@ const ClimateImpact = () => {
                 onClick={calculateTemperatureTolerance}
                 disabled={tempLoading}
                 startIcon={tempLoading ? <CircularProgress size={20} /> : <Thermostat />}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {tempLoading ? 'Calculating...' : 'Analyze Temperature Tolerance'}
               </Button>
@@ -578,6 +587,15 @@ const ClimateImpact = () => {
                 onClick={calculatePhenologyShift}
                 disabled={phenologyLoading}
                 startIcon={phenologyLoading ? <CircularProgress size={20} /> : <Schedule />}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {phenologyLoading ? 'Calculating...' : 'Analyze Phenology Shift'}
               </Button>
@@ -755,6 +773,15 @@ const ClimateImpact = () => {
                 onClick={calculateSeaLevelRise}
                 disabled={seaLevelLoading}
                 startIcon={seaLevelLoading ? <CircularProgress size={20} /> : <Waves />}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {seaLevelLoading ? 'Calculating...' : 'Analyze Sea Level Rise'}
               </Button>
@@ -912,6 +939,15 @@ const ClimateImpact = () => {
                 onClick={calculateClimateVelocity}
                 disabled={velocityLoading}
                 startIcon={velocityLoading ? <CircularProgress size={20} /> : <Speed />}
+                sx={{
+                  background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {velocityLoading ? 'Calculating...' : 'Analyze Climate Velocity'}
               </Button>

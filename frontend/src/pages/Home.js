@@ -22,6 +22,67 @@ import {
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  // Helper function to get service-specific colors
+  const getServiceColors = (title) => {
+    const colorMap = {
+      '🧬 Population Analysis': {
+        background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+        boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+        hoverBackground: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)'
+      },
+      '📋 Sampling & Survey Design': {
+        background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+        boxShadow: '0 3px 5px 2px rgba(0, 188, 212, .3)',
+        hoverBackground: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(0, 188, 212, .4)'
+      },
+      '🔬 Genetic Diversity': {
+        background: 'linear-gradient(45deg, #9C27B0 30%, #BA68C8 90%)',
+        boxShadow: '0 3px 5px 2px rgba(156, 39, 176, .3)',
+        hoverBackground: 'linear-gradient(45deg, #7B1FA2 30%, #9C27B0 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(156, 39, 176, .4)'
+      },
+      '📊 Species Assessment': {
+        background: 'linear-gradient(45deg, #FF9800 30%, #FFB74D 90%)',
+        boxShadow: '0 3px 5px 2px rgba(255, 152, 0, .3)',
+        hoverBackground: 'linear-gradient(45deg, #F57C00 30%, #FF9800 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(255, 152, 0, .4)'
+      },
+      '🌍 Habitat & Landscape': {
+        background: 'linear-gradient(45deg, #795548 30%, #A1887F 90%)',
+        boxShadow: '0 3px 5px 2px rgba(121, 85, 72, .3)',
+        hoverBackground: 'linear-gradient(45deg, #5D4037 30%, #795548 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(121, 85, 72, .4)'
+      },
+      '🌡️ Climate Impact Assessment': {
+        background: 'linear-gradient(45deg, #2196F3 30%, #64B5F6 90%)',
+        boxShadow: '0 3px 5px 2px rgba(33, 150, 243, .3)',
+        hoverBackground: 'linear-gradient(45deg, #1976D2 30%, #2196F3 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(33, 150, 243, .4)'
+      },
+      '🎯 Conservation Planning': {
+        background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+        boxShadow: '0 3px 5px 2px rgba(233, 30, 99, .3)',
+        hoverBackground: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(233, 30, 99, .4)'
+      },
+      '📚 Breed Registry': {
+        background: 'linear-gradient(45deg, #607D8B 30%, #90A4AE 90%)',
+        boxShadow: '0 3px 5px 2px rgba(96, 125, 139, .3)',
+        hoverBackground: 'linear-gradient(45deg, #455A64 30%, #607D8B 90%)',
+        hoverBoxShadow: '0 4px 8px 3px rgba(96, 125, 139, .4)'
+      }
+    };
+    
+    return colorMap[title] || {
+      background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+      boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+      hoverBackground: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+      hoverBoxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)'
+    };
+  };
+
   const toolCategories = [
     {
       title: '🧬 Population Analysis',
@@ -151,11 +212,11 @@ const Home = () => {
                 py: 1.5,
                 fontSize: '1rem',
                 fontWeight: 'bold',
-                background: 'linear-gradient(45deg, #4CAF50 30%, #8BC34A 90%)',
-                boxShadow: '0 4px 8px 2px rgba(76, 175, 80, .3)',
+                background: 'linear-gradient(45deg, #00BCD4 30%, #4DD0E1 90%)',
+                boxShadow: '0 4px 8px 2px rgba(0, 188, 212, .3)',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #388E3C 30%, #689F38 90%)',
-                  boxShadow: '0 6px 12px 4px rgba(76, 175, 80, .4)',
+                  background: 'linear-gradient(45deg, #0097A7 30%, #00BCD4 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(0, 188, 212, .4)',
                   transform: 'translateY(-2px)'
                 }
               }}
@@ -322,15 +383,18 @@ const Home = () => {
                     py: 1.5,
                     fontSize: '1rem',
                     fontWeight: 'bold',
-                    ...(category.status === 'Available' && {
-                      background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
-                      boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
-                      '&:hover': {
-                        background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
-                        boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
-                        transform: 'translateY(-1px)'
-                      }
-                    })
+                    ...(category.status === 'Available' && (() => {
+                      const colors = getServiceColors(category.title);
+                      return {
+                        background: colors.background,
+                        boxShadow: colors.boxShadow,
+                        '&:hover': {
+                          background: colors.hoverBackground,
+                          boxShadow: colors.hoverBoxShadow,
+                          transform: 'translateY(-1px)'
+                        }
+                      };
+                    })())
                   }}
                 >
                   {category.status === 'Available' ? 'Explore Tools Now' : 'Coming Soon'}

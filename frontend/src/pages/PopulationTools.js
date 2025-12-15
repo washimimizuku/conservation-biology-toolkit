@@ -230,7 +230,16 @@ const PopulationTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={growthLoading}
                 >
                   {growthLoading ? <CircularProgress size={24} /> : 'Calculate Growth'}
@@ -310,7 +319,16 @@ const PopulationTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={effectivePopLoading}
                 >
                   {effectivePopLoading ? <CircularProgress size={24} /> : 'Calculate Ne'}
@@ -429,7 +447,16 @@ const PopulationTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={pvaLoading}
                 >
                   {pvaLoading ? <CircularProgress size={24} /> : 'Run PVA'}
@@ -534,7 +561,16 @@ const PopulationTools = () => {
                   type="submit"
                   variant="contained"
                   fullWidth
-                  sx={{ mt: 2 }}
+                  sx={{ 
+                    mt: 2,
+                    background: 'linear-gradient(45deg, #4CAF50 30%, #66BB6A 90%)',
+                    boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+                    '&:hover': {
+                      background: 'linear-gradient(45deg, #388E3C 30%, #4CAF50 90%)',
+                      boxShadow: '0 4px 8px 3px rgba(76, 175, 80, .4)',
+                      transform: 'translateY(-1px)'
+                    }
+                  }}
                   disabled={metaLoading}
                 >
                   {metaLoading ? <CircularProgress size={24} /> : 'Simulate Metapopulation'}

@@ -541,6 +541,15 @@ const ConservationPlanning = () => {
                 onClick={analyzePriority}
                 disabled={priorityLoading}
                 startIcon={priorityLoading ? <CircularProgress size={20} /> : <Assessment />}
+                sx={{
+                  background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(233, 30, 99, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(233, 30, 99, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {priorityLoading ? 'Analyzing...' : 'Analyze Priority'}
               </Button>
@@ -733,6 +742,15 @@ const ConservationPlanning = () => {
                 onClick={analyzeThreat}
                 disabled={threatLoading}
                 startIcon={threatLoading ? <CircularProgress size={20} /> : <Security />}
+                sx={{
+                  background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(233, 30, 99, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(233, 30, 99, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {threatLoading ? 'Analyzing...' : 'Analyze Threats'}
               </Button>
@@ -916,6 +934,15 @@ const ConservationPlanning = () => {
                 onClick={analyzeCostEffectiveness}
                 disabled={costLoading}
                 startIcon={costLoading ? <CircularProgress size={20} /> : <AttachMoney />}
+                sx={{
+                  background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(233, 30, 99, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(233, 30, 99, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {costLoading ? 'Analyzing...' : 'Analyze Cost-Effectiveness'}
               </Button>
@@ -1139,6 +1166,15 @@ const ConservationPlanning = () => {
                 onClick={analyzeReserveSelection}
                 disabled={reserveLoading}
                 startIcon={reserveLoading ? <CircularProgress size={20} /> : <LocationOn />}
+                sx={{
+                  background: 'linear-gradient(45deg, #E91E63 30%, #F06292 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(233, 30, 99, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #C2185B 30%, #E91E63 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(233, 30, 99, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {reserveLoading ? 'Optimizing...' : 'Optimize Selection'}
               </Button>

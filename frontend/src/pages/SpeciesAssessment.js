@@ -304,6 +304,15 @@ const SpeciesAssessment = () => {
                 onClick={calculateIUCNAssessment}
                 disabled={iucnLoading}
                 startIcon={iucnLoading ? <CircularProgress size={20} /> : <Assessment />}
+                sx={{
+                  background: 'linear-gradient(45deg, #FF9800 30%, #FFB74D 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(255, 152, 0, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #F57C00 30%, #FF9800 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(255, 152, 0, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {iucnLoading ? 'Assessing...' : 'Assess IUCN Status'}
               </Button>
@@ -447,6 +456,15 @@ const SpeciesAssessment = () => {
                 onClick={calculateExtinctionRisk}
                 disabled={riskLoading}
                 startIcon={riskLoading ? <CircularProgress size={20} /> : <Warning />}
+                sx={{
+                  background: 'linear-gradient(45deg, #FF9800 30%, #FFB74D 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(255, 152, 0, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #F57C00 30%, #FF9800 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(255, 152, 0, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {riskLoading ? 'Assessing...' : 'Assess Extinction Risk'}
               </Button>
@@ -563,6 +581,15 @@ const SpeciesAssessment = () => {
                 onClick={calculateRangeAnalysis}
                 disabled={rangeLoading}
                 startIcon={rangeLoading ? <CircularProgress size={20} /> : <LocationOn />}
+                sx={{
+                  background: 'linear-gradient(45deg, #FF9800 30%, #FFB74D 90%)',
+                  boxShadow: '0 3px 5px 2px rgba(255, 152, 0, .3)',
+                  '&:hover': {
+                    background: 'linear-gradient(45deg, #F57C00 30%, #FF9800 90%)',
+                    boxShadow: '0 4px 8px 3px rgba(255, 152, 0, .4)',
+                    transform: 'translateY(-1px)'
+                  }
+                }}
               >
                 {rangeLoading ? 'Analyzing...' : 'Analyze Range'}
               </Button>
