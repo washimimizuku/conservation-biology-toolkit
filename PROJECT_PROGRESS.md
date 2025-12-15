@@ -206,12 +206,12 @@ A comprehensive web-based platform providing essential computational tools for c
 - [ ] Set up breed registry Django models
 
 ### Week 2
-- [ ] Implement first genetic diversity tool
+- [ ] Implement Sampling & Survey Design service (first new service - lowest complexity)
 - [ ] Create data visualization components
 - [ ] Add user authentication
 
 ### Week 3
-- [ ] Deploy first habitat assessment tool
+- [ ] Deploy Genetic Diversity service (second service - low-medium complexity)
 - [ ] Implement file upload/export functionality
 - [ ] Add comprehensive testing
 
@@ -219,19 +219,25 @@ A comprehensive web-based platform providing essential computational tools for c
 
 ## 🎯 Milestones
 
-### MVP (Month 1)
-- [ ] 3 working calculation tools
-- [ ] Basic breed registry functionality
+### MVP (Month 1) - Foundation + Low Complexity Services
+- [x] Population Analysis service (complete)
+- [ ] Sampling & Survey Design service
+- [ ] Genetic Diversity service
 - [ ] Responsive web interface
 - [ ] Docker deployment
 
-### Beta Release (Month 3)
-- [ ] All 8 service categories implemented
+### Beta Release (Month 3) - Medium Complexity Services
+- [ ] Species Assessment service
+- [ ] Habitat & Landscape service (partial)
+- [ ] Climate Impact service (partial)
 - [ ] User authentication and profiles
 - [ ] Data export/import functionality
 - [ ] Production deployment
 
-### v1.0 Release (Month 6)
+### v1.0 Release (Month 6) - High Complexity Services + Polish
+- [ ] Conservation Planning service (complete)
+- [ ] Breed Registry service (complete)
+- [ ] All 8 service categories fully implemented
 - [ ] Advanced visualization features
 - [ ] API documentation and SDKs
 - [ ] Mobile app (optional)
@@ -242,8 +248,10 @@ A comprehensive web-based platform providing essential computational tools for c
 ## 📝 Notes
 
 - Focus on one service at a time for initial development
-- Prioritize population analysis and breed registry as they're most developed
+- Follow complexity-based development order: Sampling & Survey → Genetic Diversity → Species Assessment → Habitat & Landscape → Climate Impact → Conservation Planning → Breed Registry
+- Build on patterns established in Population Analysis service
 - Consider user feedback early in the process
 - Plan for scientific validation of calculations
+- Defer high-complexity services (Conservation Planning, Breed Registry) to later milestones
 
 **Last Updated**: December 14, 2025
