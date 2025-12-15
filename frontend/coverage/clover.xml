@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1765797183602" clover="3.2.0">
-  <project timestamp="1765797183602" name="All files">
-    <metrics statements="257" coveredstatements="237" conditionals="176" coveredconditionals="125" methods="76" coveredmethods="72" elements="509" coveredelements="434" complexity="0" loc="257" ncloc="257" packages="4" files="7" classes="7"/>
+<coverage generated="1765799511329" clover="3.2.0">
+  <project timestamp="1765799511329" name="All files">
+    <metrics statements="322" coveredstatements="287" conditionals="249" coveredconditionals="172" methods="100" coveredmethods="83" elements="671" coveredelements="542" complexity="0" loc="322" ncloc="322" packages="4" files="8" classes="8"/>
     <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/App.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
@@ -17,8 +17,8 @@
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="22" type="stmt"/>
         <line num="8" count="22" type="stmt"/>
-        <line num="16" count="22" type="stmt"/>
-        <line num="24" count="110" type="stmt"/>
+        <line num="17" count="22" type="stmt"/>
+        <line num="25" count="132" type="stmt"/>
       </file>
     </package>
     <package name="src.config">
@@ -26,12 +26,12 @@
       <file name="api.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/config/api.js">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="2" count="4" type="stmt"/>
-        <line num="17" count="4" type="cond" truecount="1" falsecount="1"/>
-        <line num="19" count="4" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
-      <metrics statements="247" coveredstatements="227" conditionals="172" coveredconditionals="122" methods="73" coveredmethods="69"/>
+      <metrics statements="312" coveredstatements="277" conditionals="245" coveredconditionals="169" methods="97" coveredmethods="80"/>
       <file name="GeneticTools.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/pages/GeneticTools.js">
         <metrics statements="91" coveredstatements="81" conditionals="90" coveredconditionals="60" methods="24" coveredmethods="22"/>
         <line num="27" count="2" type="stmt"/>
@@ -130,9 +130,9 @@
         <metrics statements="5" coveredstatements="5" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="24" type="stmt"/>
-        <line num="63" count="24" type="stmt"/>
-        <line num="169" count="120" type="stmt"/>
-        <line num="190" count="432" type="stmt"/>
+        <line num="70" count="24" type="stmt"/>
+        <line num="199" count="144" type="stmt"/>
+        <line num="220" count="504" type="stmt"/>
       </file>
       <file name="PopulationTools.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/pages/PopulationTools.js">
         <metrics statements="79" coveredstatements="74" conditionals="36" coveredconditionals="26" methods="27" coveredmethods="26"/>
@@ -290,6 +290,74 @@
         <line num="482" count="8" type="stmt"/>
         <line num="493" count="0" type="stmt"/>
         <line num="504" count="1" type="stmt"/>
+      </file>
+      <file name="SpeciesAssessment.js" path="/Users/nfb/Code/conservation-biology-toolkit/frontend/src/pages/SpeciesAssessment.js">
+        <metrics statements="65" coveredstatements="50" conditionals="73" coveredconditionals="47" methods="24" coveredmethods="11"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="35" count="27" type="stmt"/>
+        <line num="45" count="26" type="stmt"/>
+        <line num="46" count="26" type="stmt"/>
+        <line num="49" count="26" type="stmt"/>
+        <line num="56" count="26" type="stmt"/>
+        <line num="57" count="26" type="stmt"/>
+        <line num="60" count="26" type="stmt"/>
+        <line num="66" count="26" type="stmt"/>
+        <line num="67" count="26" type="stmt"/>
+        <line num="70" count="26" type="stmt"/>
+        <line num="71" count="26" type="stmt"/>
+        <line num="72" count="26" type="stmt"/>
+        <line num="75" count="26" type="stmt"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="77" count="3" type="stmt"/>
+        <line num="79" count="3" type="stmt"/>
+        <line num="80" count="3" type="stmt"/>
+        <line num="95" count="3" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="98" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="104" count="26" type="stmt"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="109" count="2" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="118" count="2" type="stmt"/>
+        <line num="120" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="122" count="2" type="stmt"/>
+        <line num="127" count="26" type="stmt"/>
+        <line num="128" count="2" type="stmt"/>
+        <line num="129" count="2" type="stmt"/>
+        <line num="131" count="2" type="stmt"/>
+        <line num="132" count="2" type="stmt"/>
+        <line num="139" count="2" type="stmt"/>
+        <line num="140" count="2" type="stmt"/>
+        <line num="142" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="144" count="2" type="stmt"/>
+        <line num="148" count="26" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="156" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="159" count="26" type="stmt"/>
+        <line num="160" count="2" type="stmt"/>
+        <line num="166" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="169" count="26" type="stmt"/>
+        <line num="212" count="1" type="stmt"/>
+        <line num="223" count="0" type="stmt"/>
+        <line num="239" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="259" count="0" type="stmt"/>
+        <line num="268" count="1" type="stmt"/>
+        <line num="295" count="2" type="stmt"/>
+        <line num="349" count="0" type="stmt"/>
+        <line num="359" count="0" type="stmt"/>
+        <line num="374" count="0" type="stmt"/>
+        <line num="385" count="0" type="stmt"/>
+        <line num="396" count="0" type="stmt"/>
+        <line num="431" count="2" type="stmt"/>
+        <line num="443" count="2" type="stmt"/>
+        <line num="493" count="0" type="stmt"/>
+        <line num="503" count="0" type="stmt"/>
+        <line num="513" count="0" type="stmt"/>
+        <line num="522" count="0" type="stmt"/>
       </file>
     </package>
   </project>

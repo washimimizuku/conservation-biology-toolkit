@@ -4,12 +4,14 @@ const API_CONFIG = {
     populationAnalysis: 'http://localhost:8002',
     samplingSurvey: 'http://localhost:8003',
     geneticDiversity: 'http://localhost:8004',
+    speciesAssessment: 'http://localhost:8005',
     breedRegistry: 'http://localhost:8001',
   },
   production: {
     populationAnalysis: '/api/population-analysis',
     samplingSurvey: '/api/sampling-survey',
     geneticDiversity: '/api/genetic-diversity',
+    speciesAssessment: '/api/species-assessment',
     breedRegistry: '/api/breed-registry',
   }
 };

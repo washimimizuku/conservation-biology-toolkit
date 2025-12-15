@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import PopulationTools from './pages/PopulationTools';
 import SamplingTools from './pages/SamplingTools';
 import GeneticTools from './pages/GeneticTools';
+import SpeciesAssessment from './pages/SpeciesAssessment';
 import './App.css';
 
 const theme = createTheme({
@@ -32,6 +33,7 @@ function App() {
             <Route path="/population-tools" element={<PopulationTools />} />
             <Route path="/sampling-tools" element={<SamplingTools />} />
             <Route path="/genetic-tools" element={<GeneticTools />} />
+            <Route path="/species-assessment" element={<SpeciesAssessment />} />
           </Routes>
         </div>
       </Router>

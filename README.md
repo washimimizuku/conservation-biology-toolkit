@@ -26,11 +26,11 @@ This toolkit addresses the critical need for standardized, accessible conservati
 - **Bottleneck Detection** ✅ - Identify genetic diversity loss events
 - **Allelic Richness & Heterozygosity** ✅ - Quantify genetic variation
 
-### 📊 Species Assessment *(Coming Next)*
-- **IUCN Red List Criteria** *(Planned)* - Apply standardized threat assessment criteria
-- **Extinction Risk Assessment** *(Planned)* - Quantify species vulnerability
+### 📊 Species Assessment 🚧 **IN PROGRESS**
+- **IUCN Red List Assessment** ✅ - Apply standardized threat assessment criteria (A, B, C, D)
+- **Extinction Risk Assessment** ✅ - Quantify species vulnerability with multi-factor scoring
+- **Range Size Analysis** ✅ - Calculate extent of occurrence, area of occupancy, and fragmentation metrics
 - **Species Distribution Modeling** *(Planned)* - Map current and potential species ranges
-- **Range Size & Occupancy** *(Planned)* - Calculate geographic and habitat occupancy metrics
 
 ### 🌍 Habitat & Landscape *(Future Release)*
 - **Habitat Suitability Index** *(Planned)* - Evaluate habitat quality for species
@@ -96,6 +96,7 @@ cd frontend && npm start                         # Frontend (port 3000)
 cd services/population-analysis && poetry run uvicorn main:app --reload --port 8002
 cd services/sampling-survey && poetry run uvicorn main:app --reload --port 8003
 cd services/genetic-diversity && poetry run uvicorn main:app --reload --port 8004
+cd services/species-assessment && poetry run uvicorn main:app --reload --port 8005
 ```
 
 ### Access the Application
@@ -103,12 +104,13 @@ cd services/genetic-diversity && poetry run uvicorn main:app --reload --port 800
 - **Population Analysis API**: http://localhost:8002/docs
 - **Sampling & Survey API**: http://localhost:8003/docs
 - **Genetic Diversity API**: http://localhost:8004/docs
+- **Species Assessment API**: http://localhost:8005/docs
 - **Breed Registry Admin**: http://localhost:8001/admin (when implemented)
 
 ### Architecture
 This project uses a microservices architecture:
 - **Frontend**: React application with Material-UI and comprehensive test coverage (92%+)
-- **Services**: FastAPI for calculations (Population Analysis, Sampling & Survey, Genetic Diversity), Django for breed registry
+- **Services**: FastAPI for calculations (Population Analysis, Sampling & Survey, Genetic Diversity, Species Assessment), Django for breed registry
 - **Database**: PostgreSQL with Redis for caching
 - **Testing**: Jest + React Testing Library for frontend, pytest for backend services
 - **Deployment**: Docker Compose for development, production-ready configs available
@@ -116,21 +118,22 @@ This project uses a microservices architecture:
 
 ### Current Implementation Status
 
-**✅ Fully Implemented & Tested (3/8 Services Complete):**
+**✅ Fully Implemented & Tested (4/8 Services Complete):**
 - **Population Analysis Service** - Complete with 96% test coverage (23 test cases)
 - **Sampling & Survey Design Service** - Complete with 94% test coverage (31 test cases)  
 - **Genetic Diversity Service** - Complete with 94% test coverage (36 test cases)
+- **Species Assessment Service** - Complete with 92% test coverage (36 test cases)
 - **Frontend Application** - React interface with 92%+ test coverage (comprehensive test suite)
 - **Docker Environment** - Multi-service development setup with Nginx proxy
 
-**📋 Implementation Pipeline (5 Services Remaining):**
-1. **Species Assessment** (Medium complexity) - IUCN criteria, extinction risk assessment
+**📋 Implementation Pipeline (4 Services Remaining):**
+1. **Species Assessment** (Medium complexity) - Species distribution modeling (1 tool remaining)
 2. **Habitat & Landscape** (Medium-High complexity) - Spatial analysis, fragmentation metrics  
 3. **Climate Impact** (Medium-High complexity) - Climate modeling, migration corridors
 4. **Conservation Planning** (High complexity) - Optimization algorithms, reserve selection
 5. **Breed Registry** (High complexity) - Django-based CRUD application, pedigree tracking
 
-**🎯 Current Status: 12/32 tools implemented across 3/8 service categories**
+**🎯 Current Status: 15/32 tools implemented across 4/8 service categories**
 
 ## Testing
 
@@ -157,6 +160,10 @@ poetry run pytest --cov=main --cov-report=html
 # Genetic Diversity Service
 cd services/genetic-diversity  
 poetry run pytest --cov=main --cov-report=html
+
+# Species Assessment Service
+cd services/species-assessment
+poetry run pytest --cov=main --cov-report=html
 ```
 
 **Current Test Coverage:**
@@ -175,7 +182,7 @@ poetry run pytest --cov=main --cov-report=html
 - ✅ Docker development environment
 
 ### 🎯 **Milestone 2: Assessment & Analysis** *(Q1 2026)*
-- 📋 Species Assessment Service (4 tools)
+- 📋 Species Assessment Service completion (1 remaining tool)
 - 📋 Enhanced data visualization components
 - 📋 Export/import functionality
 - 📋 CI/CD pipeline implementation
@@ -192,7 +199,7 @@ poetry run pytest --cov=main --cov-report=html
 - 📋 Advanced optimization algorithms
 - 📋 Mobile application (optional)
 
-**Progress: 37.5% Complete (3/8 services, 12/32 tools)**
+**Progress: 46.9% Complete (4/8 services, 15/32 tools)**
 
 ## Contributing
 

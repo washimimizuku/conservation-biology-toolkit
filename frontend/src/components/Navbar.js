@@ -10,6 +10,7 @@ const Navbar = () => {
     { label: 'Population Tools', path: '/population-tools' },
     { label: 'Sampling Tools', path: '/sampling-tools' },
     { label: 'Genetic Tools', path: '/genetic-tools' },
+    { label: 'Species Assessment', path: '/species-assessment' },
     { label: 'Breed Registry', path: '/breed-registry' },
   ];
 

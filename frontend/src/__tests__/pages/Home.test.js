@@ -34,7 +34,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     expect(screen.getByText('🚀 Ready to Use Now!')).toBeInTheDocument();
-    expect(screen.getByText(/Three complete tool suites are live!/)).toBeInTheDocument();
+    expect(screen.getByText(/Four complete tool suites are live!/)).toBeInTheDocument();
   });
 
   test('renders call-to-action buttons', () => {
@@ -57,6 +57,7 @@ describe('Home', () => {
       '🧬 Population Analysis',
       '📋 Sampling & Survey Design',
       '🔬 Genetic Diversity',
+      '📊 Species Assessment',
       '🌍 Habitat & Landscape',
       '📚 Breed Registry'
     ];
@@ -71,11 +72,11 @@ describe('Home', () => {
     
     // Available tools should have success chips
     const availableChips = screen.getAllByText('Available');
-    expect(availableChips).toHaveLength(3); // Population Analysis, Sampling & Survey Design, and Genetic Diversity
+    expect(availableChips).toHaveLength(4); // Population Analysis, Sampling & Survey Design, Genetic Diversity, and Species Assessment
     
     // Coming soon tools should have chips (both in status and buttons)
     const comingSoonElements = screen.getAllByText('Coming Soon');
-    expect(comingSoonElements.length).toBeGreaterThanOrEqual(3); // At least 3 coming soon tools
+    expect(comingSoonElements.length).toBeGreaterThanOrEqual(2); // At least 2 coming soon tools
   });
 
   test('renders tool descriptions', () => {
@@ -84,6 +85,7 @@ describe('Home', () => {
     expect(screen.getByText(/Population viability analysis, effective population size/)).toBeInTheDocument();
     expect(screen.getByText(/Statistical tools for survey planning/)).toBeInTheDocument();
     expect(screen.getByText(/Hardy-Weinberg equilibrium, inbreeding coefficients/)).toBeInTheDocument();
+    expect(screen.getByText(/IUCN Red List criteria, extinction risk assessment/)).toBeInTheDocument();
   });
 
   test('renders individual tool chips', () => {
@@ -106,7 +108,7 @@ describe('Home', () => {
     renderWithRouter(<Home />);
     
     const availableButtons = screen.getAllByText('Explore Tools Now');
-    expect(availableButtons).toHaveLength(3);
+    expect(availableButtons).toHaveLength(4);
     
     availableButtons.forEach(button => {
       expect(button).not.toBeDisabled();
@@ -187,10 +189,10 @@ describe('Home', () => {
   test('has proper responsive grid layout', () => {
     renderWithRouter(<Home />);
     
-    // Should have 5 tool category cards (check by links instead of buttons)
+    // Should have 6 tool category cards (check by links instead of buttons)
     const exploreButtons = screen.getAllByRole('link', { name: /Explore Tools Now/ });
     const comingSoonButtons = screen.getAllByRole('link', { name: /Coming Soon/ });
-    expect(exploreButtons.length + comingSoonButtons.length).toBe(5);
+    expect(exploreButtons.length + comingSoonButtons.length).toBe(6);
   });
 
   test('renders icons in feature request cards', () => {

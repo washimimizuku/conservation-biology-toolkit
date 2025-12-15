@@ -45,6 +45,13 @@ const Home = () => {
       status: 'Available'
     },
     {
+      title: '📊 Species Assessment',
+      description: 'IUCN Red List criteria, extinction risk assessment, and range size analysis',
+      tools: ['IUCN Red List Assessment', 'Extinction Risk Assessment', 'Range Size Analysis'],
+      link: '/species-assessment',
+      status: 'Available'
+    },
+    {
       title: '🌍 Habitat & Landscape',
       description: 'Habitat suitability, fragmentation metrics, and corridor design',
       tools: ['Habitat Suitability', 'Fragmentation Analysis', 'Corridor Calculator'],
@@ -90,8 +97,9 @@ const Home = () => {
             🚀 Ready to Use Now!
           </Typography>
           <Typography variant="body1" color="text.primary" paragraph>
-            <strong>Three complete tool suites are live!</strong> Population Analysis for demographic modeling, 
-            Sampling & Survey Design for statistical analysis, and Genetic Diversity for population genetics.
+            <strong>Four complete tool suites are live!</strong> Population Analysis for demographic modeling, 
+            Sampling & Survey Design for statistical analysis, Genetic Diversity for population genetics,
+            and Species Assessment for conservation status evaluation.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
             <Button
@@ -159,6 +167,28 @@ const Home = () => {
               }}
             >
               Genetic Diversity
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
+              component={Link}
+              to="/species-assessment"
+              startIcon={<PlayArrowIcon />}
+              sx={{
+                px: 3,
+                py: 1.5,
+                fontSize: '1rem',
+                fontWeight: 'bold',
+                background: 'linear-gradient(45deg, #FF9800 30%, #FFB74D 90%)',
+                boxShadow: '0 4px 8px 2px rgba(255, 152, 0, .3)',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #F57C00 30%, #FF9800 90%)',
+                  boxShadow: '0 6px 12px 4px rgba(255, 152, 0, .4)',
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
+              Species Assessment
             </Button>
           </Box>
         </Box>

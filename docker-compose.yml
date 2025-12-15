@@ -71,6 +71,16 @@ services:
     volumes:
       - ./services/genetic-diversity:/app
 
+  # Species Assessment - FastAPI Service
+  species-assessment:
+    build:
+      context: ./services/species-assessment
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./services/species-assessment:/app
+
   # Frontend - React App
   frontend:
     build: 
@@ -87,6 +97,7 @@ services:
       - population-analysis
       - sampling-survey
       - genetic-diversity
+      - species-assessment
       # - breed-registry  # Disabled until breed registry is implemented
 
   # Reverse Proxy
@@ -101,6 +112,7 @@ services:
       - population-analysis
       - sampling-survey
       - genetic-diversity
+      - species-assessment
       - frontend
 
 # Volumes disabled until breed registry is implemented

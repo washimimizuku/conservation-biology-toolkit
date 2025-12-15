@@ -40,6 +40,7 @@ describe('Navbar', () => {
       'Population Tools',
       'Sampling Tools', 
       'Genetic Tools',
+      'Species Assessment',
       'Breed Registry'
     ];
 
@@ -56,6 +57,7 @@ describe('Navbar', () => {
       { text: 'Population Tools', href: '/population-tools' },
       { text: 'Sampling Tools', href: '/sampling-tools' },
       { text: 'Genetic Tools', href: '/genetic-tools' },
+      { text: 'Species Assessment', href: '/species-assessment' },
       { text: 'Breed Registry', href: '/breed-registry' }
     ];
 
@@ -118,7 +120,7 @@ describe('Navbar', () => {
     
     // The Box component should contain all navigation buttons
     const navButtons = screen.getAllByRole('link');
-    expect(navButtons).toHaveLength(5);
+    expect(navButtons).toHaveLength(6);
   });
 
   test('handles unknown routes without highlighting', () => {
@@ -134,14 +136,14 @@ describe('Navbar', () => {
   test('renders with BrowserRouter', () => {
     renderWithBrowserRouter();
     expect(screen.getByText('🌱 Conservation Biology Toolkit')).toBeInTheDocument();
-    expect(screen.getAllByRole('link')).toHaveLength(5);
+    expect(screen.getAllByRole('link')).toHaveLength(6);
   });
 
   test('navigation items have correct order', () => {
     renderWithRouter();
     
     const navLinks = screen.getAllByRole('link');
-    const expectedOrder = ['Home', 'Population Tools', 'Sampling Tools', 'Genetic Tools', 'Breed Registry'];
+    const expectedOrder = ['Home', 'Population Tools', 'Sampling Tools', 'Genetic Tools', 'Species Assessment', 'Breed Registry'];
     
     navLinks.forEach((link, index) => {
       expect(link).toHaveTextContent(expectedOrder[index]);
