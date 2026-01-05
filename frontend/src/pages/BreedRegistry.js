@@ -29,6 +29,7 @@ import {
   LocationOn,
   Science
 } from '@mui/icons-material';
+import { Footer } from '../components';
 
 const BreedRegistry = () => {
   const features = [
@@ -282,6 +283,8 @@ const BreedRegistry = () => {
           <Chip label="Phase 5: Integration & Testing" color="primary" variant="outlined" sx={{ m: 0.5 }} />
         </Box>
       </Box>
+      
+      <Footer />
     </Container>
   );
 };

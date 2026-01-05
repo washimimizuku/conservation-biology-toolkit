@@ -20,6 +20,7 @@ import {
   Schedule as ScheduleIcon
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import { Footer } from '../components';
 
 const Home = () => {
   // Helper function to get service-specific colors
@@ -323,20 +324,7 @@ const Home = () => {
           </Typography>
         </Box>
 
-        <Box mt={3} textAlign="center">
-          <Typography variant="caption" color="text.secondary">
-            Built by conservation biologists, for conservation biologists. 
-            Licensed under MIT • Version 0.1.0 • 
-            <MuiLink 
-              href="https://github.com/washimimizuku/conservation-biology-toolkit" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              color="inherit"
-            >
-              View Source
-            </MuiLink>
-          </Typography>
-        </Box>
+        <Footer />
       </Box>
     </Container>
   );

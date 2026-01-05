@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const SamplingTools = () => {
   // Sample Size Calculator state
@@ -584,6 +585,8 @@ const SamplingTools = () => {
           </Card>
         </Grid>
       </Grid>
+      
+      <Footer />
     </Container>
   );
 };

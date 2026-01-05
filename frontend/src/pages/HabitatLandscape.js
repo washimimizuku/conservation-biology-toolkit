@@ -31,6 +31,7 @@ import {
 } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const HabitatLandscape = () => {
   // Habitat Suitability State
@@ -712,6 +713,8 @@ const HabitatLandscape = () => {
           </Card>
         </Grid>
       </Grid>
+      
+      <Footer />
     </Container>
   );
 };

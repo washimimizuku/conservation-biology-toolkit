@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const PopulationTools = () => {
   const [growthData, setGrowthData] = useState({
@@ -603,6 +604,8 @@ const PopulationTools = () => {
           </Card>
         </Grid>
       </Grid>
+      
+      <Footer />
     </Container>
   );
 };

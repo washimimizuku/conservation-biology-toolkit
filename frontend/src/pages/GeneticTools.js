@@ -23,6 +23,7 @@ import {
 import { Biotech, Science, Analytics, TrendingUp } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const GeneticTools = () => {
   // Hardy-Weinberg State
@@ -561,7 +562,7 @@ const GeneticTools = () => {
         </Grid>
       </Grid>
 
-
+      <Footer />
     </Container>
   );
 };

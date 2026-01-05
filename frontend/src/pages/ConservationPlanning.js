@@ -33,6 +33,7 @@ import {
 } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const ConservationPlanning = () => {
   // Conservation Priority State
@@ -1183,7 +1184,7 @@ const ConservationPlanning = () => {
         </Grid>
       </Grid>
 
-
+      <Footer />
     </Container>
   );
 };

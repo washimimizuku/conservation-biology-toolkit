@@ -32,6 +32,7 @@ import {
 } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const ClimateImpact = () => {
   // Temperature Tolerance State
@@ -956,7 +957,7 @@ const ClimateImpact = () => {
         </Grid>
       </Grid>
 
-
+      <Footer />
     </Container>
   );
 };

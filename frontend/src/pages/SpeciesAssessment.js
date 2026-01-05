@@ -22,6 +22,7 @@ import {
 import { Assessment, Warning, LocationOn } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
+import { Footer } from '../components';
 
 const SpeciesAssessment = () => {
   // IUCN Assessment State
@@ -597,6 +598,8 @@ const SpeciesAssessment = () => {
           </Card>
         </Grid>
       </Grid>
+      
+      <Footer />
     </Container>
   );
 };
