@@ -200,6 +200,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Frontend coverage reports
+frontend/coverage/
+
 # Scientific computing
 *.h5
 *.hdf5

@@ -123,6 +123,12 @@ services:
       - /app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - HOST=0.0.0.0
+      - PORT=3000
+      - WDS_SOCKET_HOST=localhost
+      - WDS_SOCKET_PORT=3000
+      - REACT_APP_ENV=docker
     depends_on:
       - population-analysis
       - sampling-survey

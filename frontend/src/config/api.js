@@ -10,6 +10,16 @@ const API_CONFIG = {
     conservationPlanning: 'http://localhost:8008',
     breedRegistry: 'http://localhost:8001',
   },
+  docker: {
+    populationAnalysis: '/api/population',
+    samplingSurvey: '/api/sampling',
+    geneticDiversity: '/api/genetic',
+    speciesAssessment: '/api/species',
+    habitatLandscape: '/api/habitat',
+    climateImpact: '/api/climate',
+    conservationPlanning: '/api/conservation',
+    breedRegistry: '/api/breed',
+  },
   production: {
     populationAnalysis: 'https://api.conservationbiologytools.org/population-analysis',
     samplingSurvey: 'https://api.conservationbiologytools.org/sampling-survey',
@@ -22,7 +32,8 @@ const API_CONFIG = {
   }
 };
 
-const environment = process.env.NODE_ENV || 'development';
+// Check for Docker environment first, then fall back to NODE_ENV
+const environment = process.env.REACT_APP_ENV || process.env.NODE_ENV || 'development';
 
 export const API_URLS = API_CONFIG[environment];
 
