@@ -6,6 +6,18 @@ A comprehensive web-based platform providing essential computational tools for c
 
 This toolkit addresses the critical need for standardized, accessible conservation biology calculations. From population viability analysis to climate impact assessments, these tools help researchers make data-driven conservation decisions.
 
+## Project History
+
+The Conservation Biology Toolkit began in 2014 as a personal project during my Master's degree in Conservation Biology at Universidade de Lisboa, Portugal. What started as a simple command-line tool to help with my own research calculations grew from a genuine need to make complex conservation biology computations more accessible and standardized.
+
+The original version (v1.x) was a collection of Python scripts that I used throughout my studies and early research work. It served its purpose well, helping with population analyses, genetic diversity calculations, and basic conservation planning tasks. However, after 2016, as life took different directions, the project went largely forgotten and unused.
+
+In late 2025, I decided to revisit this old project with fresh eyes and renewed purpose. The scientific community's need for accessible, reliable conservation tools had only grown, and modern web technologies offered an opportunity to transform these personal scripts into something much more valuable. This led to a complete rewrite and expansion into the current web-based platform (v2.0.0).
+
+The transformation from a personal command-line tool to a comprehensive web application represents not just a technological upgrade, but a commitment to sharing knowledge with the broader conservation biology community. My hope is that by making these tools freely available and easy to use, researchers worldwide can focus more on their important conservation work and less on the computational challenges.
+
+This project embodies the collaborative spirit of science – taking something that helped one researcher and expanding it to potentially help many. Every calculation, every feature, and every line of code is written with the hope that it will contribute to better conservation decisions and, ultimately, to protecting the biodiversity that makes our planet so remarkable.
+
 ## Tool Categories
 
 ### 🧬 Population Analysis ✅ **COMPLETE**
