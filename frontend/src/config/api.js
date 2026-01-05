@@ -11,14 +11,14 @@ const API_CONFIG = {
     breedRegistry: 'http://localhost:8001',
   },
   production: {
-    populationAnalysis: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/population-analysis',
-    samplingSurvey: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/sampling-survey',
-    geneticDiversity: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/genetic-diversity',
-    speciesAssessment: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/species-assessment',
-    habitatLandscape: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/habitat-landscape',
-    climateImpact: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/climate-impact',
-    conservationPlanning: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/conservation-planning',
-    breedRegistry: 'https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com/breed-registry',
+    populationAnalysis: 'https://api.conservationbiologytools.org/population-analysis',
+    samplingSurvey: 'https://api.conservationbiologytools.org/sampling-survey',
+    geneticDiversity: 'https://api.conservationbiologytools.org/genetic-diversity',
+    speciesAssessment: 'https://api.conservationbiologytools.org/species-assessment',
+    habitatLandscape: 'https://api.conservationbiologytools.org/habitat-landscape',
+    climateImpact: 'https://api.conservationbiologytools.org/climate-impact',
+    conservationPlanning: 'https://api.conservationbiologytools.org/conservation-planning',
+    breedRegistry: 'https://api.conservationbiologytools.org/breed-registry',
   }
 };
 
