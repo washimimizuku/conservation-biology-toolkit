@@ -67,8 +67,8 @@ rsync -avz --exclude 'frontend/' --exclude '.git/' . ubuntu@$LIGHTSAIL_IP:~/cons
 # SSH and restart services
 ssh ubuntu@$LIGHTSAIL_IP << 'EOF'
 cd ~/conservation-toolkit
-docker-compose -f docker-compose.production.yml down
-docker-compose -f docker-compose.production.yml up -d --build
+docker compose -f docker-compose.production.yml down
+docker compose -f docker-compose.production.yml up -d --build
 EOF
 
 echo "✅ Deployment complete!"
