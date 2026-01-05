@@ -22,7 +22,14 @@ fi
 
 # 1. Create S3 bucket for static website hosting
 echo "📦 Creating S3 bucket: $BUCKET_NAME"
-aws s3 mb s3://$BUCKET_NAME --region $REGION --profile $PROFILE
+
+# Check if bucket already exists
+if aws s3api head-bucket --bucket "$BUCKET_NAME" --profile $PROFILE 2>/dev/null; then
+    echo "✅ S3 bucket already exists: $BUCKET_NAME"
+else
+    aws s3 mb s3://$BUCKET_NAME --region $REGION --profile $PROFILE
+    echo "✅ Created S3 bucket: $BUCKET_NAME"
+fi
 
 # 2. Configure bucket for static website hosting (for direct S3 access if needed)
 echo "🌐 Configuring static website hosting..."
@@ -57,14 +64,26 @@ aws s3api put-bucket-cors \
 
 # 4. Create Origin Access Control for CloudFront
 echo "🔐 Creating Origin Access Control..."
-OAC_ID=$(aws cloudfront create-origin-access-control \
-    --origin-access-control-config \
-        "Name=S3-$BUCKET_NAME-OAC,Description=OAC for $BUCKET_NAME,OriginAccessControlOriginType=s3,SigningBehavior=always,SigningProtocol=sigv4" \
-    --profile $PROFILE \
-    --query 'OriginAccessControl.Id' \
-    --output text)
 
-echo "✅ Created Origin Access Control: $OAC_ID"
+# Check if OAC already exists
+EXISTING_OAC=$(aws cloudfront list-origin-access-controls \
+    --profile $PROFILE \
+    --query "OriginAccessControlList.Items[?Name=='S3-$BUCKET_NAME-OAC'].Id" \
+    --output text 2>/dev/null)
+
+if [ ! -z "$EXISTING_OAC" ]; then
+    echo "✅ Using existing Origin Access Control: $EXISTING_OAC"
+    OAC_ID="$EXISTING_OAC"
+else
+    OAC_ID=$(aws cloudfront create-origin-access-control \
+        --origin-access-control-config \
+            "Name=S3-$BUCKET_NAME-OAC,Description=OAC for $BUCKET_NAME,OriginAccessControlOriginType=s3,SigningBehavior=always,SigningProtocol=sigv4" \
+        --profile $PROFILE \
+        --query 'OriginAccessControl.Id' \
+        --output text)
+    
+    echo "✅ Created new Origin Access Control: $OAC_ID"
+fi
 
 # 5. Request SSL certificate (if not exists)
 echo "🔒 Checking for SSL certificate..."
@@ -157,26 +176,53 @@ EOF
 
 # Only create CloudFront if certificate is validated
 if [ ! -z "$CERT_ARN" ]; then
-    DISTRIBUTION_ID=$(aws cloudfront create-distribution \
-        --distribution-config file://cloudfront-config.json \
+    # Check certificate status
+    CERT_STATUS=$(aws acm describe-certificate \
+        --certificate-arn "$CERT_ARN" \
+        --region $CERT_REGION \
         --profile $PROFILE \
-        --query 'Distribution.Id' \
-        --output text)
+        --query 'Certificate.Status' \
+        --output text 2>/dev/null)
     
-    echo "✅ CloudFront distribution created: $DISTRIBUTION_ID"
-    
-    # Get CloudFront domain name
-    CF_DOMAIN=$(aws cloudfront get-distribution \
-        --id $DISTRIBUTION_ID \
-        --profile $PROFILE \
-        --query 'Distribution.DomainName' \
-        --output text)
-    
-    echo "🌍 CloudFront domain: $CF_DOMAIN"
-    
-    # Create bucket policy to allow CloudFront OAC access
-    echo "🔐 Setting up S3 bucket policy for CloudFront OAC..."
-    cat > bucket-policy.json << EOF
+    if [ "$CERT_STATUS" != "ISSUED" ]; then
+        echo "⚠️  Certificate status: $CERT_STATUS"
+        echo "📋 Please validate the certificate in Route 53 before creating CloudFront"
+        echo "   Go to Certificate Manager → Click certificate → Create records in Route 53"
+        echo "   Then re-run this script once certificate shows 'ISSUED' status"
+    else
+        echo "✅ Certificate validated, creating CloudFront distribution..."
+        
+        # Check if CloudFront distribution already exists
+        EXISTING_DIST=$(aws cloudfront list-distributions \
+            --profile $PROFILE \
+            --query "DistributionList.Items[?Comment=='Conservation Biology Tools Frontend'].Id" \
+            --output text 2>/dev/null)
+        
+        if [ ! -z "$EXISTING_DIST" ]; then
+            echo "✅ Using existing CloudFront distribution: $EXISTING_DIST"
+            DISTRIBUTION_ID="$EXISTING_DIST"
+        else
+            DISTRIBUTION_ID=$(aws cloudfront create-distribution \
+                --distribution-config file://cloudfront-config.json \
+                --profile $PROFILE \
+                --query 'Distribution.Id' \
+                --output text)
+            
+            echo "✅ Created new CloudFront distribution: $DISTRIBUTION_ID"
+        fi
+        
+        # Get CloudFront domain name
+        CF_DOMAIN=$(aws cloudfront get-distribution \
+            --id $DISTRIBUTION_ID \
+            --profile $PROFILE \
+            --query 'Distribution.DomainName' \
+            --output text)
+        
+        echo "🌍 CloudFront domain: $CF_DOMAIN"
+        
+        # Create bucket policy to allow CloudFront OAC access
+        echo "🔐 Setting up S3 bucket policy for CloudFront OAC..."
+        cat > bucket-policy.json << EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -197,13 +243,14 @@ if [ ! -z "$CERT_ARN" ]; then
     ]
 }
 EOF
-    
-    aws s3api put-bucket-policy \
-        --bucket $BUCKET_NAME \
-        --policy file://bucket-policy.json \
-        --profile $PROFILE
-    
-    echo "✅ S3 bucket policy configured for CloudFront access"
+        
+        aws s3api put-bucket-policy \
+            --bucket $BUCKET_NAME \
+            --policy file://bucket-policy.json \
+            --profile $PROFILE
+        
+        echo "✅ S3 bucket policy configured for CloudFront access"
+    fi
 else
     echo "⚠️  Skipping CloudFront creation - validate SSL certificate first"
 fi
