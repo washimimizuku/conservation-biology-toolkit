@@ -39,7 +39,8 @@ for service in "${SERVICES[@]}"; do
     echo "aws lightsail push-container-image \\"
     echo "    --service-name conservation-api \\"
     echo "    --label $service \\"
-    echo "    --image $ECR_REGISTRY/conservation/$service:latest"
+    echo "    --image $ECR_REGISTRY/conservation/$service:latest \\"
+    echo "    --region $REGION"
     echo ""
 done
 

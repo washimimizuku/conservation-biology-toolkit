@@ -15,8 +15,8 @@ ECR_REGISTRY="$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com"
 
 # Check if Lightsail service exists
 echo "🔍 Checking Lightsail container service..."
-if ! aws lightsail get-container-services --service-name "$SERVICE_NAME" >/dev/null 2>&1; then
-    echo "❌ Lightsail container service '$SERVICE_NAME' not found"
+if ! aws lightsail get-container-services --service-name "$SERVICE_NAME" --region $REGION >/dev/null 2>&1; then
+    echo "❌ Lightsail container service '$SERVICE_NAME' not found in $REGION"
     echo "📋 Run ./04-create-lightsail-container-service.sh first"
     exit 1
 fi
@@ -65,7 +65,8 @@ for service in "${SERVICES[@]}"; do
     aws lightsail push-container-image \
         --service-name "$SERVICE_NAME" \
         --label "$service" \
-        --image "conservation/$service:latest"
+        --image "conservation/$service:latest" \
+        --region $REGION
     
     echo "✅ $service updated"
     cd ../..
@@ -87,13 +88,15 @@ docker push $ECR_REGISTRY/conservation/nginx:latest
 aws lightsail push-container-image \
     --service-name "$SERVICE_NAME" \
     --label "nginx" \
-    --image "conservation/nginx:latest"
+    --image "conservation/nginx:latest" \
+    --region $REGION
 
 rm nginx-deployment.dockerfile
 
 # Get current deployment version
 CURRENT_VERSION=$(aws lightsail get-container-services \
     --service-name "$SERVICE_NAME" \
+    --region $REGION \
     --query 'containerServices[0].currentDeployment.version' \
     --output text)
 
