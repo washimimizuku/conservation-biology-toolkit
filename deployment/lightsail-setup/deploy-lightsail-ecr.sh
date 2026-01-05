@@ -35,7 +35,7 @@ echo "📦 Copying deployment files to Lightsail..."
 # Copy docker-compose and environment files
 scp docker-compose.lightsail-ecr.yml $LIGHTSAIL_USER@$LIGHTSAIL_IP:~/docker-compose.yml
 scp .env.lightsail $LIGHTSAIL_USER@$LIGHTSAIL_IP:~/.env
-scp deployment/nginx/api-only.conf $LIGHTSAIL_USER@$LIGHTSAIL_IP:~/nginx.conf
+scp ../nginx/api-only.conf $LIGHTSAIL_USER@$LIGHTSAIL_IP:~/nginx.conf
 
 echo "✅ Files copied to Lightsail"
 
