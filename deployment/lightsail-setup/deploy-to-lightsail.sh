@@ -3,6 +3,9 @@
 # Deploy ECR images to Lightsail Container Service
 set -e
 
+# Fix Docker API version compatibility
+export DOCKER_API_VERSION=1.41
+
 echo "🚀 Deploying to Lightsail Container Service"
 echo "=========================================="
 
@@ -24,11 +27,19 @@ SERVICES=(
 
 echo "📤 Pushing images from ECR to Lightsail..."
 
+# Pull images locally first to avoid platform issues
+echo "📥 Pulling images from ECR..."
+aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+
 # Push each service image
 for service_port in "${SERVICES[@]}"; do
     service=$(echo $service_port | cut -d: -f1)
-    echo "📦 Pushing $service..."
+    echo "📦 Pulling and pushing $service..."
     
+    # Pull from ECR
+    docker pull "$ECR_REGISTRY/conservation/$service:latest"
+    
+    # Push to Lightsail
     aws lightsail push-container-image \
         --service-name "$SERVICE_NAME" \
         --label "$service" \
@@ -36,7 +47,8 @@ for service_port in "${SERVICES[@]}"; do
 done
 
 # Push nginx
-echo "📦 Pushing nginx..."
+echo "📦 Pulling and pushing nginx..."
+docker pull "$ECR_REGISTRY/conservation/nginx:latest"
 aws lightsail push-container-image \
     --service-name "$SERVICE_NAME" \
     --label "nginx" \
