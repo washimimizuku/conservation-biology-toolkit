@@ -205,32 +205,43 @@ The **Habitat & Landscape Service** provides three core analytical tools for spa
 
 ## Deployment
 
-### AWS Deployment (Recommended)
-The project is configured for cost-efficient AWS deployment using S3 + CloudFront + Lightsail.
+Choose the deployment method that best fits your needs:
 
-**Cost**: ~$7.50/month for 1,000-2,000 daily users
+### 1. Lightsail + ECR (Recommended for Small Projects)
+**Cost**: ~$5.10/month | **Best for**: Development, testing, low-traffic production
 
 ```bash
-# 1. Check prerequisites
-./check-prerequisites.sh
+# Quick setup
+cd deployment/lightsail-setup/
+./setup-lightsail-iam.sh        # Setup IAM role
+./deploy-lightsail-ecr.sh       # Deploy to Lightsail
+```
 
-# 2. Set up AWS infrastructure
+### 2. ECS Fargate (Recommended for Production)
+**Cost**: $49-245/month | **Best for**: Auto-scaling production workloads
+
+```bash
+# Complete automated deployment
+cd deployment/ecs-setup/
+./deploy-all.sh
+```
+
+### 3. S3 + CloudFront + Lightsail (Legacy)
+**Cost**: ~$8.50/month | **Best for**: Static frontend + simple backend
+
+```bash
+# Traditional AWS deployment
+cd deployment/scripts/
 ./setup-aws-infrastructure.sh
-
-# 3. Configure deployment
-cp .env.deploy.template .env.deploy
-# Edit .env.deploy with your AWS resource IDs
-
-# 4. Deploy application
 ./deploy-aws.sh
 ```
 
 **Documentation:**
-- [New Computer Setup](docs/NEW_COMPUTER_SETUP.md) - Complete setup guide for new machines
+- [Deployment Options](deployment/README.md) - Compare all deployment methods
+- [Lightsail + ECR Guide](deployment/lightsail-setup/README.md) - Cost-effective deployment
+- [ECS Fargate Guide](deployment/ecs-setup/README.md) - Production-ready deployment
 - [AWS Setup Guide](docs/AWS_SETUP_GUIDE.md) - Detailed AWS infrastructure setup
-- [Deployment Setup](docs/DEPLOYMENT_SETUP.md) - Secure configuration management
 - [Architecture Diagrams](docs/ARCHITECTURE_DIAGRAM.md) - Visual system architecture
-- [Capacity Planning](docs/DEPLOYMENT_CAPACITY.md) - Performance and scaling analysis
 
 ### Local Development
 
