@@ -106,8 +106,10 @@ aws configure
 Enter your credentials:
 - **AWS Access Key ID**: Your access key
 - **AWS Secret Access Key**: Your secret key  
-- **Default region**: `us-east-1` (required for CloudFront)
+- **Default region**: `eu-central-1` (or your preferred region)
 - **Default output format**: `json`
+
+**Important**: While you can use any region for S3 and other services, SSL certificates for CloudFront must be created in `us-east-1`. The setup script handles this automatically.
 
 ### 3. Test AWS Access
 ```bash

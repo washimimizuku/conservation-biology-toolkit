@@ -8,7 +8,8 @@ set -e
 # Configuration
 DOMAIN="conservationbiologytools.org"
 BUCKET_NAME="conservationbiologytools-frontend"
-REGION="us-east-1"  # Required for CloudFront
+REGION="us-east-1"  # Keep simple - same region as SSL cert
+CERT_REGION="us-east-1"  # CloudFront requires certificates in us-east-1
 PROFILE="default"   # Change if using different AWS profile
 
 echo "🚀 Setting up AWS infrastructure for $DOMAIN..."
@@ -23,36 +24,17 @@ fi
 echo "📦 Creating S3 bucket: $BUCKET_NAME"
 aws s3 mb s3://$BUCKET_NAME --region $REGION --profile $PROFILE
 
-# 2. Configure bucket for static website hosting
+# 2. Configure bucket for static website hosting (for direct S3 access if needed)
 echo "🌐 Configuring static website hosting..."
 aws s3 website s3://$BUCKET_NAME \
     --index-document index.html \
     --error-document index.html \
     --profile $PROFILE
 
-# 3. Create bucket policy for public read access
-echo "🔓 Setting bucket policy for public access..."
-cat > bucket-policy.json << EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::$BUCKET_NAME/*"
-        }
-    ]
-}
-EOF
+# Note: We'll use CloudFront Origin Access Control instead of public bucket policy
+# This is more secure as S3 bucket remains private, only CloudFront can access it
 
-aws s3api put-bucket-policy \
-    --bucket $BUCKET_NAME \
-    --policy file://bucket-policy.json \
-    --profile $PROFILE
-
-# 4. Configure CORS for API calls
+# 3. Configure CORS for API calls (optional, mainly for direct S3 access)
 echo "🔄 Configuring CORS..."
 cat > cors-config.json << EOF
 {
@@ -73,21 +55,33 @@ aws s3api put-bucket-cors \
     --cors-configuration file://cors-config.json \
     --profile $PROFILE
 
+# 4. Create Origin Access Control for CloudFront
+echo "🔐 Creating Origin Access Control..."
+OAC_ID=$(aws cloudfront create-origin-access-control \
+    --origin-access-control-config \
+        "Name=S3-$BUCKET_NAME-OAC,Description=OAC for $BUCKET_NAME,OriginAccessControlOriginType=s3,SigningBehavior=always,SigningProtocol=sigv4" \
+    --profile $PROFILE \
+    --query 'OriginAccessControl.Id' \
+    --output text)
+
+echo "✅ Created Origin Access Control: $OAC_ID"
+
 # 5. Request SSL certificate (if not exists)
 echo "🔒 Checking for SSL certificate..."
 CERT_ARN=$(aws acm list-certificates \
-    --region $REGION \
+    --region $CERT_REGION \
     --profile $PROFILE \
     --query "CertificateSummaryList[?DomainName=='$DOMAIN'].CertificateArn" \
     --output text)
 
 if [ -z "$CERT_ARN" ]; then
     echo "📜 Requesting SSL certificate for $DOMAIN and *.$DOMAIN..."
+    echo "⚠️  Note: CloudFront requires SSL certificates in us-east-1 region"
     CERT_ARN=$(aws acm request-certificate \
         --domain-name $DOMAIN \
         --subject-alternative-names "*.$DOMAIN" \
         --validation-method DNS \
-        --region $REGION \
+        --region $CERT_REGION \
         --profile $PROFILE \
         --query 'CertificateArn' \
         --output text)
@@ -115,12 +109,11 @@ cat > cloudfront-config.json << EOF
         "Items": [
             {
                 "Id": "S3-$BUCKET_NAME",
-                "DomainName": "$BUCKET_NAME.s3-website-$REGION.amazonaws.com",
-                "CustomOriginConfig": {
-                    "HTTPPort": 80,
-                    "HTTPSPort": 443,
-                    "OriginProtocolPolicy": "http-only"
-                }
+                "DomainName": "$BUCKET_NAME.s3.$REGION.amazonaws.com",
+                "S3OriginConfig": {
+                    "OriginAccessIdentity": ""
+                },
+                "OriginAccessControlId": "$OAC_ID"
             }
         ]
     },
@@ -180,6 +173,37 @@ if [ ! -z "$CERT_ARN" ]; then
         --output text)
     
     echo "🌍 CloudFront domain: $CF_DOMAIN"
+    
+    # Create bucket policy to allow CloudFront OAC access
+    echo "🔐 Setting up S3 bucket policy for CloudFront OAC..."
+    cat > bucket-policy.json << EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowCloudFrontServicePrincipal",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::$BUCKET_NAME/*",
+            "Condition": {
+                "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::$(aws sts get-caller-identity --query Account --output text --profile $PROFILE):distribution/$DISTRIBUTION_ID"
+                }
+            }
+        }
+    ]
+}
+EOF
+    
+    aws s3api put-bucket-policy \
+        --bucket $BUCKET_NAME \
+        --policy file://bucket-policy.json \
+        --profile $PROFILE
+    
+    echo "✅ S3 bucket policy configured for CloudFront access"
 else
     echo "⚠️  Skipping CloudFront creation - validate SSL certificate first"
 fi
@@ -191,10 +215,10 @@ rm -f bucket-policy.json cors-config.json cloudfront-config.json
 echo ""
 echo "✅ AWS Infrastructure Setup Complete!"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📦 S3 Bucket: $BUCKET_NAME"
+echo "📦 S3 Bucket: $BUCKET_NAME (Region: $REGION)"
 echo "🌐 Website URL: http://$BUCKET_NAME.s3-website-$REGION.amazonaws.com"
 if [ ! -z "$CERT_ARN" ]; then
-    echo "🔒 SSL Certificate: $CERT_ARN"
+    echo "🔒 SSL Certificate: $CERT_ARN (Region: $CERT_REGION)"
 fi
 if [ ! -z "$DISTRIBUTION_ID" ]; then
     echo "☁️ CloudFront Distribution: $DISTRIBUTION_ID"
@@ -208,4 +232,9 @@ echo "   - A record: $DOMAIN → $CF_DOMAIN (alias)"
 echo "   - CNAME: www.$DOMAIN → $DOMAIN"
 echo "3. Deploy your React app: npm run build && aws s3 sync build/ s3://$BUCKET_NAME"
 echo "4. Set up Lightsail instance for API backend"
+echo ""
+echo "⚠️  Important Notes:"
+echo "- S3 bucket is in $REGION region"
+echo "- SSL certificate must be in us-east-1 for CloudFront"
+echo "- DNS propagation may take up to 48 hours"
 echo ""
