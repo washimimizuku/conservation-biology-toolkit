@@ -31,6 +31,11 @@ const Footer = () => {
           {' '}• Conservation Biology Toolkit
         </Typography>
       </Box>
+      <Box mt={1}>
+        <Typography variant="caption" color="text.secondary">
+          © {new Date().getFullYear()} Nuno Barreto. All rights reserved.
+        </Typography>
+      </Box>
     </Box>
   );
 };
