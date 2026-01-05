@@ -6,7 +6,7 @@ const Footer = () => {
     <Box mt={4} mb={2} textAlign="center">
       <Typography variant="caption" color="text.secondary">
         Built by conservation biologists, for conservation biologists. 
-        Licensed under MIT • Version 0.1.0 • 
+        Licensed under MIT • Version 2.0.0 • 
         <MuiLink 
           href="https://github.com/washimimizuku/conservation-biology-toolkit" 
           target="_blank" 

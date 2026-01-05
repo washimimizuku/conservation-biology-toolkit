@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "population-analysis"
-version = "0.1.0"
+version = "2.0.0"
 description = "Population viability analysis and demographic tools"
 authors = ["Nuno Barreto <nbarreto@gmail.com>"]
 package-mode = false

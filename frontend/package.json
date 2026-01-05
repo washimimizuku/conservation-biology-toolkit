@@ -1,6 +1,6 @@
 {
   "name": "conservation-biology-toolkit-frontend",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",

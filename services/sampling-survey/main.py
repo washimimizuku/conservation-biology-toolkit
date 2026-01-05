@@ -9,7 +9,7 @@ from math import sqrt, log, exp
 app = FastAPI(
     title="Sampling & Survey Design API",
     description="Statistical tools for sampling design and survey planning in conservation biology",
-    version="0.1.0"
+    version="2.0.0"
 )
 
 # CORS middleware
@@ -78,7 +78,7 @@ class DistanceSamplingOutput(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Sampling & Survey Design API", "version": "0.1.0"}
+    return {"message": "Sampling & Survey Design API", "version": "2.0.0"}
 
 @app.post("/sample-size", response_model=SampleSizeOutput)
 async def calculate_sample_size(data: SampleSizeInput):

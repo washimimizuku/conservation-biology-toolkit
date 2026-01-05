@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sampling-survey"
-version = "0.1.0"
+version = "2.0.0"
 description = "Sampling and survey design tools for conservation biology"
 authors = ["Nuno Barreto <nbarreto@gmail.com>"]
 package-mode = false

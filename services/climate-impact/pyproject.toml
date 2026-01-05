@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "climate-impact-service"
-version = "0.1.0"
+version = "2.0.0"
 description = "Climate impact assessment tools for conservation biology"
 authors = ["Conservation Biology Toolkit"]
 readme = "README.md"

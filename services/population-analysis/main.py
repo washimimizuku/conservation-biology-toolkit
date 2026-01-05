@@ -8,7 +8,7 @@ from typing import List, Optional
 app = FastAPI(
     title="Population Analysis API",
     description="Population viability analysis and demographic tools",
-    version="0.1.0"
+    version="2.0.0"
 )
 
 # CORS middleware
@@ -79,7 +79,7 @@ class MetapopulationOutput(BaseModel):
 
 @app.get("/")
 async def root():
-    return {"message": "Population Analysis API", "version": "0.1.0"}
+    return {"message": "Population Analysis API", "version": "2.0.0"}
 
 @app.post("/population-growth", response_model=PopulationGrowthOutput)
 async def calculate_population_growth(data: PopulationGrowthInput):

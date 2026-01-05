@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "conservation-biology-toolkit"
-version = "0.1.0"
+version = "2.0.0"
 description = "A comprehensive web-based platform providing essential computational tools for conservation biologists"
 authors = ["Nuno Barreto <nbarreto@gmail.com>"]
 readme = "README.md"
