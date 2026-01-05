@@ -1,0 +1,90 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    nginx \
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install common Python dependencies
+RUN pip install fastapi uvicorn numpy scipy pandas
+
+# Copy all services
+COPY services/ ./services/
+
+# Install Poetry and dependencies for each service
+RUN pip install poetry && \
+    cd services/population-analysis && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/sampling-survey && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/genetic-diversity && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/species-assessment && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/habitat-landscape && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/climate-impact && poetry config virtualenvs.create false && poetry install --only=main && cd ../.. && \
+    cd services/conservation-planning && poetry config virtualenvs.create false && poetry install --only=main && cd ../..
+
+# Copy nginx config
+COPY deployment/nginx/lightsail.conf /etc/nginx/sites-available/default
+RUN rm /etc/nginx/sites-enabled/default && \
+    ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Create supervisor config
+COPY <<EOF /etc/supervisor/conf.d/supervisord.conf
+[supervisord]
+nodaemon=true
+
+[program:nginx]
+command=nginx -g "daemon off;"
+autostart=true
+autorestart=true
+
+[program:population-analysis]
+command=uvicorn main:app --host 127.0.0.1 --port 8000
+directory=/app/services/population-analysis
+autostart=true
+autorestart=true
+
+[program:sampling-survey]
+command=uvicorn main:app --host 127.0.0.1 --port 8003
+directory=/app/services/sampling-survey
+autostart=true
+autorestart=true
+
+[program:genetic-diversity]
+command=uvicorn main:app --host 127.0.0.1 --port 8004
+directory=/app/services/genetic-diversity
+autostart=true
+autorestart=true
+
+[program:species-assessment]
+command=uvicorn main:app --host 127.0.0.1 --port 8005
+directory=/app/services/species-assessment
+autostart=true
+autorestart=true
+
+[program:habitat-landscape]
+command=uvicorn main:app --host 127.0.0.1 --port 8006
+directory=/app/services/habitat-landscape
+autostart=true
+autorestart=true
+
+[program:climate-impact]
+command=uvicorn main:app --host 127.0.0.1 --port 8007
+directory=/app/services/climate-impact
+autostart=true
+autorestart=true
+
+[program:conservation-planning]
+command=uvicorn main:app --host 127.0.0.1 --port 8008
+directory=/app/services/conservation-planning
+autostart=true
+autorestart=true
+EOF
+
+# Expose only port 80 (nginx)
+EXPOSE 80
+
+# Start supervisor
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
