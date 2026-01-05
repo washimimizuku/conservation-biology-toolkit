@@ -90,6 +90,21 @@ This toolkit addresses the critical need for standardized, accessible conservati
 - **Node.js 18+** - For React frontend
 - **Poetry** - Python dependency management
 - **Docker & Docker Compose** - For development environment
+- **AWS CLI v2** - For deployment (if deploying to AWS)
+
+### New Computer Setup
+If setting up on a new computer, run the prerequisites checker first:
+
+```bash
+# Clone the repository
+git clone https://github.com/washimimizuku/conservation-biology-toolkit.git
+cd conservation-biology-toolkit
+
+# Check if your system is ready for deployment
+./check-prerequisites.sh
+```
+
+For detailed setup instructions, see [New Computer Setup Guide](docs/NEW_COMPUTER_SETUP.md).
 
 ### Quick Start
 ```bash
@@ -187,6 +202,48 @@ The **Habitat & Landscape Service** provides three core analytical tools for spa
 1. **Breed Registry** (High complexity) - Django-based CRUD application, pedigree tracking, breeding management
 
 **🎯 Current Status: 26/32 tools implemented across 7/8 service categories**
+
+## Deployment
+
+### AWS Deployment (Recommended)
+The project is configured for cost-efficient AWS deployment using S3 + CloudFront + Lightsail.
+
+**Cost**: ~$7.50/month for 1,000-2,000 daily users
+
+```bash
+# 1. Check prerequisites
+./check-prerequisites.sh
+
+# 2. Set up AWS infrastructure
+./setup-aws-infrastructure.sh
+
+# 3. Configure deployment
+cp .env.deploy.template .env.deploy
+# Edit .env.deploy with your AWS resource IDs
+
+# 4. Deploy application
+./deploy-aws.sh
+```
+
+**Documentation:**
+- [New Computer Setup](docs/NEW_COMPUTER_SETUP.md) - Complete setup guide for new machines
+- [AWS Setup Guide](docs/AWS_SETUP_GUIDE.md) - Detailed AWS infrastructure setup
+- [Deployment Setup](docs/DEPLOYMENT_SETUP.md) - Secure configuration management
+- [Architecture Diagrams](docs/ARCHITECTURE_DIAGRAM.md) - Visual system architecture
+- [Capacity Planning](docs/DEPLOYMENT_CAPACITY.md) - Performance and scaling analysis
+
+### Local Development
+
+For local development, use Docker Compose:
+
+```bash
+# Start all services
+docker-compose up
+
+# Or start individual services
+cd frontend && npm start
+cd services/population-analysis && poetry run uvicorn main:app --reload --port 8002
+```
 
 ## Testing
 
