@@ -46,6 +46,9 @@ if ! command -v docker &> /dev/null; then
     exit 1
 fi
 
+# Fix Docker API version compatibility
+export DOCKER_API_VERSION=1.41
+
 # Check AWS credentials
 if ! aws sts get-caller-identity >/dev/null 2>&1; then
     echo "❌ AWS credentials not configured. Run 'aws configure' first."
