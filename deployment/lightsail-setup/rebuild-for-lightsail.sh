@@ -3,6 +3,9 @@
 # Rebuild and push images with platform compatibility for Lightsail
 set -e
 
+# Fix Docker API version compatibility
+export DOCKER_API_VERSION=1.41
+
 echo "🔨 Rebuilding images for Lightsail compatibility"
 echo "==============================================="
 
