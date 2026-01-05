@@ -32,19 +32,19 @@ cd deployment/aws/
 ./04-create-lightsail-container-service.sh
 
 # 5. Deploy frontend
-./07-deploy-frontend.sh
+./05-deploy-frontend.sh
 ```
 
 ## Updates
 
 ### Update API
 ```bash
-./update-lightsail.sh
+./06-update-lightsail.sh
 ```
 
 ### Update Frontend
 ```bash
-./update-frontend.sh
+./07-update-frontend.sh
 ```
 
 ## File Structure

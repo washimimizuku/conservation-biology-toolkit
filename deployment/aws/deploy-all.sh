@@ -46,7 +46,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 # Step 5: Deploy Frontend
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-./07-deploy-frontend.sh
+./05-deploy-frontend.sh
 
 echo ""
 echo "🎉 Deployment Complete!"
