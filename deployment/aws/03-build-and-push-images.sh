@@ -5,8 +5,7 @@
 
 set -e
 
-# Fix Docker API version compatibility
-export DOCKER_API_VERSION=1.41
+# Let Docker use its default API version
 
 echo "🚀 Step 3: Building and Pushing Images to ECR"
 echo "=============================================="
