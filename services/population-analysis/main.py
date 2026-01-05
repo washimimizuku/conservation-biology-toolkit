@@ -18,7 +18,8 @@ app.add_middleware(
         "http://localhost:3000",  # Development frontend
         "https://conservationbiologytools.org",  # Production frontend
         "https://www.conservationbiologytools.org",  # Production frontend with www
-        "https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com"  # Direct Lightsail URL
+        "https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com",  # Direct Lightsail URL
+        "https://api.conservationbiologytools.org"  # Custom domain
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
