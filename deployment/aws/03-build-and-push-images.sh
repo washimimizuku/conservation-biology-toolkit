@@ -38,8 +38,8 @@ for service in "${SERVICES[@]}"; do
     
     cd "services/$service"
     
-    # Build image
-    docker build -t "conservation/$service" .
+    # Build image with platform specification
+    docker build --platform linux/amd64 -t "conservation/$service" .
     
     # Tag for ECR
     docker tag "conservation/$service:latest" "$ECR_REGISTRY/conservation/$service:latest"
@@ -66,8 +66,8 @@ COPY deployment/nginx/api-only.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 EOF
 
-# Build and push Nginx
-docker build -f nginx-deployment.dockerfile -t conservation/nginx .
+# Build and push Nginx with platform specification
+docker build --platform linux/amd64 -f nginx-deployment.dockerfile -t conservation/nginx .
 docker tag conservation/nginx:latest $ECR_REGISTRY/conservation/nginx:latest
 docker push $ECR_REGISTRY/conservation/nginx:latest
 
