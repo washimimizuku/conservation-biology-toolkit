@@ -17,7 +17,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",  # Development frontend
         "https://conservationbiologytools.org",  # Production frontend
-        "https://www.conservationbiologytools.org"  # Production frontend with www
+        "https://www.conservationbiologytools.org",  # Production frontend with www
+        "https://conservation-api.xfn4ddjmwg9tr.us-east-1.cs.amazonlightsail.com"  # Direct Lightsail URL
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
