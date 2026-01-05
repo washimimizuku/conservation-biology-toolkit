@@ -7,10 +7,43 @@ set -e
 
 echo "🚀 Deploying Conservation Biology Toolkit to AWS..."
 
-# Configuration
-BUCKET_NAME="conservation-toolkit-frontend"
-CLOUDFRONT_DISTRIBUTION_ID="your-distribution-id"
-LIGHTSAIL_IP="your-lightsail-ip"
+# Configuration - Load from environment variables or config file
+BUCKET_NAME="conservationbiologytools-frontend"
+CLOUDFRONT_DISTRIBUTION_ID="${CLOUDFRONT_DISTRIBUTION_ID:-}"
+LIGHTSAIL_IP="${LIGHTSAIL_IP:-}"
+
+# Load from local config file if it exists (not committed to git)
+if [ -f ".env.deploy" ]; then
+    echo "📋 Loading configuration from .env.deploy..."
+    source .env.deploy
+fi
+
+# Validate required variables
+if [ -z "$CLOUDFRONT_DISTRIBUTION_ID" ]; then
+    echo "❌ Error: CLOUDFRONT_DISTRIBUTION_ID not set"
+    echo ""
+    echo "💡 Setup options:"
+    echo "1. Create .env.deploy file: cp .env.deploy.template .env.deploy"
+    echo "2. Set environment variable: export CLOUDFRONT_DISTRIBUTION_ID=your-id"
+    echo "3. See docs/DEPLOYMENT_SETUP.md for detailed instructions"
+    exit 1
+fi
+
+if [ -z "$LIGHTSAIL_IP" ]; then
+    echo "❌ Error: LIGHTSAIL_IP not set"
+    echo ""
+    echo "💡 Setup options:"
+    echo "1. Create .env.deploy file: cp .env.deploy.template .env.deploy"
+    echo "2. Set environment variable: export LIGHTSAIL_IP=your-ip"
+    echo "3. See docs/DEPLOYMENT_SETUP.md for detailed instructions"
+    exit 1
+fi
+
+echo "✅ Configuration loaded successfully"
+echo "📦 S3 Bucket: $BUCKET_NAME"
+echo "☁️ CloudFront: $CLOUDFRONT_DISTRIBUTION_ID"
+echo "🖥️ Lightsail: $LIGHTSAIL_IP"
+echo ""
 
 # Build and deploy frontend to S3
 echo "📦 Building React frontend..."
@@ -39,5 +72,5 @@ docker-compose -f docker-compose.production.yml up -d --build
 EOF
 
 echo "✅ Deployment complete!"
-echo "Frontend: https://yourdomain.com"
-echo "API: https://api.yourdomain.com"
+echo "Frontend: https://conservationbiologytools.org"
+echo "API: https://api.conservationbiologytools.org"
