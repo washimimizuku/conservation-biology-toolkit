@@ -1,77 +1,104 @@
-# Deployment Options
+# Deployment Guide
 
-This directory contains all deployment configurations and scripts for the Conservation Biology Toolkit.
+This directory contains the production deployment configuration for the Conservation Biology Toolkit.
 
-## Available Deployment Methods
+## Current Architecture
 
-### 1. Lightsail + ECR (Recommended for Low Traffic)
-**Cost**: ~$5.10/month | **Traffic**: Up to 1,000 requests/day
+**✅ Production Setup:**
+- **Frontend**: S3 + CloudFront → `https://conservationbiologytools.org`
+- **API**: Lightsail Container Service → `https://api.conservationbiologytools.org`
+- **Container**: Single container with all 7 FastAPI services + nginx
 
+## Quick Deployment
+
+### Automated (Recommended)
 ```bash
-cd lightsail-setup/
-./setup-lightsail-iam.sh
-./deploy-lightsail-ecr.sh
-```
-
-**Best for**: Development, testing, low-traffic production
-
-### 2. ECS Fargate (Recommended for Production)
-**Cost**: $49-245/month | **Traffic**: Unlimited with auto-scaling
-
-```bash
-cd ecs-setup/
+cd deployment/aws/
 ./deploy-all.sh
 ```
 
-**Best for**: Production workloads, high availability, auto-scaling
-
-### 3. S3 + CloudFront + Lightsail (Legacy)
-**Cost**: ~$8.50/month | **Traffic**: Up to 2,000 requests/day
-
+### Manual Steps
 ```bash
-cd scripts/
-./setup-aws-infrastructure.sh
-./deploy-aws.sh
+# 1. Setup frontend infrastructure
+./01-setup-frontend-infrastructure.sh
+
+# 2. Create ECR repository
+./02-create-ecr-repositories.sh
+
+# 3. Build and push API container
+./03-build-and-push-lightsail.sh
+
+# 4. Create Lightsail service
+./04-create-lightsail-container-service.sh
+
+# 5. Deploy frontend
+./07-deploy-frontend.sh
 ```
 
-**Best for**: Static frontend + simple backend
+## Updates
 
-## Directory Structure
+### Update API
+```bash
+./update-lightsail.sh
+```
+
+### Update Frontend
+```bash
+./update-frontend.sh
+```
+
+## File Structure
 
 ```
 deployment/
-├── README.md                    # This file
-├── nginx/                       # Nginx configurations
-│   └── api-only.conf           # API-only nginx config
-├── scripts/                     # Legacy deployment scripts
-│   ├── deploy-aws.sh           # S3 + CloudFront deployment
-│   ├── setup-aws-infrastructure.sh
-│   └── setup-dev.sh            # Development setup
-├── lightsail-setup/            # Lightsail + ECR deployment
-│   ├── README.md
-│   ├── setup-lightsail-iam.sh
-│   ├── deploy-lightsail-ecr.sh
-│   ├── test-lightsail-ecr.sh
-│   └── docker-compose.lightsail-ecr.yml
-└── ecs-setup/                  # ECS Fargate deployment
-    ├── README.md
-    ├── deploy-all.sh
-    └── 01-08-*.sh              # Individual setup scripts
+├── aws/                    # Main deployment scripts
+│   ├── deploy-all.sh      # Complete automated deployment
+│   ├── update-*.sh        # Update scripts
+│   └── 0*-*.sh           # Individual deployment steps
+└── nginx/
+    └── lightsail.conf     # Nginx configuration for container
 ```
 
-## Choosing the Right Deployment
+## Services
 
-| Use Case | Method | Cost/Month | Complexity |
-|----------|--------|------------|------------|
-| **Development** | Lightsail + ECR | $5.10 | Low |
-| **Small Production** | Lightsail + ECR | $5.10 | Low |
-| **Growing Production** | ECS Fargate | $49-245 | Medium |
-| **Enterprise** | ECS Fargate | $245+ | Medium |
+**API Endpoints:**
+- Population Analysis: `/population-analysis`
+- Sampling & Survey: `/sampling-survey`
+- Genetic Diversity: `/genetic-diversity`
+- Species Assessment: `/species-assessment`
+- Habitat & Landscape: `/habitat-landscape`
+- Climate Impact: `/climate-impact`
+- Conservation Planning: `/conservation-planning`
 
-## Migration Path
+**Documentation:**
+- Swagger UI: `https://api.conservationbiologytools.org/{service}/docs`
+- OpenAPI: `https://api.conservationbiologytools.org/{service}/openapi.json`
 
-1. **Start**: Lightsail + ECR ($5.10/month)
-2. **Growth**: ECS Fargate ($49+/month)
-3. **Scale**: Add auto-scaling, monitoring, CI/CD
+## Cost Estimate
 
-Each method uses the same Docker images, making migration straightforward.
+- **Lightsail Container (nano)**: ~$7/month
+- **S3 + CloudFront**: ~$1-5/month
+- **Route 53 Hosted Zone**: $0.50/month
+- **Total**: ~$8.50-12.50/month
+
+## Prerequisites
+
+- AWS CLI configured
+- Docker installed
+- Domain configured in Route 53 (for custom domains)
+
+## Troubleshooting
+
+### Check Service Status
+```bash
+aws lightsail get-container-services --service-name conservation-api
+```
+
+### Test API Endpoints
+```bash
+curl https://api.conservationbiologytools.org/health
+curl https://api.conservationbiologytools.org/population-analysis/
+```
+
+### View Logs
+Check Lightsail Console → Container Services → conservation-api → Logs
