@@ -139,7 +139,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./deployment/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./deployment/nginx/development.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       # - breed-registry  # Disabled until breed registry is implemented
       - population-analysis
