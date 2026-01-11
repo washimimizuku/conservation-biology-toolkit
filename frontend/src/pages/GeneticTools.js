@@ -24,6 +24,7 @@ import { Biotech, Science, Analytics, TrendingUp } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const GeneticTools = () => {
   // Hardy-Weinberg State
@@ -62,6 +63,9 @@ const GeneticTools = () => {
     setHwLoading(true);
     setHwError('');
     
+    // Track tool usage
+    trackToolUsage('Hardy-Weinberg Equilibrium', 'Genetic Diversity');
+    
     try {
       // Parse genotype input (format: "AA:25,AB:50,BB:25")
       const genotypes = {};
@@ -83,6 +87,9 @@ const GeneticTools = () => {
       });
       
       setHwResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Hardy-Weinberg Equilibrium', 'hardy_weinberg');
     } catch (error) {
       setHwError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -94,6 +101,9 @@ const GeneticTools = () => {
   const calculateInbreeding = async () => {
     setInbreedingLoading(true);
     setInbreedingError('');
+    
+    // Track tool usage
+    trackToolUsage('Inbreeding Coefficient', 'Genetic Diversity');
     
     try {
       // Parse heterozygosity arrays
@@ -116,6 +126,9 @@ const GeneticTools = () => {
       });
       
       setInbreedingResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Inbreeding Coefficient', 'inbreeding_coefficient');
     } catch (error) {
       setInbreedingError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -127,6 +140,9 @@ const GeneticTools = () => {
   const detectBottleneck = async () => {
     setBottleneckLoading(true);
     setBottleneckError('');
+    
+    // Track tool usage
+    trackToolUsage('Bottleneck Detection', 'Genetic Diversity');
     
     try {
       const sizes = populationSizes
@@ -143,6 +159,9 @@ const GeneticTools = () => {
       });
       
       setBottleneckResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Bottleneck Detection', 'bottleneck_detection');
     } catch (error) {
       setBottleneckError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -154,6 +173,9 @@ const GeneticTools = () => {
   const calculateRichness = async () => {
     setRichnessLoading(true);
     setRichnessError('');
+    
+    // Track tool usage
+    trackToolUsage('Allelic Richness', 'Genetic Diversity');
     
     try {
       const counts = alleleCounts
@@ -180,6 +202,9 @@ const GeneticTools = () => {
       });
       
       setRichnessResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Allelic Richness', 'allelic_richness');
     } catch (error) {
       setRichnessError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {

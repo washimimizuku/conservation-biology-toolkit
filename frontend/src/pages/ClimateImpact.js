@@ -33,6 +33,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const ClimateImpact = () => {
   // Temperature Tolerance State
@@ -98,6 +99,9 @@ const ClimateImpact = () => {
     setTempLoading(true);
     setTempError('');
     
+    // Track tool usage
+    trackToolUsage('Temperature Tolerance', 'Climate Impact');
+    
     try {
       const payload = {
         current_temp_min: parseFloat(tempTolerance.current_temp_min),
@@ -111,6 +115,9 @@ const ClimateImpact = () => {
 
       const response = await axios.post(`${API_URLS.climateImpact}/temperature-tolerance`, payload);
       setTempResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Temperature Tolerance', 'temperature_tolerance');
     } catch (error) {
       setTempError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -143,6 +150,9 @@ const ClimateImpact = () => {
     setPhenologyLoading(true);
     setPhenologyError('');
     
+    // Track tool usage
+    trackToolUsage('Phenology Shift', 'Climate Impact');
+    
     try {
       const payload = {
         historical_event_day: parseInt(phenologyData.historical_event_day),
@@ -156,6 +166,9 @@ const ClimateImpact = () => {
 
       const response = await axios.post(`${API_URLS.climateImpact}/phenology-shift`, payload);
       setPhenologyResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Phenology Shift', 'phenology_shift');
     } catch (error) {
       setPhenologyError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {

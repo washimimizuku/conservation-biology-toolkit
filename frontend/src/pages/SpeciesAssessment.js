@@ -23,6 +23,7 @@ import { Assessment, Warning, LocationOn } from '@mui/icons-material';
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const SpeciesAssessment = () => {
   // IUCN Assessment State
@@ -70,6 +71,9 @@ const SpeciesAssessment = () => {
     setIucnLoading(true);
     setIucnError('');
     
+    // Track tool usage
+    trackToolUsage('IUCN Red List Assessment', 'Species Assessment');
+    
     try {
       const payload = {
         population_data: {
@@ -88,6 +92,9 @@ const SpeciesAssessment = () => {
 
       const response = await axios.post(`${API_URLS.speciesAssessment}/iucn-assessment`, payload);
       setIucnResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('IUCN Red List Assessment', 'iucn_assessment');
     } catch (error) {
       setIucnError(error.response?.data?.detail || error.message || 'Assessment failed');
     } finally {
@@ -98,6 +105,9 @@ const SpeciesAssessment = () => {
   const calculateExtinctionRisk = async () => {
     setRiskLoading(true);
     setRiskError('');
+    
+    // Track tool usage
+    trackToolUsage('Extinction Risk Assessment', 'Species Assessment');
     
     try {
       const payload = {
@@ -110,6 +120,9 @@ const SpeciesAssessment = () => {
 
       const response = await axios.post(`${API_URLS.speciesAssessment}/extinction-risk`, payload);
       setRiskResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Extinction Risk Assessment', 'extinction_risk');
     } catch (error) {
       setRiskError(error.response?.data?.detail || error.message || 'Assessment failed');
     } finally {
@@ -122,6 +135,9 @@ const SpeciesAssessment = () => {
     setRangeLoading(true);
     setRangeError('');
     
+    // Track tool usage
+    trackToolUsage('Range Analysis', 'Species Assessment');
+    
     try {
       const payload = {
         extent_of_occurrence: rangeData.extentOfOccurrence ? parseFloat(rangeData.extentOfOccurrence) : null,
@@ -132,6 +148,9 @@ const SpeciesAssessment = () => {
 
       const response = await axios.post(`${API_URLS.speciesAssessment}/range-analysis`, payload);
       setRangeResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Range Analysis', 'range_analysis');
     } catch (error) {
       setRangeError(error.response?.data?.detail || error.message || 'Assessment failed');
     } finally {

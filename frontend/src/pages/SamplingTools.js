@@ -15,6 +15,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const SamplingTools = () => {
   // Sample Size Calculator state
@@ -63,6 +64,9 @@ const SamplingTools = () => {
     setSampleSizeLoading(true);
     setSampleSizeError(null);
 
+    // Track tool usage
+    trackToolUsage('Sample Size Calculator', 'Sampling & Survey Design');
+
     try {
       const payload = {
         population_size: sampleSizeData.population_size ? parseInt(sampleSizeData.population_size) : null,
@@ -73,6 +77,9 @@ const SamplingTools = () => {
 
       const response = await axios.post(`${API_URLS.samplingSurvey}/sample-size`, payload);
       setSampleSizeResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Sample Size Calculator', 'sample_size');
     } catch (error) {
       setSampleSizeError(error.response?.data?.detail || 'An error occurred');
     } finally {
@@ -85,6 +92,9 @@ const SamplingTools = () => {
     setDetectionLoading(true);
     setDetectionError(null);
 
+    // Track tool usage
+    trackToolUsage('Detection Probability', 'Sampling & Survey Design');
+
     try {
       const payload = {
         detections: parseInt(detectionData.detections),
@@ -94,6 +104,9 @@ const SamplingTools = () => {
 
       const response = await axios.post(`${API_URLS.samplingSurvey}/detection-probability`, payload);
       setDetectionResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Detection Probability', 'detection_probability');
     } catch (error) {
       setDetectionError(error.response?.data?.detail || 'An error occurred');
     } finally {
@@ -106,6 +119,9 @@ const SamplingTools = () => {
     setCaptureLoading(true);
     setCaptureError(null);
 
+    // Track tool usage
+    trackToolUsage('Capture-Recapture', 'Sampling & Survey Design');
+
     try {
       const payload = {
         marked_first_sample: parseInt(captureData.marked_first_sample),
@@ -115,6 +131,9 @@ const SamplingTools = () => {
 
       const response = await axios.post(`${API_URLS.samplingSurvey}/capture-recapture`, payload);
       setCaptureResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Capture-Recapture', 'capture_recapture');
     } catch (error) {
       setCaptureError(error.response?.data?.detail || 'An error occurred');
     } finally {
@@ -127,6 +146,9 @@ const SamplingTools = () => {
     setDistanceLoading(true);
     setDistanceError(null);
 
+    // Track tool usage
+    trackToolUsage('Distance Sampling', 'Sampling & Survey Design');
+
     try {
       const payload = {
         distances: distanceData.distances.split(',').map(x => parseFloat(x.trim())),
@@ -136,6 +158,9 @@ const SamplingTools = () => {
 
       const response = await axios.post(`${API_URLS.samplingSurvey}/distance-sampling`, payload);
       setDistanceResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Distance Sampling', 'distance_sampling');
     } catch (error) {
       setDistanceError(error.response?.data?.detail || 'An error occurred');
     } finally {
