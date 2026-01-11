@@ -32,6 +32,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const HabitatLandscape = () => {
   // Habitat Suitability State
@@ -89,6 +90,9 @@ const HabitatLandscape = () => {
     setHsiLoading(true);
     setHsiError('');
     
+    // Track tool usage
+    trackToolUsage('Habitat Suitability Index', 'Habitat & Landscape');
+    
     try {
       const parameters = hsiParameters.map(param => ({
         name: param.name || 'Unnamed Parameter',
@@ -101,6 +105,9 @@ const HabitatLandscape = () => {
       });
       
       setHsiResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Habitat Suitability Index', 'habitat_suitability');
     } catch (error) {
       setHsiError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -129,6 +136,9 @@ const HabitatLandscape = () => {
     setSarLoading(true);
     setSarError('');
     
+    // Track tool usage
+    trackToolUsage('Species-Area Relationship', 'Habitat & Landscape');
+    
     try {
       const areas = areaData.map(d => parseFloat(d.area)).filter(a => !isNaN(a) && a > 0);
       const species_counts = areaData.map(d => parseInt(d.species)).filter(s => !isNaN(s) && s > 0);
@@ -145,6 +155,9 @@ const HabitatLandscape = () => {
 
       const response = await axios.post(`${API_URLS.habitatLandscape}/species-area-relationship`, payload);
       setSarResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Species-Area Relationship', 'species_area_relationship');
     } catch (error) {
       setSarError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {
@@ -173,6 +186,9 @@ const HabitatLandscape = () => {
     setFragLoading(true);
     setFragError('');
     
+    // Track tool usage
+    trackToolUsage('Habitat Fragmentation', 'Habitat & Landscape');
+    
     try {
       const validPatches = patches
         .filter(p => p.area && p.perimeter)
@@ -193,6 +209,9 @@ const HabitatLandscape = () => {
 
       const response = await axios.post(`${API_URLS.habitatLandscape}/fragmentation-metrics`, payload);
       setFragResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Habitat Fragmentation', 'habitat_fragmentation');
     } catch (error) {
       setFragError(error.response?.data?.detail || error.message || 'Calculation failed');
     } finally {

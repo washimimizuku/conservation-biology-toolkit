@@ -34,6 +34,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const ConservationPlanning = () => {
   // Conservation Priority State
@@ -120,6 +121,9 @@ const ConservationPlanning = () => {
     setPriorityLoading(true);
     setPriorityError('');
     
+    // Track tool usage
+    trackToolUsage('Conservation Priority Analysis', 'Conservation Planning');
+    
     try {
       // Normalize weights to sum to 1
       const totalWeight = Object.values(priorityWeights).reduce((sum, w) => sum + w, 0);
@@ -142,6 +146,9 @@ const ConservationPlanning = () => {
       });
       
       setPriorityResults(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Conservation Priority Analysis', 'conservation_priority');
     } catch (error) {
       setPriorityError(error.response?.data?.detail || error.message || 'Analysis failed');
     } finally {
@@ -185,6 +192,9 @@ const ConservationPlanning = () => {
   const analyzeThreat = async () => {
     setThreatLoading(true);
     setThreatError('');
+    
+    // Track tool usage
+    trackToolUsage('Threat Assessment', 'Conservation Planning');
     
     try {
       const threatData = threats.map(threat => ({
@@ -234,6 +244,9 @@ const ConservationPlanning = () => {
   const analyzeCostEffectiveness = async () => {
     setCostLoading(true);
     setCostError('');
+    
+    // Track tool usage
+    trackToolUsage('Cost-Effectiveness Analysis', 'Conservation Planning');
     
     try {
       const actionData = actions.map(action => ({
@@ -291,6 +304,9 @@ const ConservationPlanning = () => {
   const analyzeReserveSelection = async () => {
     setReserveLoading(true);
     setReserveError('');
+    
+    // Track tool usage
+    trackToolUsage('Reserve Selection', 'Conservation Planning');
     
     try {
       const siteData = reserveSites.map(site => ({
