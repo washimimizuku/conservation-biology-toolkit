@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
+import { ErrorBoundary } from './components';
 import Home from './pages/Home';
 import PopulationTools from './pages/PopulationTools';
 import SamplingTools from './pages/SamplingTools';
@@ -13,6 +14,7 @@ import ClimateImpact from './pages/ClimateImpact';
 import ConservationPlanning from './pages/ConservationPlanning';
 
 import './App.css';
+import { startPageTracking } from './analytics';
 
 // Google Analytics page tracking component
 function GoogleAnalytics() {
@@ -25,6 +27,10 @@ function GoogleAnalytics() {
         page_path: location.pathname,
       });
     }
+    
+    // Track page engagement time
+    const pageName = location.pathname === '/' ? 'Home' : location.pathname.replace('/', '').replace('-', ' ');
+    startPageTracking(pageName);
   }, [location]);
 
   return null;
@@ -45,23 +51,52 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <GoogleAnalytics />
-        <div className="App">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/population-tools" element={<PopulationTools />} />
-            <Route path="/sampling-tools" element={<SamplingTools />} />
-            <Route path="/genetic-tools" element={<GeneticTools />} />
-            <Route path="/species-assessment" element={<SpeciesAssessment />} />
-            <Route path="/habitat-landscape" element={<HabitatLandscape />} />
-            <Route path="/climate-impact" element={<ClimateImpact />} />
-            <Route path="/conservation-planning" element={<ConservationPlanning />} />
-
-          </Routes>
-        </div>
-      </Router>
+      <ErrorBoundary toolName="Conservation Biology Toolkit" reloadOnError={true}>
+        <Router>
+          <GoogleAnalytics />
+          <div className="App">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/population-tools" element={
+                <ErrorBoundary toolName="Population Tools">
+                  <PopulationTools />
+                </ErrorBoundary>
+              } />
+              <Route path="/sampling-tools" element={
+                <ErrorBoundary toolName="Sampling Tools">
+                  <SamplingTools />
+                </ErrorBoundary>
+              } />
+              <Route path="/genetic-tools" element={
+                <ErrorBoundary toolName="Genetic Tools">
+                  <GeneticTools />
+                </ErrorBoundary>
+              } />
+              <Route path="/species-assessment" element={
+                <ErrorBoundary toolName="Species Assessment">
+                  <SpeciesAssessment />
+                </ErrorBoundary>
+              } />
+              <Route path="/habitat-landscape" element={
+                <ErrorBoundary toolName="Habitat Landscape">
+                  <HabitatLandscape />
+                </ErrorBoundary>
+              } />
+              <Route path="/climate-impact" element={
+                <ErrorBoundary toolName="Climate Impact">
+                  <ClimateImpact />
+                </ErrorBoundary>
+              } />
+              <Route path="/conservation-planning" element={
+                <ErrorBoundary toolName="Conservation Planning">
+                  <ConservationPlanning />
+                </ErrorBoundary>
+              } />
+            </Routes>
+          </div>
+        </Router>
+      </ErrorBoundary>
     </ThemeProvider>
   );
 }

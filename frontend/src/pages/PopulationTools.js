@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Container, 
   Typography, 
@@ -14,7 +14,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
-import { trackToolUsage, trackCalculation } from '../analytics';
+import { trackToolUsage, trackCalculation, trackApiCall, trackError, trackAbandonment, trackFormInteraction } from '../analytics';
 
 const PopulationTools = () => {
   const [growthData, setGrowthData] = useState({
@@ -60,6 +60,40 @@ const PopulationTools = () => {
   const [metaLoading, setMetaLoading] = useState(false);
   const [metaError, setMetaError] = useState(null);
 
+  // Helper function to track form field changes
+  const handleFieldChange = (toolName, fieldName, value, setter) => {
+    setter(value);
+    
+    // Track form interaction
+    const isValid = value && value.toString().trim() !== '';
+    trackFormInteraction(toolName, fieldName, 'field_change', isValid);
+  };
+
+  // Track abandonment when users start filling forms but don't submit
+  useEffect(() => {
+    let abandonmentTimer;
+    
+    // Check if user has started filling any form
+    const hasStartedGrowth = growthData.initial_population !== '100' || growthData.growth_rate !== '0.05';
+    const hasStartedEffective = effectivePopData.breeding_males !== '25' || effectivePopData.breeding_females !== '30';
+    
+    if (hasStartedGrowth && !growthResult && !growthLoading) {
+      abandonmentTimer = setTimeout(() => {
+        trackAbandonment('Population Growth Model', 'form_filled_no_submit', 30000);
+      }, 30000); // 30 seconds of inactivity
+    }
+    
+    if (hasStartedEffective && !effectivePopResult && !effectivePopLoading) {
+      abandonmentTimer = setTimeout(() => {
+        trackAbandonment('Effective Population Size', 'form_filled_no_submit', 30000);
+      }, 30000);
+    }
+    
+    return () => {
+      if (abandonmentTimer) clearTimeout(abandonmentTimer);
+    };
+  }, [growthData, effectivePopData, growthResult, effectivePopResult, growthLoading, effectivePopLoading]);
+
   const handleGrowthSubmit = async (e) => {
     e.preventDefault();
     setGrowthLoading(true);
@@ -76,13 +110,40 @@ const PopulationTools = () => {
         carrying_capacity: growthData.carrying_capacity ? parseInt(growthData.carrying_capacity) : null
       };
 
-      const response = await axios.post(`${API_URLS.populationAnalysis}/population-growth`, payload);
+      // Validate inputs and track form interactions
+      if (isNaN(payload.initial_population) || payload.initial_population <= 0) {
+        trackFormInteraction('Population Growth Model', 'initial_population', 'validation_error', false);
+        throw new Error('Initial population must be a positive number');
+      }
+      
+      if (isNaN(payload.growth_rate)) {
+        trackFormInteraction('Population Growth Model', 'growth_rate', 'validation_error', false);
+        throw new Error('Growth rate must be a valid number');
+      }
+      
+      if (isNaN(payload.years) || payload.years <= 0) {
+        trackFormInteraction('Population Growth Model', 'years', 'validation_error', false);
+        throw new Error('Years must be a positive number');
+      }
+
+      // Use the comprehensive API tracking wrapper
+      const response = await trackApiCall(
+        'Population Growth Model',
+        () => axios.post(`${API_URLS.populationAnalysis}/population-growth`, payload)
+      );
+      
       setGrowthResult(response.data);
       
-      // Track successful calculation
-      trackCalculation('Population Growth Model', 'population_growth');
+      // Track successful calculation (already handled by trackApiCall)
     } catch (error) {
-      setGrowthError(error.response?.data?.detail || 'An error occurred');
+      const errorMessage = error.response?.data?.detail || error.message || 'An error occurred';
+      setGrowthError(errorMessage);
+      
+      // Error tracking is handled by trackApiCall for API errors
+      // Track validation errors separately
+      if (!error.response) {
+        trackError('Population Growth Model', 'validation_error', errorMessage);
+      }
     } finally {
       setGrowthLoading(false);
     }
