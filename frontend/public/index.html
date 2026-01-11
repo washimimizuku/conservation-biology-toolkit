@@ -19,7 +19,8 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
-      if('%REACT_APP_GA_MEASUREMENT_ID%' !== '%REACT_APP_GA_MEASUREMENT_ID%') {
+      // Only initialize GA if measurement ID is provided (not empty and not the placeholder)
+      if('%REACT_APP_GA_MEASUREMENT_ID%' && '%REACT_APP_GA_MEASUREMENT_ID%' !== '') {
         gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%');
       }
     </script>

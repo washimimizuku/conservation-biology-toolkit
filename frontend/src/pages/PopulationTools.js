@@ -14,6 +14,7 @@ import {
 import axios from 'axios';
 import { API_URLS } from '../config/api';
 import { Footer } from '../components';
+import { trackToolUsage, trackCalculation } from '../analytics';
 
 const PopulationTools = () => {
   const [growthData, setGrowthData] = useState({
@@ -64,6 +65,9 @@ const PopulationTools = () => {
     setGrowthLoading(true);
     setGrowthError(null);
 
+    // Track tool usage
+    trackToolUsage('Population Growth Model', 'Population Analysis');
+
     try {
       const payload = {
         initial_population: parseInt(growthData.initial_population),
@@ -74,6 +78,9 @@ const PopulationTools = () => {
 
       const response = await axios.post(`${API_URLS.populationAnalysis}/population-growth`, payload);
       setGrowthResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Population Growth Model', 'population_growth');
     } catch (error) {
       setGrowthError(error.response?.data?.detail || 'An error occurred');
     } finally {
@@ -86,6 +93,9 @@ const PopulationTools = () => {
     setEffectivePopLoading(true);
     setEffectivePopError(null);
 
+    // Track tool usage
+    trackToolUsage('Effective Population Size', 'Population Analysis');
+
     try {
       const payload = {
         breeding_males: parseInt(effectivePopData.breeding_males),
@@ -94,6 +104,9 @@ const PopulationTools = () => {
 
       const response = await axios.post(`${API_URLS.populationAnalysis}/effective-population-size`, payload);
       setEffectivePopResult(response.data);
+      
+      // Track successful calculation
+      trackCalculation('Effective Population Size', 'effective_population');
     } catch (error) {
       setEffectivePopError(error.response?.data?.detail || 'An error occurred');
     } finally {

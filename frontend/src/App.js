@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
@@ -13,6 +13,22 @@ import ClimateImpact from './pages/ClimateImpact';
 import ConservationPlanning from './pages/ConservationPlanning';
 
 import './App.css';
+
+// Google Analytics page tracking component
+function GoogleAnalytics() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Track page views
+    if (window.gtag) {
+      window.gtag('config', process.env.REACT_APP_GA_MEASUREMENT_ID, {
+        page_path: location.pathname,
+      });
+    }
+  }, [location]);
+
+  return null;
+}
 
 const theme = createTheme({
   palette: {
@@ -30,6 +46,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <GoogleAnalytics />
         <div className="App">
           <Navbar />
           <Routes>

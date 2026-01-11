@@ -21,6 +21,7 @@ import {
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components';
+import { trackCategoryEngagement } from '../analytics';
 
 const Home = () => {
   // Helper function to get service-specific colors
