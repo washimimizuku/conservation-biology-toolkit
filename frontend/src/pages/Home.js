@@ -21,6 +21,7 @@ import {
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { Footer } from '../components';
+import { trackCategoryEngagement, trackNavigation, trackToolInterest } from '../analytics';
 
 const Home = () => {
   // Helper function to get service-specific colors
@@ -143,6 +144,17 @@ const Home = () => {
     }
   ];
 
+  // Track navigation from home page to tool categories
+  const handleCategoryNavigation = (categoryTitle, categoryLink) => {
+    trackCategoryEngagement(categoryTitle, 'navigation_click');
+    trackNavigation('Home', categoryTitle, 'category_button');
+  };
+
+  // Track interest in specific tools when users click on tool chips
+  const handleToolChipClick = (toolName, categoryTitle) => {
+    trackToolInterest(toolName, categoryTitle, 'chip_click');
+  };
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box textAlign="center" mb={6}>
@@ -188,7 +200,15 @@ const Home = () => {
                       label={tool} 
                       variant="outlined" 
                       size="small" 
-                      sx={{ mr: 1, mb: 1 }}
+                      onClick={() => handleToolChipClick(tool, category.title)}
+                      sx={{ 
+                        mr: 1, 
+                        mb: 1,
+                        cursor: 'pointer',
+                        '&:hover': {
+                          backgroundColor: 'action.hover'
+                        }
+                      }}
                     />
                   ))}
                 </Box>
@@ -201,6 +221,7 @@ const Home = () => {
                   component={Link} 
                   to={category.link}
                   disabled={category.status !== 'Available'}
+                  onClick={() => category.status === 'Available' && handleCategoryNavigation(category.title, category.link)}
                   startIcon={category.status === 'Available' ? <PlayArrowIcon /> : <ScheduleIcon />}
                   sx={{
                     py: 1.5,

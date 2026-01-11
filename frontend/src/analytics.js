@@ -54,3 +54,26 @@ export const trackCategoryEngagement = (category, action) => {
     });
   }
 };
+
+// Track navigation patterns from home page
+export const trackNavigation = (fromPage, toPage, elementType) => {
+  if (window.gtag) {
+    window.gtag('event', 'navigation', {
+      event_category: 'User Navigation',
+      event_label: `${fromPage} → ${toPage}`,
+      navigation_type: elementType,
+    });
+  }
+};
+
+// Track user interest in specific tools
+export const trackToolInterest = (toolName, categoryName, interactionType) => {
+  if (window.gtag) {
+    window.gtag('event', 'tool_interest', {
+      event_category: 'Tool Interest',
+      event_label: toolName,
+      tool_category: categoryName,
+      interaction_type: interactionType,
+    });
+  }
+};
